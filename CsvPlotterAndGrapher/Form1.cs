@@ -12,9 +12,30 @@ namespace CsvPlotterAndGrapher
 {
     public partial class Form1 : Form
     {
+        String csvPath = "";
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void OpenFileButtonClick(object sender, EventArgs e)
+        {
+            //initialize OpenfileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Opening csv file";
+            openFileDialog.Filter = "CSV files|*.csv";
+            openFileDialog.InitialDirectory = @"C:\";
+
+            //open dialog and return its result
+            DialogResult dialogResult = openFileDialog.ShowDialog();
+
+            switch (dialogResult)
+            {
+                case DialogResult.OK:
+                    this.csvPath = openFileDialog.FileName;
+                    MessageBox.Show(this.csvPath);
+                    break;
+            }
         }
     }
 }
