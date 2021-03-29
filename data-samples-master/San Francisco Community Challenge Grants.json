@@ -1,0 +1,1349 @@
+[ {
+  "id" : "S-1",
+  "requested" : "9999.00",
+  "category" : "Urban Forestry",
+  "organization" : "Goettingen Neighbors Group & SF Parks Trust",
+  "project_title" : "Goettingen Hill Beautification Project",
+  "granted" : "9999",
+  "round" : "2009 Q1",
+  "project_address" : "600 - 700 block of Goettingen St, SF, CA  94134",
+  "size" : "Small"
+}
+, {
+  "id" : "S-2",
+  "requested" : "3000.00",
+  "category" : "Public Art",
+  "organization" : "VVBOOM & Visitacaion Valley Community Development Corp",
+  "project_title" : "Nayarit Taqueria Community Mural",
+  "granted" : "3000",
+  "round" : "2009 Q1",
+  "project_address" : "98 Leland Ave, SF, CA  94134",
+  "size" : "Small"
+}
+, {
+  "id" : "M-1",
+  "requested" : "24944.00",
+  "category" : "Public Art",
+  "organization" : "Les Seymour & World Savvy",
+  "project_title" : "Reflective Mural - ISA",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "655 DeHaro Street, SF CA  94107",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-2",
+  "requested" : "25000.00",
+  "category" : "Public Art",
+  "organization" : "Kid Serve Youth Murals",
+  "project_title" : "Fell St. Mosaic Project - IBWHS",
+  "granted" : "25000",
+  "round" : "2009 Q1",
+  "project_address" : "1099 Hayes St, SF, CA  94117",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-3",
+  "requested" : "16400.00",
+  "category" : "Urban Forestry",
+  "organization" : "Noe Valley Association - CBD",
+  "project_title" : "Noe Sidewalk Gardens",
+  "granted" : "16400",
+  "round" : "2009 Q1",
+  "project_address" : "24th St & Noe St, SF, CA  94114",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-4",
+  "requested" : "19500.00",
+  "category" : "Street Maintenance",
+  "organization" : "La Raza Centro Legal & SF Clean City Coalition",
+  "project_title" : "Day Laborer Good Neighbor Project",
+  "granted" : "19500",
+  "round" : "2009 Q1",
+  "project_address" : "Cesar Chavez & 26th St, SF, CA  94103",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-5",
+  "requested" : "25000.00",
+  "category" : "Street Maintenance",
+  "organization" : "Chinatown Community Development Center",
+  "project_title" : "AAA Workathon",
+  "granted" : "15000",
+  "round" : "2009 Q1",
+  "project_address" : "1525 Grant Ave, SF, CA  94133",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-6",
+  "requested" : "24138.00",
+  "category" : "Graffiti & Litter Abatement ",
+  "organization" : "Bayview Hunters Point Foundation",
+  "project_title" : "BHP Youth Clean Up Program",
+  "granted" : "24138",
+  "round" : "2009 Q1",
+  "project_address" : "5015 Third St, SF, CA  94124",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-7",
+  "requested" : "19088.00",
+  "category" : "Urban Forestry",
+  "organization" : "SF Clean City Coalition",
+  "project_title" : "Pacific Heights Open Space Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "2451 Sacramento St, SF, CA  94115",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-8",
+  "requested" : "24860.00",
+  "category" : "Street Maintenance & Graffiti Abatement",
+  "organization" : "Community Initiative Fund",
+  "project_title" : "Portola Streetscapes Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "4702 Mission St, SF, CA  94112",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-9",
+  "requested" : "25000.00",
+  "category" : "Public Art",
+  "organization" : "Gray Area Gallery",
+  "project_title" : "Tendorama",
+  "granted" : "25000",
+  "round" : "2009 Q1",
+  "project_address" : "55 Taylor St, SF, CA  94103",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-10",
+  "requested" : "19600.00",
+  "category" : "Urban Forestry",
+  "organization" : "SF Parks Trust",
+  "project_title" : "Mission Roots",
+  "granted" : "19600",
+  "round" : "2009 Q1",
+  "project_address" : "Harrison St, btwn 22nd - 24th St, SF, CA  94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "L-1",
+  "requested" : "100000.00",
+  "category" : "Public Art",
+  "organization" : "North of Market/Tenderloin CBD",
+  "project_title" : "UN Plaza Sculpture",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "83 McAllister St, SF, CA  94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-2",
+  "requested" : "51000.00",
+  "category" : "Urban Forestry",
+  "organization" : "M.D. Referral, Inc.",
+  "project_title" : "Alice Griffith Garden",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "2500 Griffith St, SF, CA  94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-3",
+  "requested" : "86226.00",
+  "category" : "Urban Forestry",
+  "organization" : "Friends of the Urban Forest",
+  "project_title" : "Greening the Wiggle",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "Market & Church St, SF, CA  94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-4",
+  "requested" : "100000",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "PREFund",
+  "project_title" : "Daniel Webster Beautification Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "465 Missouri St, SF, CA  94107",
+  "size" : "Large"
+}
+, {
+  "id" : "L-5",
+  "requested" : "48025",
+  "category" : "Urban Forestry",
+  "organization" : "CA College of the Arts",
+  "project_title" : "Hooper St Greenscape Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "Hooper St, btwn 7th & 8th St, SF, CA  94107 ",
+  "size" : "Large"
+}
+, {
+  "id" : "L-6",
+  "requested" : "100000",
+  "category" : "Beautification",
+  "organization" : "Bayview Opera House",
+  "project_title" : "Bayview Opera House",
+  "granted" : "86000",
+  "round" : "2009 Q1",
+  "project_address" : "4705 Third Street, SF, CA  94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-7",
+  "requested" : "100000.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Castro/Upper Market CBD",
+  "project_title" : "Harvey Milk Plaza",
+  "granted" : "58167",
+  "round" : "2009 Q1",
+  "project_address" : "Market & Castro St, SF, CA  94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-8",
+  "requested" : "100000.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Trust for Public Land",
+  "project_title" : "Hayes Valley Playground Renovation",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "Hayes & Buchanan St, SF, CA  94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-9",
+  "requested" : "34188.00",
+  "category" : "Public Art",
+  "organization" : "SF Clean City Coalition",
+  "project_title" : "Tenderloin Post Office Mural Project",
+  "granted" : "34188",
+  "round" : "2009 Q1",
+  "project_address" : "101 Hyde St @ Golden Gate Ave, SF, CA  94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-10",
+  "requested" : "26846.00",
+  "category" : "Urban Forestry",
+  "organization" : "Enterprise for High School Students",
+  "project_title" : "Summer Gardening Program",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "Crocker Amazon Park",
+  "size" : "Large"
+}
+, {
+  "id" : "L-11",
+  "requested" : "99299.00",
+  "category" : "Urban Forestry",
+  "organization" : "SF Parks Trust",
+  "project_title" : "Visitacion Valley Greenway Project",
+  "granted" : "54000",
+  "round" : "2009 Q1",
+  "project_address" : "Campbell & Rutland Ave, SF, CA  94134",
+  "size" : "Large"
+}
+, {
+  "id" : "L-12",
+  "requested" : "100000",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Winslow Architecture & Neighborhood Parks Council",
+  "project_title" : "Sumner Living Alley",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "100 blk of Sumner St, btwn Howard & Clementina St, SF, CA  94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-13",
+  "requested" : "82500",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Friends of Duboce Playground & neighborhood Parks Council",
+  "project_title" : "Duboce Park Youth Play Area",
+  "granted" : "29251",
+  "round" : "2009 Q1",
+  "project_address" : "Duboce Park Plyground",
+  "size" : "Large"
+}
+, {
+  "id" : "L-14",
+  "requested" : "46772",
+  "category" : "Urban Forestry",
+  "organization" : "8th Avenue Neighbors & SF Parks Trust",
+  "project_title" : "8th Avenue Greening Project",
+  "granted" : "29945",
+  "round" : "2009 Q1",
+  "project_address" : "8th Ave, btwn Lincoln & Irving St, SF, CA  94122",
+  "size" : "Large"
+}
+, {
+  "id" : "L-15",
+  "requested" : "62261",
+  "category" : "Street Maintenance",
+  "organization" : "MainTrain",
+  "project_title" : "Chinatown Public Places & Spaces Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "777 Stockton St, SF, CA  94108",
+  "size" : "Large"
+}
+, {
+  "id" : "L-16",
+  "requested" : "100000.00",
+  "category" : "Urban Forestry",
+  "organization" : "509 Cultural Center",
+  "project_title" : "Cohen Alley's Green Lab",
+  "granted" : "75000",
+  "round" : "2009 Q1",
+  "project_address" : "509 Ellis St, SF, CA  94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-17",
+  "requested" : "95920.00",
+  "category" : "Urban Forestry",
+  "organization" : "Execelsior Action Group & Community Initiative Fund",
+  "project_title" : "Excelsior Streetscapes Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "4300 Silver Ave, SF, CA  94112",
+  "size" : "Large"
+}
+, {
+  "id" : "L-18",
+  "requested" : "88607.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "OMI Neighbors In Action",
+  "project_title" : "Ocean Ave Landscape & Banner Project",
+  "granted" : "0",
+  "round" : "2009 Q1",
+  "project_address" : "4702 Mission St, SF, CA  94112",
+  "size" : "Large"
+}
+, {
+  "id" : "L-19",
+  "requested" : "120824.00",
+  "category" : "Public Art",
+  "organization" : "Bayview Hunters Point Foundation",
+  "project_title" : "Bayview Youthh Art Program",
+  "granted" : "0.00",
+  "round" : "2009 Q1",
+  "project_address" : "5015 Third St, SF, CA  94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-20",
+  "requested" : "100000.00",
+  "category" : "Public Art",
+  "organization" : "HOMEY",
+  "project_title" : "BOMBB Mural Project",
+  "granted" : "0.00",
+  "round" : "2009 Q1",
+  "project_address" : "1337 Mission St, SF, CA  94103",
+  "size" : "Large"
+}
+, {
+  "id" : "ID",
+  "category" : "Category",
+  "organization" : "Organization",
+  "project_title" : "Project Title",
+  "round" : "Round",
+  "project_address" : "Project Address",
+  "size" : "Size"
+}
+, {
+  "id" : "S-1",
+  "requested" : "8457.00",
+  "category" : "Urban Forestry",
+  "organization" : "Sunnyside ES PTA",
+  "project_title" : "Sunnyside ES Beautification Project",
+  "granted" : "8457",
+  "round" : "2009 Q2",
+  "project_address" : "250 Foerster Street, SF CA 94112",
+  "size" : "Small"
+}
+, {
+  "id" : "S-2",
+  "requested" : "8453.00",
+  "category" : "Urban Forestry",
+  "organization" : "Tara Street Neighbors & SF Parks Trust",
+  "project_title" : "Tara Street Community Garden",
+  "granted" : "7980",
+  "round" : "2009 Q2",
+  "project_address" : "Tara & Geneva Avenue, SFCA 94112",
+  "size" : "Small"
+}
+, {
+  "id" : "S-3",
+  "requested" : "10000.00",
+  "category" : "Public Art",
+  "organization" : "Think Round, Inc.",
+  "project_title" : "New Neighbors Mural Project",
+  "granted" : "6160",
+  "round" : "2009 Q2",
+  "project_address" : "1800 Oakdale Avenue, SFCA 94124",
+  "size" : "Small"
+}
+, {
+  "id" : "M-1",
+  "requested" : "16278.00",
+  "category" : "Urban Forestry",
+  "organization" : "Lakeside Property Owners Association",
+  "project_title" : "Junipero Serra Greenbelt Tree Planting Project",
+  "granted" : "16278",
+  "round" : "2009 Q2",
+  "project_address" : "Junipero Serra Blvd. & Ocean Avenue, SFCA 94127",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-2",
+  "requested" : "25000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Boys & Girls Clubs of San Francisco",
+  "project_title" : "Willie Mays Edible Garden",
+  "granted" : "21450",
+  "round" : "2009 Q2",
+  "project_address" : "195 Kiska Road, SFCA 94124",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-3",
+  "requested" : "25000.00",
+  "category" : "Urban Forestry",
+  "organization" : "La Playa Park Neighbors & SF Parks Trust",
+  "project_title" : "La Playa Street Parks ",
+  "granted" : "18000",
+  "round" : "2009 Q2",
+  "project_address" : "La Playa Avenue & Judah, SFCA 94122",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-4",
+  "requested" : "24400.00",
+  "category" : "Urban Forestry",
+  "organization" : "Girls 2000",
+  "project_title" : "Give Thanks Garden",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "323 Grand View Avenue, SFCA 94114",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-5",
+  "requested" : "16200.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Neighbors Improving Bernal & SF Parks Trust",
+  "project_title" : "Tompkins Avenue Stairs Project",
+  "granted" : "15015",
+  "round" : "2009 Q2",
+  "project_address" : "400 Nevada Street, SFCA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-6",
+  "requested" : "20000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Surfrider Foundation, SF Chapter",
+  "project_title" : "Plant Don't Pave",
+  "granted" : "20000",
+  "round" : "2009 Q2",
+  "project_address" : "1779 48th Avenue, SFCA 94122",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-7",
+  "requested" : "21382.00",
+  "category" : "Urban Forestry",
+  "organization" : "OMI Neighbors In Action",
+  "project_title" : "Ocean Avenue Gateway Greening Project",
+  "granted" : "20943",
+  "round" : "2009 Q2",
+  "project_address" : "272 Harold Avenue, SFCA 94112",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-8",
+  "requested" : "16355.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Japantown Task Force, Inc.",
+  "project_title" : "Japantown Beautification & Greening Project",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "1700 Sutter Street, SFCA 94115",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-9",
+  "requested" : "18910.00",
+  "category" : "Rainwater Harvesting Project",
+  "organization" : "Trust for Public Land",
+  "project_title" : "Hayes Valley Playground Clubhouse",
+  "granted" : "18910",
+  "round" : "2009 Q2",
+  "project_address" : "699 Hayes Street, SFCA 94102",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-10",
+  "requested" : "13905.00",
+  "category" : "Urban Forestry",
+  "organization" : "Enterprise for High School Students",
+  "project_title" : "Summer Gardening Program",
+  "granted" : "10965",
+  "round" : "2009 Q2",
+  "project_address" : "950 Key Avenue, SFCA 94124",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-11",
+  "requested" : "20000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Good Samaritan Family Resource Center",
+  "project_title" : "The Secret Garden",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "2715 Harrison Streets, SFCA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-12",
+  "requested" : "22508.00",
+  "category" : "Graffiti & Litter Abatement ",
+  "organization" : "Larkin Street Youth Services",
+  "project_title" : "Divisadero Corridor Clean-Up Project",
+  "granted" : "15000",
+  "round" : "2009 Q2",
+  "project_address" : "401 Divisadero, SFCA 94117",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-13",
+  "requested" : "25000",
+  "category" : "Urban Forestry",
+  "organization" : "Public Architecture",
+  "project_title" : "Folsom St Sidewalk Garden Project",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "1122 Folsom Street, SF CA 94103",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-15",
+  "requested" : "25000",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Larkin Street Youth Services",
+  "project_title" : "Polk St Corridor Clean-Up Project",
+  "granted" : "15000",
+  "round" : "2009 Q2",
+  "project_address" : "1033 Polk Street, SF CA 94109",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-16",
+  "requested" : "24035",
+  "category" : "Urban Forestry & Public Art",
+  "organization" : "Excelsior Action Group",
+  "project_title" : "Execelsior Streetscapes Project",
+  "granted" : "17435",
+  "round" : "2009 Q2",
+  "project_address" : "5096 Mission St, SF CA 94112",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-17",
+  "requested" : "21255.00",
+  "category" : "Rainwater Harvesting Project",
+  "organization" : "Literacy for Environmental Justice",
+  "project_title" : "EcoCenter At Herons Head Park Project",
+  "granted" : "21255",
+  "round" : "2009 Q2",
+  "project_address" : "1 Jennings Street, SFCA 94124",
+  "size" : "Medium"
+}
+, {
+  "id" : "L-1",
+  "requested" : "100000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Chinese Culture Foundation of SF ",
+  "project_title" : "Greening of the Bridge",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "750 Kearny Street, SF CA 94108",
+  "size" : "Large"
+}
+, {
+  "id" : "L-2",
+  "requested" : "82500.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Vietnamese Elderly Mutual Assistance Association",
+  "project_title" : "Little Saigon Beautification Project",
+  "granted" : "12370",
+  "round" : "2009 Q2",
+  "project_address" : "910 Larkin Street, SF CA 94109",
+  "size" : "Large"
+}
+, {
+  "id" : "L-3",
+  "requested" : "50000.00",
+  "category" : "Public Art",
+  "organization" : "Chinatown Community Development Center",
+  "project_title" : "International Hotel Mural Project",
+  "granted" : "23455",
+  "round" : "2009 Q2",
+  "project_address" : "868 Kearny Street, SF CA 94133",
+  "size" : "Large"
+}
+, {
+  "id" : "L-4",
+  "requested" : "80000.00",
+  "category" : "Public Art",
+  "organization" : "Intersection for the Arts",
+  "project_title" : "Systems Mural Project",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "420 Berry Street, SF CA 94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-5",
+  "requested" : "74889",
+  "category" : "Urban Forestry & Rainwater Harvesting",
+  "organization" : "Plant *SF & SF Parks Trust",
+  "project_title" : "Sidewalk Garden Project",
+  "granted" : "34835",
+  "round" : "2009 Q2",
+  "project_address" : "Quintera & 42nd Avenue, SF CA 94122",
+  "size" : "Large"
+}
+, {
+  "id" : "L-6",
+  "requested" : "84800",
+  "category" : "Urban Forestry & Rainwater Harvesting",
+  "organization" : "Miraloma ES PTA",
+  "project_title" : "Miraloma ES Educational Community Garden",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "175 Omar Way, SF CA 94127",
+  "size" : "Large"
+}
+, {
+  "id" : "L-8",
+  "requested" : "95823",
+  "category" : "Public Art",
+  "organization" : "Friends of Lincoln Park & SF Parks Trust",
+  "project_title" : "Lincoln Park Steps Project",
+  "granted" : "51000",
+  "round" : "2009 Q2",
+  "project_address" : "California Street & 32nd Avenue, SF CA 94121",
+  "size" : "Large"
+}
+, {
+  "id" : "L-9",
+  "requested" : "70288",
+  "category" : "Urban Forestry",
+  "organization" : "Friends of Bernal Gardens & SF Parks Trust",
+  "project_title" : "Vista Pointe Garden",
+  "granted" : "61045",
+  "round" : "2009 Q2",
+  "project_address" : "52 Bradford Street, SF CA 94110",
+  "size" : "Large"
+}
+, {
+  "id" : "L-10",
+  "requested" : "100000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Citywide Case Management, UCSF-SFGH Psychiatry",
+  "project_title" : "Community Flower Box Program",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "982 Mission Street, SF CA 94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-12",
+  "requested" : "60436.00",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "SF Clean City Coalition",
+  "project_title" : "Clean City Youth Program",
+  "granted" : "51727",
+  "round" : "2009 Q2",
+  "project_address" : "4494 Mission Street, SF CA 94112",
+  "size" : "Large"
+}
+, {
+  "id" : "L-14",
+  "requested" : "94000.00",
+  "category" : "Beautification & Urban Forestry",
+  "organization" : "Friends of Dolores Park & Neighborhood Parks Council",
+  "project_title" : "Dolores Park Playground Renovations",
+  "granted" : "0",
+  "round" : "2009 Q2",
+  "project_address" : "18th Street & Dolores Street, SF CA 94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-16",
+  "requested" : "100000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Garden for the Environment & Haight-Ashbury Neighborhood Council",
+  "project_title" : "Studio for Urban Projects Garden",
+  "granted" : "27720.00",
+  "round" : "2009 Q2",
+  "project_address" : "7th Avenue & Lawton Street, SF CA 94122 ",
+  "size" : "Large"
+}
+, {
+  "id" : "L-17",
+  "requested" : "43000.00",
+  "category" : "Rainwater Harvesting Project",
+  "organization" : "Rebuilding Together SF",
+  "project_title" : "McKinley Elementary School Project",
+  "granted" : "5000.00",
+  "round" : "2009 Q2",
+  "project_address" : "1025 14th Street, SF CA 94114",
+  "size" : "Large"
+}
+, {
+  "id" : "ID",
+  "category" : "Category",
+  "organization" : "Organization",
+  "project_title" : "Project Title",
+  "round" : "Round",
+  "project_address" : "Project Address",
+  "size" : "Size"
+}
+, {
+  "id" : "S-1",
+  "requested" : "10000.00",
+  "category" : "Public Art",
+  "organization" : "SFABSE/City-Wide Tutorial Program",
+  "project_title" : "Public Art Youth Program",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1551 Newcomb St, SF, CA 94124",
+  "size" : "Small"
+}
+, {
+  "id" : "S-2",
+  "requested" : "9800.00",
+  "category" : "Urban Forestry",
+  "organization" : "Sargent-Orizaba & SF Clean City Coalition",
+  "project_title" : "Sargent-Orizaba Garden",
+  "granted" : "9800",
+  "round" : "2010 Q1",
+  "project_address" : "Sargent & Orizaba St, SF, CA 94132",
+  "size" : "Small"
+}
+, {
+  "id" : "M-1",
+  "requested" : "25000.00",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Chinatown Community Development Center",
+  "project_title" : "AAA Annual Workathon",
+  "granted" : "14025",
+  "round" : "2010 Q1",
+  "project_address" : "Portsmouth Square, SF, CA 94108",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-2",
+  "requested" : "20284.00",
+  "category" : "Urban Forestry",
+  "organization" : "Enterprise for High School Students",
+  "project_title" : "Summer Gardening Program",
+  "granted" : "20123",
+  "round" : "2010 Q1",
+  "project_address" : "Holly Park & St. Mary's Park",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-3",
+  "requested" : "20000.00",
+  "category" : "Public Art",
+  "organization" : "Inner Sunset Neighbors & Fresh Approach",
+  "project_title" : "9th Ave Farmers' Market",
+  "granted" : "16000",
+  "round" : "2010 Q1",
+  "project_address" : "9th Ave & Irving St, SF, CA 94122",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-4",
+  "requested" : "20938.00",
+  "category" : "Urban Forestry",
+  "organization" : "Glide Community Housing ",
+  "project_title" : "Edible Rooftop Garden Project",
+  "granted" : "20061",
+  "round" : "2010 Q1",
+  "project_address" : "333 Taylor St, SF, CA 94102",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-5",
+  "requested" : "20000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Good Samaritan Family Resource Center",
+  "project_title" : "The Secret Garden ",
+  "granted" : "13420",
+  "round" : "2010 Q1",
+  "project_address" : "23rd St & Harrison St, SF, CA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-6",
+  "requested" : "22508.00",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Larkin Street Youth Services",
+  "project_title" : "Divisadero St Corridor Clean-Up Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Divisadero St, btwn Eddy & Haight St, SF, CA 94117",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-7",
+  "requested" : "25000.00",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Larkin Street Youth Services",
+  "project_title" : "Polk St Corridor Clean-Up Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Polk St, btwn Ellis & California St, SF, CA 94109 ",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-8",
+  "requested" : "23000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Miraloma ES PTA",
+  "project_title" : "Native Plant Garden Project",
+  "granted" : "23000",
+  "round" : "2010 Q1",
+  "project_address" : "175 Omar Way, SF, CA 94127",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-9",
+  "requested" : "21303.00",
+  "category" : "Urban Forestry",
+  "organization" : "Guerrero Park Neighbors & Neighborhood Parks Council",
+  "project_title" : "Guerrero Parks Sidewalk Gardens",
+  "granted" : "21303",
+  "round" : "2010 Q1",
+  "project_address" : "28th St @ Guerrero St & San Jose Ave, SF, CA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-10",
+  "requested" : "13304.00",
+  "category" : "Urban Forestry",
+  "organization" : "Noe Valley Association CBD",
+  "project_title" : "Permeable Sidewalk Garden Project",
+  "granted" : "13304",
+  "round" : "2010 Q1",
+  "project_address" : "24th St @ Sanchez St, SF, CA 94114",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-11",
+  "requested" : "25000.00",
+  "category" : "Urban Forestry",
+  "organization" : "Public Archiecture",
+  "project_title" : "Folsom St Sidewalk Garden",
+  "granted" : "12375",
+  "round" : "2010 Q1",
+  "project_address" : "1122 Folsom St, SF, CA 94103",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-12",
+  "requested" : "23150.00",
+  "category" : "Urban Forestry",
+  "organization" : "Korean American Community Center/SF Clean City Coalition",
+  "project_title" : "Permeable Sidewalk Garden Project",
+  "granted" : "23150",
+  "round" : "2010 Q1",
+  "project_address" : "745 Buchanan St, SF, CA 94102",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-13",
+  "requested" : "22000.00",
+  "category" : "Street Maintenance",
+  "organization" : "North Beach Partnership & SF Clean City Coalition",
+  "project_title" : "North Beach Street Maintenance",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "720 Columbus St, SF, CA 94133",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-14",
+  "requested" : "24120",
+  "category" : "Public Art & Urban Forestry",
+  "organization" : "Revere Neighbors & Sf Clean City Coalition",
+  "project_title" : "Revere St Beautification",
+  "granted" : "24120",
+  "round" : "2010 Q1",
+  "project_address" : "Revere & Selby St, SF, CA 94124",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-15",
+  "requested" : "24999",
+  "category" : "Urban Forestry",
+  "organization" : "Mission-Verde Neighbors & SF Parks Trust",
+  "project_title" : "Permeable Sidewalk Garden Project",
+  "granted" : "16695",
+  "round" : "2010 Q1",
+  "project_address" : "22nd St, Harriosn St, Bryant St & Florida St, SF, CA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-16",
+  "requested" : "24914",
+  "category" : "Urban Forestry",
+  "organization" : "Kids In Parks & SF Parks Trust",
+  "project_title" : "Hawk Hill Garden Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Herbert Hoover MS, 2290 - 14th Ave, SF, CA 94116",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-17",
+  "requested" : "19919.00",
+  "category" : "Public Art & Urban Forestry",
+  "organization" : "Mission Greenbelt Group & SF Parks Trust",
+  "project_title" : "Mission Greenbelt Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "4150A - 25th St, SF, CA 94114",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-18",
+  "requested" : "18930.00",
+  "category" : "Urban Forestry",
+  "organization" : "Stewards of Cragmont Ave & SF Parks Trust",
+  "project_title" : "Cragmont Ave Greening",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Cragmont Ave & Quintara St, SF, CA 94116",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-19",
+  "requested" : "18450.00",
+  "category" : "Recycling & Composting Program",
+  "organization" : "Self-Help for the Elderly",
+  "project_title" : "Recycling & Composting Program",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "407 Sansome St, SF, CA 94111",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-20",
+  "requested" : "25000.00",
+  "category" : "Urban Forestry",
+  "organization" : "WELCOME",
+  "project_title" : "Community Garden Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1751 Sacramento St, SF, CA 94109",
+  "size" : "Medium"
+}
+, {
+  "id" : "M-21",
+  "requested" : "23959.00",
+  "category" : "Urban Forestry",
+  "organization" : "Park St Neighbors & SF Clean City Coalition",
+  "project_title" : "Permeable Sidewalk Garden Project",
+  "granted" : "19963",
+  "round" : "2010 Q1",
+  "project_address" : "Junipero Serra ES - Holly Park Circle & Park St, SF, CA 94131",
+  "size" : "Medium"
+}
+, {
+  "id" : "L-1",
+  "requested" : "100000",
+  "category" : "Public Art & Urban Forestry",
+  "organization" : "African American Art & Culture Complex",
+  "project_title" : "Garden & Art Project",
+  "granted" : "25000",
+  "round" : "2010 Q1",
+  "project_address" : "762 Fulton st, SF, CA 94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-2",
+  "requested" : "35055",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "Quesada Gardens Initiative & Bayview Hunters Point Foundation",
+  "project_title" : "Quesada Gardens Project",
+  "granted" : "32505",
+  "round" : "2010 Q1",
+  "project_address" : "1747 Quesada Ave, SF, CA 94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-3",
+  "requested" : "30650",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Bayview Hunters Point Foundation",
+  "project_title" : "Youth Litter Abatement Program",
+  "granted" : "30650",
+  "round" : "2010 Q1",
+  "project_address" : "5015 Third St, SF, CA 94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-4",
+  "category" : "Beautification",
+  "organization" : "Friends of Mint Plaza & Central Market CBD",
+  "project_title" : "Mint Plaza",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "5th & Mint St, SF, CA 94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-5",
+  "requested" : "100000.00",
+  "category" : "Recycling, Graffiti & Litter Abatement",
+  "organization" : "Charity Cultural Services Center",
+  "project_title" : "Chinatown Clean-Up Program",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "827 Stockton St, SF, CA 94108",
+  "size" : "Large"
+}
+, {
+  "id" : "L-6",
+  "requested" : "54980.00",
+  "category" : "Urban Forestry",
+  "organization" : "Alice Griffith COO Resident Group & Community Initiative Fund",
+  "project_title" : "Edible Community Garden",
+  "granted" : "43153",
+  "round" : "2010 Q1",
+  "project_address" : "2500 Griffith Ave, SF, CA 94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-7",
+  "requested" : "38900.00",
+  "category" : "Public Art",
+  "organization" : "Daniel Webster ES PTA",
+  "project_title" : "Daniel Webster Mural Project",
+  "granted" : "23150",
+  "round" : "2010 Q1",
+  "project_address" : "465 Missouri St, SF, CA 94107",
+  "size" : "Large"
+}
+, {
+  "id" : "L-8",
+  "requested" : "93780.00",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "Ella Hill Hutch Community Center",
+  "project_title" : "Adopt-A-Spot Program ",
+  "granted" : "25000.00",
+  "round" : "2010 Q1",
+  "project_address" : "1050 McAllister St, SF, CA 94115",
+  "size" : "Large"
+}
+, {
+  "id" : "L-9",
+  "requested" : "100000.00",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "Horseshoe Pitching Club & The Guardsmen",
+  "project_title" : "Horseshoe Pits",
+  "granted" : "30000.00",
+  "round" : "2010 Q1",
+  "project_address" : "East Conservatory Dr, GGP, SF, CA 94117",
+  "size" : "Large"
+}
+, {
+  "id" : "L-10",
+  "requested" : "40000.00",
+  "category" : "Public Art",
+  "organization" : "Intersection for the Arts",
+  "project_title" : "Systems Mural Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1067 Market St, SF, CA 94103",
+  "size" : "Large"
+}
+, {
+  "id" : "L-11",
+  "requested" : "62100",
+  "category" : "Urban Forestry",
+  "organization" : "James Lick MS PTA",
+  "project_title" : "James Lick Garden Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1220 Noe St, SF, CA 94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-12",
+  "requested" : "25001",
+  "category" : "Public Art",
+  "organization" : "Kid Serve Youth Murals",
+  "project_title" : "Ida B. Wells HS Mural Project",
+  "granted" : "25000",
+  "round" : "2010 Q1",
+  "project_address" : "1099 Hayes St, SF, CA 94117",
+  "size" : "Large"
+}
+, {
+  "id" : "L-13",
+  "requested" : "64521",
+  "category" : "Street Maintenance",
+  "organization" : "MainTrain",
+  "project_title" : "Chinatown Public Places & Spaces Project ",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "777 Stockton St, SF, CA 94108",
+  "size" : "Large"
+}
+, {
+  "id" : "L-14",
+  "requested" : "55000",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "Friends of Duboce Park Plauground & Neighborhood Parks Council",
+  "project_title" : "Duboce Park Youth Play Area",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Duboce Park Playground, SF, CA 94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-15",
+  "requested" : "100000",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "Help McLaren Park & Neighborhood Parks Council",
+  "project_title" : "Burrows & Gambier Playground",
+  "granted" : "65000",
+  "round" : "2010 Q1",
+  "project_address" : "Burrows & Gambier St, SF, CA 94134",
+  "size" : "Large"
+}
+, {
+  "id" : "L-16",
+  "requested" : "96000",
+  "category" : "Urban Forestry",
+  "organization" : "Mission Bay Families & Neighborhood Parks Council",
+  "project_title" : "Mission Bay Gathering Place",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "301 Channel St, SF, CA 94158",
+  "size" : "Large"
+}
+, {
+  "id" : "L-17",
+  "requested" : "100000",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "MUNA & Neighborhood Parks Council",
+  "project_title" : "MUNA Garden",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Utah & 18th St, SF, CA 94110",
+  "size" : "Large"
+}
+, {
+  "id" : "L-18",
+  "requested" : "100000",
+  "category" : "Public Art",
+  "organization" : "North of Market/Tenderloin CBD",
+  "project_title" : "WonderLand Gallery Art Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "134 Golden Gate Ave, SF, CA 94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-19",
+  "requested" : "47938",
+  "category" : "Urban Forestry",
+  "organization" : "Project Homeless Connect",
+  "project_title" : "Edible Community Garden",
+  "granted" : "37878",
+  "round" : "2010 Q1",
+  "project_address" : "Octavia & Lily St, btwn Page & Oak, SF, CA 94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-20",
+  "requested" : "47324",
+  "category" : "Urban Forestry",
+  "organization" : "SF Clean City Coalition",
+  "project_title" : "Green City Gardens",
+  "granted" : "47324",
+  "round" : "2010 Q1",
+  "project_address" : "Bayshore Blvd, btwn Salinas & Keys, SF CA 94124",
+  "size" : "Large"
+}
+, {
+  "id" : "L-21",
+  "requested" : "62366",
+  "category" : "Graffiti & Litter Abatement",
+  "organization" : "SF Juneteenth Committee",
+  "project_title" : "SF Juneteenth",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1347 Divisadero St, SF, CA 94115",
+  "size" : "Large"
+}
+, {
+  "id" : "L-22",
+  "requested" : "27620",
+  "category" : "Public Art",
+  "organization" : "SF Mime Troupe",
+  "project_title" : "Community Mural Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "855 Treat Ave, SF, CA 94110",
+  "size" : "Large"
+}
+, {
+  "id" : "L-23",
+  "requested" : "52950",
+  "category" : "Urban Forestry",
+  "organization" : "Hayes Valley Farm & SF Parks Trust",
+  "project_title" : "Hayes Valley Edible Garden",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Oak & Fell St, btwn Laguna & Octavia St, SF, CA 94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-24",
+  "requested" : "100000",
+  "category" : "Public Art",
+  "organization" : "Friends of Lincoln Park & SF Parks Trust",
+  "project_title" : "Lincoln Park Stairs Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "California St & 32 Ave, SF, CA 94121",
+  "size" : "Large"
+}
+, {
+  "id" : "L-25",
+  "requested" : "52083",
+  "category" : "Urban Forestry",
+  "organization" : "Storrie-Ord St Neighborhood Group & SF Parks Trust",
+  "project_title" : "Storrie-Ord St Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Market, Storrie, 18th & Ord St, SF, CA 94114",
+  "size" : "Large"
+}
+, {
+  "id" : "L-26",
+  "requested" : "90827",
+  "category" : "Urban Forestry",
+  "organization" : "Visitacion Valley Greenway & SF Parks Trust",
+  "project_title" : "Visitacion Valley Greenway Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "Leland & Peabody Ave, SF, CA 94134",
+  "size" : "Large"
+}
+, {
+  "id" : "L-27",
+  "requested" : "90592",
+  "category" : "Urban Forestry",
+  "organization" : "Shih-Yu Central YMCA",
+  "project_title" : "Community Roftop Garden Project",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "220 Golden Gate Ave, SF, CA 94102",
+  "size" : "Large"
+}
+, {
+  "id" : "L-28",
+  "requested" : "100000",
+  "category" : "Beautification Urban Forestry",
+  "organization" : "SOMArts Cultural Center",
+  "project_title" : "SOMArts Gathering Place",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "934 Brannan St, SF, CA 94103",
+  "size" : "Large"
+}
+, {
+  "id" : "P-1",
+  "requested" : "100000",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "Drew School",
+  "project_title" : "Drew School LivingWall & Garden Project",
+  "granted" : "25000",
+  "round" : "2010 Q1",
+  "project_address" : "2901 California St, SF, CA 94115",
+  "size" : "Large"
+}
+, {
+  "id" : "P-2",
+  "requested" : "30500",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "Ecology Center",
+  "project_title" : "Indigenous Permaculture",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "3288 - 21st St, SF, CA 94110",
+  "size" : "Large"
+}
+, {
+  "id" : "P-3",
+  "requested" : "24640",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "Friends of the Urban Forest",
+  "project_title" : "Cesar Chavez Sidewalk Garden Project",
+  "granted" : "24640",
+  "round" : "2010 Q1",
+  "project_address" : "Cesar Chavez St, Sf, CA 94110",
+  "size" : "Medium"
+}
+, {
+  "id" : "P-4",
+  "requested" : "3450",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "Northeast San Francisco Conservancy",
+  "project_title" : "Grace Marchant Garden",
+  "granted" : "3450",
+  "round" : "2010 Q1",
+  "project_address" : "22 Alta St, SF, CA 94133",
+  "size" : "Small"
+}
+, {
+  "id" : "P-5",
+  "requested" : "38750",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "SF Green Schoolyard Alliance & SF School Alliance",
+  "project_title" : "Tap The Sky Project",
+  "granted" : "38750",
+  "round" : "2010 Q1",
+  "project_address" : "2051-34th Ave, SF, CA 94116, 400 Sargent St, SF, CA 94132, 250 Foerster St, SF, CA 94112, 755 Morse St, SF, CA 94112",
+  "size" : "Large"
+}
+, {
+  "id" : "P-6",
+  "requested" : "25000",
+  "category" : "Urban Watershed Stewardship Project",
+  "organization" : "Trust for Conservation Innovation",
+  "project_title" : "Wholly H2O",
+  "granted" : "0",
+  "round" : "2010 Q1",
+  "project_address" : "1121 Mariposa St, SF, CA 94107",
+  "size" : "Medium"
+}
+ ]

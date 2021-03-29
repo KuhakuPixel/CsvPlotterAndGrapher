@@ -1,0 +1,119 @@
+Data.Medicare.gov location affected,Downloadable Access file affected,Downloadable CSV revised file affected,Data Last Updated,Data Last Updated Details
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-Hospital/7xux-kdpw,HQI_HOSP_ReadmCompDeath,Readmissions Complications and Deaths—Hospital.csv,22-Jan-15,Footnotes added for applicable providers for READM_30_COPD measure
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-Hospital/yv7e-xc69,HQI_HOSP_TimelyEffectiveCare,Timely and effective care - Hospital.csv,22-Jan-15,"Added missing denominator countsfor applicable providers for CAC-1, CAC-2 and CAC-3 measures"
+https://data.medicare.gov/Hospital-Compare/Medicare-Volume-Hospital/qqc4-6tc7,HQI_HOSP_MV,Medicare Volume - Hospital.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/dataset/Medicare-Volume-National/kwd6-ji9j,HQI_NATIONAL_MV,Medicare Volume - National.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/dataset/Medicare-Volume-State/fwj5-uxek,HQI_STATE_MV,Medicare Volume - State.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/Hospital-Compare/Heart-Attack-Payment-Hospital/c7us-v4mf,HQI_HOSP_AMI_Payment,Heart Attack Payment - Hospital.csv,18-Dec-14,NEW AMI payment and value of care measures were added
+https://data.medicare.gov/Hospital-Compare/Heart-Attack-Payment-National/ygty-mm5a,HQI_NATIONAL_AMI_Payment,Heart Attack Payment - National.csv,18-Dec-14,NEW AMI payment and value of care measures were added
+https://data.medicare.gov/Hospital-Compare/Heart-Attack-Payment-State/98ix-2iqy,HQI_STATE_AMI_Payment,Heart Attack Payment - Statel.csv,18-Dec-14,NEW AMI payment and value of care measures were added
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-National/di9i-zzrc,HQI_NATIONAL_IMG_AVG,Outpatient Imaging Efficiency – National.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-State/if5v-4x48?,HQI_STATE_IMG_AVG,Outpatient Imaging Efficiency – State.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-Hospital/wkfw-kthe?,HQI_HOSP_IMG,Outpatient Imaging Efficiency - Hospital.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/Hospital-Compare/Measure-Dates/4j6d-yzce,Measure_Dates,Measure Dates.csv,18-Dec-14,Measure dates added for all the NEW measures
+https://data.medicare.gov/Hospital-Compare/HCAHPS-National/99ue-w85f,HQI_NATIONAL_HCAHPS,HCAHPS - National.csv,18-Dec-14,"NEW Care transition measure added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/Hospital-Compare/HCAHPS-State/84jm-wiui,HQI_STATE_HCAHPS,HCAHPS  - State.csv,18-Dec-14,"NEW Care transition measure added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/Hospital-Compare/HCAHPS-Hospital/dgck-syfz,HQI_HOSP_HCAHPS,HCAHPS - Hospital.csv ,18-Dec-14,"NEW Care transition measure added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/Hospital-Compare/Outpatient-Procedures-Volume/xbz4-gvaz,HQI_OP_Procedure_Volume,Outpatient Procedures - Volume.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-National/seeb-g2s2,HQI_NATIONAL_ReadmCompDeath,Readmissions Complications and Deaths—National.csv,18-Dec-14,"NEW Stroke and COPD (readmission and mortality) measures added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-State/r9qh-58xk,HQI_STATE_ReadmCompDeath,Readmissions Complications and Deaths—State.csv,18-Dec-14,"NEW Stroke and COPD (readmission and mortality) measures added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-Hospital/7xux-kdpw,HQI_HOSP_ReadmCompDeath,Readmissions Complications and Deaths—Hospital.csv,18-Dec-14,"NEW Stroke and COPD (readmission and mortality) measures added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-National/isrn-hqyy,HQI_NATIONAL_TimelyEffectiveCare,Timely and Effective Care - National.csv,18-Dec-14,"NEW Healthcare Provider Influenza Measure added.
+Effective surgical care measure: Heart surgery patients whose blood sugar (blood glucose) is kept under good control in the days right after surgery has been replaced with Heart surgery patients whose blood sugar (blood glucose) is kept under good control 18-24 hours after surgery.
+IMM-1a measure removed (Patients assessed and given pneumonia vaccination) from the preventive care section.
+PN-3b measure removed (Pneumonia patients whose initial emergency room blood culture was performed prior to the administration of the first hospital dose of antibiotics) from the pneumonia care section.
+NEW emergency department volume added to the timely emergency department care section.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-Hospital/yv7e-xc69,HQI_HOSP_TimelyEffectiveCare,Timely and effective care - Hospital.csv,18-Dec-14,"NEW Healthcare Provider Influenza Measure added.
+Effective surgical care measure: Heart surgery patients whose blood sugar (blood glucose) is kept under good control in the days right after surgery has been replaced with Heart surgery patients whose blood sugar (blood glucose) is kept under good control 18-24 hours after surgery.
+IMM-1a measure removed (Patients assessed and given pneumonia vaccination) from the preventive care section.
+PN-3b measure removed (Pneumonia patients whose initial emergency room blood culture was performed prior to the administration of the first hospital dose of antibiotics) from the pneumonia care section.
+NEW emergency department volume added to the timely emergency department care section.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-State/apyc-v239,HQI_STATE_TimelyEffectiveCare,Timely and effective care - State.csv,18-Dec-14,"NEW Healthcare Provider Influenza Measure added.
+Effective surgical care measure: Heart surgery patients whose blood sugar (blood glucose) is kept under good control in the days right after surgery has been replaced with Heart surgery patients whose blood sugar (blood glucose) is kept under good control 18-24 hours after surgery.
+IMM-1a measure removed (Patients assessed and given pneumonia vaccination) from the preventive care section.
+PN-3b measure removed (Pneumonia patients whose initial emergency room blood culture was performed prior to the administration of the first hospital dose of antibiotics) from the pneumonia care section.
+NEW emergency department volume added to the timely emergency department care section.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/Footnote-Crosswalk/y9us-9xdf,HQI_FTNT,Footnote Crosswalk.csv,18-Dec-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-Hospital/77hc-ibv8,HQI_HOSP_HAI,Healthcare Associated Infections - Hospital.csv,18-Dec-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-National/yd3s-jyhd,HQI_NATIONAL_HAI,Healthcare Associated Infections - National.csv,18-Dec-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-State/k2ze-bqvw,HQI_STATE_HAI,Healthcare Associated Infections - State.csv,18-Dec-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Structural-Measures-Hospital/4hje-vua3?,HQI_HOSP_STRUCTURAL,Structural Measures - Hospital.csv,18-Dec-14,"Cardiac, Stroke, General Surgery, Nursing measures were refreshed"
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-National/3n5g-6b7f,HQI_NATIONAL_MSPB,Medicare Hospital Spending per Patient - National.csv,9-Oct-14,Data corrected December 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-State/rs6n-9qwg,HQI_STATE_MSPB,Medicare Hospital Spending per Patient - State.csv,9-Oct-14,Data corrected December 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-Hospital/rrqw-56er,HQI_HOSP_MSPB,Medicare Hospital Spending per Patient - Hospital.csv,9-Oct-14,Data corrected December 2014
+https://data.medicare.gov/dataset/Hospital-General-Information/xubh-q36u,HQI_HOSP,Hospital General Information.csv,18-Dec-14,Data refreshed
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Acute-Myocard/rm5p-8gae,Hvbp_ami_10_28_2014,hvbp_ami_10_28_2014.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Healthcare-As/qmeg-skqq,Hvbp_hai_10_28_2014,hvbp_hai_10_28_2014.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Patient-Exper/avtz-f2ge,Hvbp_hcahps_10_28_2014,hvbp_hcahps_10_28_2014.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Heart-Failure/waqh-8uyi,Hvbp_hf_10_28_2014,hvbp_hf_10_28_2014.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Outcome/pudb-wetr,Hvbp_outcome_10_28_2014,hvbp_outcome_10_28_2014.csv,18-Dec-14,"NEW PSI-90 and HAI-1 measures were added
+Data refreshed for the rest of the measures"
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Pneumonia-Sco/md6f-wqvv,Hvbp_pn_10_28_2014,hvbp_pn_10_28_2014.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Quarters-file/qheq-qctz,Hvbp_quarters,hvbp_quarters.csv,18-Dec-14,Data refreshed 
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Surgical-Care/aae7-dzxe,Hvbp_scip_10_28_2014,hvbp_scip_10_28_2014.csv,18-Dec-14,"The following measures were removed from the SCIP 2015 program:
+SCIP-VTE-1 Performance Rate
+SCIP-VTE-1 Achievement Points
+SCIP-VTE-1 Improvement Points 
+SCIP-VTE-1 Measure Score"
+https://data.medicare.gov/Hospital-Compare/Hospital-Value-Based-Purchasing-HVBP-Total-Perform/ypbt-wvdk,HVBP_TPS_10_28_2014,HVBP_TPS_10_28_2014.csv,18-Dec-14,"NEW columns added:
+Unweighted Normalized Efficiency Domain Score
+Weighted Efficiency Domain Score"
+https://data.medicare.gov/dataset/Hvbp-Efficiency-10-16-2014/su9h-3pvj,Hvbp_efficiency_10_28_2014,Hvbp_efficiency_10_28_2014.csv,18-Dec-14,NEW dataset
+https://data.medicare.gov/Hospital-Compare/Hospital-Acquired-Condition-Reduction-Program/yq43-i98g,HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL_11_24_2014,HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL_11_24_2014.csv,18-Dec-14,"New AHRQ PSI-90, CLABSI and CAUTI measures added to the HAC data 
+Data was refreshed"
+https://data.medicare.gov/Hospital-Compare/Hospital-Readmission-Reduction/9n3s-kdb3,HQI_READM_REDUCTION,READMISSION REDUCTION.csv,18-Dec-14,"NEW Hip/ knee and COPD measures added.
+Data refreshed for the rest of the measures."
+https://data.medicare.gov/dataset/HOSPITAL-QUARTERLY-QUALITYMEASURE-PCH-HOSPITAL/42wc-33ci,PCH_CancerSpecificMeasures_Hospital,HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL.csv,18-Dec-14,NEW Cancer measure data embeds were added 
+https://data.medicare.gov/Hospital-Compare/Table-1-Net-Change-in-Base-Operating-DRG-Payment-A/5gv4-jwyv,FY2013_Distribution_of_ Net_Change_in_Base_Op_DRG_Payment_Amt ,FY2013_Distribution_of_ Net_Change_in_Base_Op_DRG_Payment_Amt ,9-Oct-14,New data set for the Oct 2014 release
+https://data.medicare.gov/Hospital-Compare/Table-2-FY2013-Distribution-of-Net-Change-in-Base-/xrgf-x36b,FY2013_Net_Change_in_Base_Op_DRG_Payment_Amt ,FY2013_Net_Change_in_Base_Op_DRG_Payment_Amt ,9-Oct-14,New data set for the Oct 2014 release
+https://data.medicare.gov/Hospital-Compare/Table-3-FY2013-Percent-Change-in-Base-Operating-DR/u625-zae7,FY2013_Percent_Change_in_Base_Operating_DRG_Payment_ Amount  ,FY2013_Percent_Change_in_Base_Operating_DRG_Payment_ Amount  ,9-Oct-14,New data set for the Oct 2014 release
+https://data.medicare.gov/Hospital-Compare/Table-4-FY2013-Value-Based-Incentive-Payment-Amoun/vtqa-m4zn,FY2013_Value_Based_Incentive_Payment_Amount,FY2013_Value_Based_Incentive_Payment_Amount,9-Oct-14,Data refreshed October 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-National/3n5g-6b7f,HQI_NATIONAL_MSPB,Medicare Hospital Spending per Patient - National.csv,9-Oct-14,Data refreshed October 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-State/rs6n-9qwg,HQI_STATE_MSPB,Medicare Hospital Spending per Patient - State.csv,9-Oct-14,Data refreshed October 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-Hospital/rrqw-56er,HQI_HOSP_MSPB,Medicare Hospital Spending per Patient - Hospital.csv,9-Oct-14,Data refreshed October 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-by-Claim/nrth-mfg3,Medicare Hospital Spending by Claim,Medicare Hospital Spending by Claim.csv,9-Oct-14,Data refreshed October 2014
+https://data.medicare.gov/Hospital-Compare/Medicare-hospital-spending-per-patient-Medicare-Sp/5hk7-b79m,N/A,N/A,17-Jul-14,Added a new measure that displays surgical procedures performed in outpatient surgical departments
+https://data.medicare.gov/Hospital-Compare/Outpatient-Procedures-Volume/xbz4-gvaz,HQI_OP_Procedure_Volume,Outpatient Procedures - Volume.csv,17-Jul-14,"Data refresh
+Combined the Agency for Healthcare Research and Quality - National and Outcome of Care Measures - National files for all format types"
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-National/seeb-g2s2,HQI_NATIONAL_ReadmCompDeath,Readmissions Complications and Deaths—National.csv,17-Jul-14,"Data refresh
+Combined the Agency for Healthcare Research and Quality - State and Outcome of Care Measures - State files for all format types"
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-State/r9qh-58xk,HQI_STATE_ReadmCompDeath,Readmissions Complications and Deaths—State.csv,17-Jul-14,"Data refresh
+Combined the Agency for Healthcare Research and Quality and Outcome of Care Measures files for all format types"
+https://data.medicare.gov/dataset/Readmissions-Complications-And-Deaths-Hospital/7xux-kdpw,HQI_HOSP_ReadmCompDeath,Readmissions Complications and Deaths—Hospital.csv,17-Jul-14,"Data refresh
+Combined the Emergency Department Throughput, Immunization and Measure Crosswalk files"
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-Hospital/yv7e-xc69,HQI_HOSP_TimelyEffectiveCare,Timely and effective care - Hospital.csv,17-Jul-14,"Data refresh
+Combined the Emergency Department Throughput - State, Immunization - State and Process of Care Measures - State files for all format types"
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-State/apyc-v239,HQI_STATE_TimelyEffectiveCare,Timely and effective care - State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/dataset/Footnote-Crosswalk/y9us-9xdf,HQI_FTNT,Footnote Crosswalk.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-Hospital/77hc-ibv8,HQI_HOSP_HAI,Healthcare Associated Infections - Hospital.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-National/yd3s-jyhd,HQI_NATIONAL_HAI,Healthcare Associated Infections - National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Healthcare-Associated-Infections-State/k2ze-bqvw,HQI_STATE_HAI,Healthcare Associated Infections - State.csv,17-Jul-14,Added a safe surgery checklist measure
+https://data.medicare.gov/Hospital-Compare/Structural-Measures-Hospital/4hje-vua3?,HQI_HOSP_STRUCTURAL,Structural Measures - Hospital.csv,17-Jul-14,"Data refresh
+Combined the Emergency Department Throughput, Immunization and Measure Crosswalk files for all format types"
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-Hospital/yv7e-xc69,HQI_HOSP_TimelyEffectiveCare,Timely and effective care - Hospital.csv,17-Jul-14,"Data refresh
+Combined the Emergency Department Throughput - State, Immunization - State and Process of Care Measures - State files for all format types"
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-State/apyc-v239,HQI_STATE_TimelyEffectiveCare,Timely and effective care - State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Measure-Dates/4j6d-yzce,Measure_Dates,Measure Dates.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-National/3n5g-6b7f,HQI_NATIONAL_MSPB,Medicare Hospital Spending per Patient - National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-State/rs6n-9qwg,HQI_STATE_MSPB,Medicare Hospital Spending per Patient - State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Hospital-Spending-Per-Patient-Hospital/rrqw-56er,HQI_HOSP_MSPB,Medicare Hospital Spending per Patient - Hospital.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Volume-National/kwd6-ji9j?,HQI_NATIONAL_MV,Medicare Volume - National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Volume-State/fwj5-uxek,HQI_STATE_MV,Medicare Volume – State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Medicare-Volume-Hospital/qqc4-6tc7,HQI_HOSP_MV,Medicare Volume - Hospital.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-National/di9i-zzrc,HQI_NATIONAL_IMG_AVG,Outpatient Imaging Efficiency – National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-State/if5v-4x48?,HQI_STATE_IMG_AVG,Outpatient Imaging Efficiency – State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/Outpatient-Imaging-Efficiency-Hospital/wkfw-kthe?,HQI_HOSP_IMG,Outpatient Imaging Efficiency - Hospital.csv,17-Jul-14,"Data refresh
+Combined the Agency for Healthcare Research and Quality and Outcome of Care Measures files for all format types"
+https://data.medicare.gov/dataset/Timely-And-Effective-Care-National/isrn-hqyy,HQI_NATIONAL_TimelyEffectiveCare,Timely and Effective Care - National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/HCAHPS-National/99ue-w85f,HQI_NATIONAL_HCAHPS,HCAHPS - National.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/HCAHPS-State/84jm-wiui,HQI_STATE_HCAHPS,HCAHPS  - State.csv,17-Jul-14,Data refresh
+https://data.medicare.gov/Hospital-Compare/HCAHPS-Hospital/dgck-syfz,HQI_HOSP_HCAHPS,HCAHPS - Hospital.csv ,17-Jul-14,Data set refreshed refreshed for the July 2014 quarterly release

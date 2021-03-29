@@ -1,16 +1,38 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from flask_restful import Resource, Api,reqparse
+from flask import Flask, request
+import pandas as pd
+app = Flask(__name__)
+api = Api(app)
+print("test")
 
 
-# Press the green button in the gutter to run the script.
+
+#creating argument parser
+parser = reqparse.RequestParser()
+parser.add_argument('csvFilePath',type=str)
+csvFilesPathDictionary= {}
+class CsvReader(Resource):
+
+
+
+    def get(self,pathID):
+        #reading csv
+        #print(csvFilesPathDictionary)
+        #print(type(csvFilesPathDictionary))
+        #self.dataFrame = pd.read_csv(csvFilesPathDictionary)
+        #return {"Column Name":self.dataframe.columns}
+        return {pathID : csvFilesPathDictionary[pathID]}
+
+
+    def put(self,pathID):
+        #reading csv
+        arguments=parser.parse_args()
+        csvFilesPathDictionary[pathID]=arguments["csvFilePath"]
+
+        return {pathID:csvFilesPathDictionary[pathID]}
+
+#api resource routing
+api.add_resource(CsvReader, '/CsvReader/<string:pathID>')
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)
