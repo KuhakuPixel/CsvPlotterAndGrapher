@@ -12,7 +12,7 @@ get:
     curl http://localhost:5000/CsvReader/path1
 """
 from requests import get,put
-import pandas as pd
+
 API_ENDPOINT='http://localhost:5000/CsvReader/path1'
 CSV_FILE_PATH='C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv'
 
