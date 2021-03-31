@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -11,10 +12,15 @@ namespace RestApiTesting
         static string apiURL = "http://localhost:5000/CsvReader/path1";
         private static async Task Main(string[] args)
         {
-            
+            FlaskApi.StartAPIServer();
             await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv"));
 
             await FlaskApi.GetRequest(apiURL);
+
+
+           
+            Console.ReadLine();
+
            
         }
     }
