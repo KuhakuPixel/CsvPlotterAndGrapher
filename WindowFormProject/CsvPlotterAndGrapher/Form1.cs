@@ -16,6 +16,7 @@ namespace CsvPlotterAndGrapher
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void OpenFileButtonClick(object sender, EventArgs e)

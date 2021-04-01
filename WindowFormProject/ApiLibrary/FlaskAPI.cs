@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
-
-namespace RestApiTesting
+namespace ApiLibrary
 {
-     class FlaskApi
-     {
+
+    public class FlaskApi
+    {
         private static readonly HttpClient client = new HttpClient();
 
 
 
 
-       
+
         public static void StartAPIServer()
         {
             ProcessStartInfo start = new ProcessStartInfo();
@@ -34,11 +34,11 @@ namespace RestApiTesting
             string pythonBackendDirectory = Path.Combine(solutionDirectory, "PythonBackend");
 
             //getting pythonscript dir
-            string pythonScriptDirectory = Path.Combine(pythonBackendDirectory,            
+            string pythonScriptDirectory = Path.Combine(pythonBackendDirectory,
                                                          Path.GetFileName("main.py"));
 
             //getting executable dir
-            string pythonExeDirectory=Path.Combine(new string[]{pythonBackendDirectory,"venv","scripts" ,Path.GetFileName("python.exe")});
+            string pythonExeDirectory = Path.Combine(new string[] { pythonBackendDirectory, "venv", "scripts", Path.GetFileName("python.exe") });
             #endregion
 
 
@@ -55,14 +55,14 @@ namespace RestApiTesting
         }
         public static async Task GetRequest(string apiEndPointUrl)
         {
-            HttpResponseMessage response =await client.GetAsync(apiEndPointUrl);
-            string responseString=await response.Content.ReadAsStringAsync();
+            HttpResponseMessage response = await client.GetAsync(apiEndPointUrl);
+            string responseString = await response.Content.ReadAsStringAsync();
 
 
             //clearing [responseString]
             //using double backslash to escape the special backslash character
             //responseString.Replace("\\","");
-           // responseString.Replace("/", "");
+            // responseString.Replace("/", "");
             string debugMessage = "Get request to " + apiEndPointUrl + "\n" + responseString;
             Debug.Write(debugMessage);
             Console.WriteLine(debugMessage);
@@ -77,13 +77,13 @@ namespace RestApiTesting
         /// </summary>
         /// <param name="keyAndArgument">DataID specified by the key and the data specified by the value, </param>
         /// <returns></returns>
-        public static async Task PutRequest(string apiEndPointUrl,KeyValuePair<string,string> keyAndArgument)
+        public static async Task PutRequest(string apiEndPointUrl, KeyValuePair<string, string> keyAndArgument)
         {
             //encode keyAndArgument
             FormUrlEncodedContent content = new FormUrlEncodedContent(
                        new[] {
                            keyAndArgument
-                          //new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv"),
+                           //new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv"),
                        }
 
                        );
@@ -99,5 +99,6 @@ namespace RestApiTesting
             Console.WriteLine(debugMessage);
         }
 
-     }
+    }
+
 }

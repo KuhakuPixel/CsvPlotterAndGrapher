@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using ApiLibrary;
 namespace CsvPlotterAndGrapher
 {
     internal static class Program
@@ -13,6 +13,8 @@ namespace CsvPlotterAndGrapher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            FlaskApi.StartAPIServer();
+            
             Application.Run(new Form1());
         }
     }
