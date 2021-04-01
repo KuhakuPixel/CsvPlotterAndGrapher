@@ -14,8 +14,7 @@ namespace RestApiTesting
 
 
 
-
-
+       
         public static void StartAPIServer()
         {
             ProcessStartInfo start = new ProcessStartInfo();
@@ -33,25 +32,28 @@ namespace RestApiTesting
 
             string pythonBackendDirectory = Path.Combine(solutionDirectory, "PythonBackend");
 
+            //getting pythonscript dir
             string pythonScriptDirectory = Path.Combine(pythonBackendDirectory,            
                                                          Path.GetFileName("main.py"));
 
-
-
-
+            //getting executable dir
+            string pythonExeDirectory=Path.Combine(new string[]{pythonBackendDirectory,"venv","scripts" ,Path.GetFileName("python.exe")});
             #endregion
 
 
-            start.FileName = pythonScriptDirectory;
-           //start.Arguments = string.Format("{0} {1}", cmd, args);
+            start.FileName = pythonExeDirectory;
+            start.Arguments = pythonScriptDirectory;
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
+            //runnning cmd
+            
             using (Process process = Process.Start(start))
             {
                 using (StreamReader reader = process.StandardOutput)
                 {
-                    string result = reader.ReadToEnd();
-                    Console.Write(result);
+                    
+                   //string result = reader.ReadToEnd();
+                   //Console.Write(result);
                 }
             }
         }
@@ -101,5 +103,5 @@ namespace RestApiTesting
             Console.WriteLine(debugMessage);
         }
 
-    }
+     }
 }
