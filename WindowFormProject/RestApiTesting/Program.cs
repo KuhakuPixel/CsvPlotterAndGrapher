@@ -13,7 +13,7 @@ namespace RestApiTesting
         private static async Task Main(string[] args)
         {
             FlaskApi.StartAPIServer();
-            await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv"));
+            await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/heart.csv"));
 
             await FlaskApi.GetRequest(apiURL);
 

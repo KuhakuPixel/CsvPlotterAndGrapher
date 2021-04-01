@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace RestApiTesting
 {
@@ -46,16 +47,11 @@ namespace RestApiTesting
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             //runnning cmd
-            
-            using (Process process = Process.Start(start))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    
-                   //string result = reader.ReadToEnd();
-                   //Console.Write(result);
-                }
-            }
+
+            Process process = Process.Start(start);
+            //suspend control until the process ended
+            Thread.Sleep(3000);
+
         }
         public static async Task GetRequest(string apiEndPointUrl)
         {
