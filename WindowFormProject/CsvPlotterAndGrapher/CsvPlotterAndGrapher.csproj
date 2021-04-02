@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiLibrary\FlaskApiLibrary.csproj">
+      <Project>{3261fe83-b824-4872-91b5-b6788d7e8226}</Project>
+      <Name>FlaskApiLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

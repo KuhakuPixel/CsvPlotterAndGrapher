@@ -15,8 +15,11 @@ namespace ApiLibrary
 
 
 
-
-        public static void StartAPIServer()
+        /// <summary>
+        /// set isTesting to true if calling from console project(testing) 
+        /// </summary>
+        /// <param name="isTesting"></param>
+        public static void StartAPIServer(bool isTesting)
         {
             ProcessStartInfo start = new ProcessStartInfo();
 
@@ -45,15 +48,16 @@ namespace ApiLibrary
             start.FileName = pythonExeDirectory;
             start.Arguments = pythonScriptDirectory;
             start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
+            start.RedirectStandardOutput = isTesting;
+            start.CreateNoWindow = false;
             //runnning cmd
 
-            Process process = Process.Start(start);
+            Process.Start(start);
             //suspend control until the process ended
             Thread.Sleep(3000);
 
         }
-        public static async Task GetRequest(string apiEndPointUrl)
+        public static async Task<string> GetRequest(string apiEndPointUrl)
         {
             HttpResponseMessage response = await client.GetAsync(apiEndPointUrl);
             string responseString = await response.Content.ReadAsStringAsync();
@@ -66,6 +70,7 @@ namespace ApiLibrary
             string debugMessage = "Get request to " + apiEndPointUrl + "\n" + responseString;
             Debug.Write(debugMessage);
             Console.WriteLine(debugMessage);
+            return responseString;
         }
 
 

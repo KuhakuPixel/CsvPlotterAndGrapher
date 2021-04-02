@@ -13,7 +13,7 @@ namespace CsvPlotterAndGrapher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FlaskApi.StartAPIServer();
+            FlaskApi.StartAPIServer(isTesting:false);
             
             Application.Run(new Form1());
         }

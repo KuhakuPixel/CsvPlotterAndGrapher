@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ApiLibrary;
 namespace CsvPlotterAndGrapher
 {
     public partial class Form1 : Form
     {
         String csvPath = "";
+        static string apiURL = "http://localhost:5000/CsvReader/path1";
         public Form1()
         {
             InitializeComponent();
 
         }
 
-        private void OpenFileButtonClick(object sender, EventArgs e)
+        private async void OpenFileButtonClick(object sender, EventArgs e)
         {
             //initialize OpenfileDialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -27,14 +28,17 @@ namespace CsvPlotterAndGrapher
             openFileDialog.Filter = "CSV files|*.csv";
             openFileDialog.InitialDirectory = @"C:\";
 
-            //open dialog and return its result
+            //open dialog to open a file and return its result
             DialogResult dialogResult = openFileDialog.ShowDialog();
 
             switch (dialogResult)
             {
                 case DialogResult.OK:
                     this.csvPath = openFileDialog.FileName;
-                    MessageBox.Show(this.csvPath);
+                    await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", this.csvPath));
+
+                    string response= await FlaskApi.GetRequest(apiURL);
+                    MessageBox.Show(text:response);
                     break;
             }
         }
