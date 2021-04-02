@@ -1,0 +1,8 @@
+altgraph==0.17
+future==0.18.2
+p==0.0.0
+pefile==2019.4.18
+pyarmor==6.6.0
+pyinstaller==4.1
+pyinstaller-hooks-contrib==2020.11
+pywin32-ctypes==0.2.0
