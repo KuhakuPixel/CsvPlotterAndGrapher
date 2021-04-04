@@ -12,7 +12,7 @@ namespace RestApiTesting
         static string apiURL = "http://localhost:5000/CsvReader/path1";
         private static async Task Main(string[] args)
         {
-            FlaskApi.StartAPIServer(isTesting:true);
+           
             await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/heart.csv"));
 
             await FlaskApi.GetRequest(apiURL);

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiLibrary\FlaskApiLibrary.csproj" />
+    <ProjectReference Include="..\ApiLibrary\ProjectLibrary.csproj" />
   </ItemGroup>
 
 </Project>

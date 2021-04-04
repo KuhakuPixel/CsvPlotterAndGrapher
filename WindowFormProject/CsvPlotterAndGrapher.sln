@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvPlotterAndGrapher", "Csv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApiTesting", "RestApiTesting\RestApiTesting.csproj", "{7E5DE9F7-6C05-4635-B505-21E1838D16E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlaskApiLibrary", "ApiLibrary\FlaskApiLibrary.csproj", "{3261FE83-B824-4872-91B5-B6788D7E8226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectLibrary", "ApiLibrary\ProjectLibrary.csproj", "{3261FE83-B824-4872-91B5-B6788D7E8226}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ApiBackend", "ApiBackend\ApiBackend.pyproj", "{D2F9FA09-5D38-4387-BF61-C4CEA5DA10E4}"
 EndProject

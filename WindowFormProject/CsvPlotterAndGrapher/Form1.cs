@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApiLibrary;
+using ProjectLibrary;
 namespace CsvPlotterAndGrapher
 {
     public partial class Form1 : Form
@@ -35,10 +30,11 @@ namespace CsvPlotterAndGrapher
             {
                 case DialogResult.OK:
                     this.csvPath = openFileDialog.FileName;
-                    await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", this.csvPath));
+                    //await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", this.csvPath));
 
-                    string response= await FlaskApi.GetRequest(apiURL);
-                    MessageBox.Show(text:response);
+                    //string response= await FlaskApi.GetRequest(apiURL);
+                    await CsvReader.GetCsvColumns(this.csvPath);
+                    //MessageBox.Show(text:response);
                     break;
             }
         }
