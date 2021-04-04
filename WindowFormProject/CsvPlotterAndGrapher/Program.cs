@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using ApiLibrary;
 namespace CsvPlotterAndGrapher
@@ -12,9 +13,14 @@ namespace CsvPlotterAndGrapher
         private static void Main()
         {
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
-            FlaskApi.StartAPIServer(isTesting:false);
-            
+
+#if (!DEBUG)
+            FlaskApi.StartAPIServer();
+#endif
+
+
             Application.Run(new Form1());
         }
     }

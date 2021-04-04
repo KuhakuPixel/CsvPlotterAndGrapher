@@ -19,7 +19,7 @@ namespace ApiLibrary
         /// set isTesting to true if calling from console project(testing) 
         /// </summary>
         /// <param name="isTesting"></param>
-        public static void StartAPIServer(bool isTesting)
+        public static void StartAPIServer()
         {
             ProcessStartInfo start = new ProcessStartInfo();
 
@@ -48,7 +48,7 @@ namespace ApiLibrary
             start.FileName = pythonExeDirectory;
             start.Arguments = pythonScriptDirectory;
             start.UseShellExecute = false;
-            start.RedirectStandardOutput = isTesting;
+            start.RedirectStandardOutput = true;
             start.CreateNoWindow = false;
             //runnning cmd
 
