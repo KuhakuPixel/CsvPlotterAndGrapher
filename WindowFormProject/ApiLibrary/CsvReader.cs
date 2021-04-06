@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using ApiLibrary;
@@ -15,8 +16,12 @@ namespace ProjectLibrary
             await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", csvFilePath));
             string json = await FlaskApi.GetRequest(apiURL);
             Dictionary<string, object> result = JsonConvert.DeserializeObject<Dictionary<string,object>>(json);
-            // JavaScriptSerializer json_serializer = new JavaScriptSerializer();
-            return new string[0];
+
+
+            //result["path1"] should be an array of the columns in string data types
+            string columnsString = result["path1"] as string;
+            return StringDataStructureConverter.ConvertStringToArray(columnsString);
+            
         }
     }
 }
