@@ -1,16 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from PIL import Image
 
 
 class CsvPlotter:
-
-    @staticmethod
-    def array_to_img(img_array : np.ndarray):
-        plt.imshow(img_array, interpolation='nearest')
-        plt.show()
-
     @staticmethod
     def pyplotFigureToImageArray(figure):
         """
