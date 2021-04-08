@@ -20,7 +20,7 @@ namespace ProjectLibrary
 
             //result["path1"] should be an array of the columns in string data types
             string columnsString = result["plot1"] as string;
-            return StringDataStructureConverter.ConvertStringToArray(columnsString);
+            return DataStructureConverter.ConvertStringToArrayOfString(columnsString);
 
         }
     }

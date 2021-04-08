@@ -1,12 +1,9 @@
 import json
-
 import numpy as np
 import pandas as pd
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-
 from CsvPlotter import CsvPlotter
-
 """
 containing the data such as dataframe,columns or ect
 """

@@ -1,3 +1,4 @@
+from multiprocessing import Process
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -14,6 +15,7 @@ class CsvPlotter:
         canvas.draw()
 
         width, height = figure.get_size_inches() * figure.get_dpi()
+        #convert to array
         img = np.frombuffer(canvas.tostring_rgb(), dtype='uint8').reshape(int(height), int(width), 3)
         return img
 
@@ -25,6 +27,6 @@ class CsvPlotter:
         """
         fig, ax = plt.subplots()
         ax.hist(x=x)
-        #show fig(figure)
-        plt.show()
+
+
         return CsvPlotter.pyplotFigureToImageArray(figure=fig)
