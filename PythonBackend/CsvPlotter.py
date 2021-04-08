@@ -25,4 +25,6 @@ class CsvPlotter:
         """
         fig, ax = plt.subplots()
         ax.hist(x=x)
+        #show fig(figure)
+        plt.show()
         return CsvPlotter.pyplotFigureToImageArray(figure=fig)

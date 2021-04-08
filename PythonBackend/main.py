@@ -49,8 +49,6 @@ class CsvReader(Resource):
 
 columnToHistogramArgumentParser = reqparse.RequestParser()
 columnToHistogramArgumentParser.add_argument('columnName', type=str)
-
-
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):

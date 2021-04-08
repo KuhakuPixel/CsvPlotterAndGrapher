@@ -15,6 +15,7 @@ namespace ProjectLibrary
             string apiURL = "http://localhost:5000/CsvReader/path1";
             await FlaskApi.PutRequest(apiURL, new KeyValuePair<string, string>("csvFilePath", csvFilePath));
             string json = await FlaskApi.GetRequest(apiURL);
+            //deserialize json
             Dictionary<string, object> result = JsonConvert.DeserializeObject<Dictionary<string,object>>(json);
 
 

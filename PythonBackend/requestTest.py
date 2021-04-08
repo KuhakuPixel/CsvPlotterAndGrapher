@@ -9,11 +9,24 @@ get:
 from flask import Flask, request
 from requests import get,put
 
-API_ENDPOINT='http://localhost:5000/CsvReader/path1'
-CSV_FILE_PATH='C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv'
+
+
+def read_csv():
+    API_ENDPOINT = 'http://localhost:5000/CsvReader/path1'
+    CSV_FILE_PATH = 'C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv'
+
+    put(API_ENDPOINT, data={'csvFilePath': CSV_FILE_PATH})
+
+    print(get('http://localhost:5000/CsvReader/path1').json())
 
 
 
-put(API_ENDPOINT, data={'csvFilePath': CSV_FILE_PATH})
+def histogram_api():
+    API_ENDPOINT = 'http://localhost:5000/Plotter/ColumnToHistogram/plot1'
 
-print(get('http://localhost:5000/CsvReader/path1').json())
+
+    put(API_ENDPOINT, data={'columnName':"sepal length"})
+    get(API_ENDPOINT)
+
+read_csv()
+histogram_api()
