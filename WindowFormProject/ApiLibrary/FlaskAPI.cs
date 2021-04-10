@@ -57,19 +57,20 @@ namespace ApiLibrary
             Thread.Sleep(3000);
 
         }
-        public static async Task<string> GetRequest(string apiEndPointUrl)
+        public static async Task<string> GetRequest(string apiEndPointUrl, bool printResponse=true)
         {
             HttpResponseMessage response = await client.GetAsync(apiEndPointUrl);
             string responseString = await response.Content.ReadAsStringAsync();
 
 
-            //clearing [responseString]
-            //using double backslash to escape the special backslash character
-            //responseString.Replace("\\","");
-            // responseString.Replace("/", "");
-            string debugMessage = "Get request to " + apiEndPointUrl + "\n" + responseString;
-            Debug.Write(debugMessage);
-            Console.WriteLine(debugMessage);
+
+            if (printResponse)
+            {
+                string debugMessage = "Get request to " + apiEndPointUrl + "\n" + responseString;
+                Debug.Write(debugMessage);
+                Console.WriteLine(debugMessage);
+            }
+           
             return responseString;
         }
 
@@ -82,7 +83,7 @@ namespace ApiLibrary
         /// </summary>
         /// <param name="keyAndArgument">DataID specified by the key and the data specified by the value, </param>
         /// <returns></returns>
-        public static async Task PutRequest(string apiEndPointUrl, KeyValuePair<string, string> keyAndArgument)
+        public static async Task PutRequest(string apiEndPointUrl, KeyValuePair<string, string> keyAndArgument, bool printResponse = true)
         {
             //encode keyAndArgument
             FormUrlEncodedContent content = new FormUrlEncodedContent(
@@ -95,13 +96,17 @@ namespace ApiLibrary
 
             HttpResponseMessage response = await client.PutAsync(apiEndPointUrl, content);
 
-            string responseString = await response.Content.ReadAsStringAsync();
+            if (printResponse)
+            {
+                string responseString = await response.Content.ReadAsStringAsync();
 
 
 
-            string debugMessage = "Put request to " + apiEndPointUrl + "\n" + responseString;
-            Debug.Write(debugMessage);
-            Console.WriteLine(debugMessage);
+                string debugMessage = "Put request to " + apiEndPointUrl + "\n" + responseString;
+                Debug.Write(debugMessage);
+                Console.WriteLine(debugMessage);
+            }
+           
         }
 
     }
