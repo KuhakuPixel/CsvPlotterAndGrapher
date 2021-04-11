@@ -9,8 +9,22 @@ using System.Threading.Tasks;
 
 namespace ProjectLibrary
 {
-    public class CsvPlotter
+    static public class CsvPlotter
     {
+        enum PlotTypes
+        {
+            Histogram,
+            Scatter,
+
+        }
+        static private string[] plotTypesValues = Enum.GetNames(typeof(PlotTypes));
+
+        
+        static public string[] GetPlotTypesValues()
+        {
+            return plotTypesValues;
+
+        }
         static public async Task DisplayHistogram(string columnToHistogram)
         {
             string plotName = "plot1";
@@ -41,7 +55,7 @@ namespace ProjectLibrary
             Bitmap bitmap=ImageReader.CreateImageFromRGB(width, height, imageData);
             #endregion
 
-          
+            
             bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" +"plot1.png",ImageFormat.Png);
         }
     }

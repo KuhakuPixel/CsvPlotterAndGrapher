@@ -9,7 +9,7 @@ namespace CsvPlotterAndGrapher
     public partial class Form1 : Form
     {
         String csvPath = "";
-        static string apiURL = "http://localhost:5000/CsvReader/path1";
+      
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace CsvPlotterAndGrapher
             openFileDialog.Filter = "CSV files|*.csv";
             openFileDialog.InitialDirectory = @"C:\";
 
-            //open dialog to open a file and return its result
+            //open dialog to open a file 
             DialogResult dialogResult = openFileDialog.ShowDialog();
 
             switch (dialogResult)
@@ -34,7 +34,9 @@ namespace CsvPlotterAndGrapher
 
                     string[] columns = await CsvReader.GetCsvColumns(this.csvPath);
                     
-                    MessageBox.Show(text:string.Join(",",columns));
+                    
+                    
+                    //MessageBox.Show(text:string.Join(",",columns));
                     break;
             }
         }

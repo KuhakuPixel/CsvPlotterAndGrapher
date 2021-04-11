@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjectLibrary
 {
-    public class DataStructureConverter
+    static public class DataStructureConverter
     {
         /// <summary>
         /// example: convert "[name,car,house]" to [name,car,house]
@@ -91,5 +91,14 @@ namespace ProjectLibrary
             return arr;
 
         }
+    }
+    
+    static public class EnumConverter
+    {
+        static public T ToEnum<T>(this string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
+        }
+
     }
 }
