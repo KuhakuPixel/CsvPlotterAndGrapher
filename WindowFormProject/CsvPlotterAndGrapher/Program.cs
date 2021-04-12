@@ -21,7 +21,7 @@ namespace CsvPlotterAndGrapher
 #endif
 
 
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

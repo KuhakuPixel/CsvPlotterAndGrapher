@@ -18,15 +18,15 @@ namespace ProjectLibrary
             //inner bound represents rgb value
             byte [,,] imageData=DataStructureConverter.Convert1dArrayTo3d<byte>(data, height, width, 3);
 
-            for(int h = 0; h < imageData.GetLength(0); h++)
+            for(int y = 0; y < imageData.GetLength(0); y++)
             {
-                for(int w = 0; w < imageData.GetLength(1); w++)
+                for(int x = 0; x < imageData.GetLength(1); x++)
                 {
                     List<byte> rgbValues = new List<byte>();
                     //get rgb value
                     for(int k = 0; k < imageData.GetLength(2); k++)
                     {
-                        rgbValues.Add(imageData[h, w, k]);
+                        rgbValues.Add(imageData[y, x, k]);
                     }
 
                     Color color = Color.FromArgb(
@@ -37,8 +37,8 @@ namespace ProjectLibrary
                     );
 
                     
-                    //draw pixel on coordinate w,h
-                    pic.SetPixel(w, h, color);
+                    //draw pixel on coordinate x,y
+                    pic.SetPixel(x, y, color);
                 }
             }
             return pic;

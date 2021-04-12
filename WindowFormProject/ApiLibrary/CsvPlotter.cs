@@ -11,7 +11,7 @@ namespace ProjectLibrary
 {
     static public class CsvPlotter
     {
-        enum PlotTypes
+       public enum PlotTypes
         {
             Histogram,
             Scatter,

@@ -6,11 +6,11 @@ using ApiLibrary;
 using ProjectLibrary;
 namespace CsvPlotterAndGrapher
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        String csvPath = "";
+       
       
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -30,15 +30,33 @@ namespace CsvPlotterAndGrapher
             switch (dialogResult)
             {
                 case DialogResult.OK:
-                    this.csvPath = openFileDialog.FileName;
-
-                    string[] columns = await CsvReader.GetCsvColumns(this.csvPath);
+                    string csvPath = openFileDialog.FileName;
+                   
+                    string[] columns = await CsvReader.GetCsvColumns(csvPath);
                     
                     
                     
                     //MessageBox.Show(text:string.Join(",",columns));
                     break;
             }
+        }
+
+        private void PlotTypeComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StartPlotBtn_Click(object sender, EventArgs e)
+        {
+            
+            CsvPlotter.PlotTypes plotType=EnumConverter.ToEnum<CsvPlotter.PlotTypes>(cbPlotType.SelectedItem as string);
+
+            
+            using (PlotPropertyWindow plotPropertyWindow = new PlotPropertyWindow(plotType))
+            {
+                plotPropertyWindow.ShowDialog();
+            }
+              
         }
     }
 }
