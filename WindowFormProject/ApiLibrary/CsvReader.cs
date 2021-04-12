@@ -8,10 +8,10 @@ using Newtonsoft.Json;
 
 namespace ProjectLibrary
 {
-    public class CsvReader
+    static public class CsvReader
     {
-        static string csvFilePath;
-
+        private static string csvFilePath;
+        private static string[] columns;
        
         static public async Task<string[]>  GetCsvColumns(string csvFilePath)
         {
@@ -26,8 +26,25 @@ namespace ProjectLibrary
 
             //result["path1"] should be an array of the columns in string data types
             string columnsString = result["path1"] as string;
-            return DataStructureConverter.ConvertStringToArrayOfString(columnsString);
+            CsvReader.columns = DataStructureConverter.ConvertStringToArrayOfString(columnsString);
+            return CsvReader.columns;
             
+        }
+        /// <summary>
+        /// Check if [columnName] exist 
+        /// </summary>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        static public bool DoesColumnExist(string columnName)
+        {
+           for(int i = 0; i < CsvReader.columns.Length; i++)
+           {
+                if (CsvReader.columns[i] == columnName)
+                {
+                    return true;
+                }
+           }
+            return false;
         }
     }
 }

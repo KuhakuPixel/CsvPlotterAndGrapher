@@ -34,9 +34,10 @@ namespace CsvPlotterAndGrapher
             // 
             // pgPlotProperty
             // 
-            this.pgPlotProperty.Location = new System.Drawing.Point(271, 12);
+            this.pgPlotProperty.Location = new System.Drawing.Point(3, 3);
             this.pgPlotProperty.Name = "pgPlotProperty";
-            this.pgPlotProperty.Size = new System.Drawing.Size(198, 332);
+            this.pgPlotProperty.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.pgPlotProperty.Size = new System.Drawing.Size(341, 351);
             this.pgPlotProperty.TabIndex = 0;
             // 
             // PlotPropertyWindow
