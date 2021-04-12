@@ -11,27 +11,35 @@ namespace ProjectLibrary
     /// </summary>
     public class PlotProperty
     {
-        protected string name;
+        private string name;
+        public string Name { get => name; set => name = value; }
     }
     public class HistogramAttributes : PlotProperty
     {
+        private string xColumnName;
+
         /// <summary>
         /// the column name for x (histogram's data)
         /// </summary>
-        public string xColumnName;
-
+        public string XColumnName { get => xColumnName; set => xColumnName = value; }
+       
     }
     public class ScatterAttributes : PlotProperty
     {
+
+        private string xColumnName;
         /// <summary>
         /// the column name for x (histogram's data)
         /// </summary>
-        public string xColumnName;
+        public string XColumnName { get => xColumnName; set => xColumnName = value; }
+      
+
+        private string yColumnName;
 
         /// <summary>
         /// the column name for y (histogram's data)
         /// </summary>
-        public string yColumnName;
+        public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
     }
 }
