@@ -89,7 +89,7 @@ namespace ProjectLibrary
             #endregion
 
 
-            //bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" + plotName, ImageFormat.Png);
+            bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" + (plotName+".png"), ImageFormat.Png);
         }
     }
 }
