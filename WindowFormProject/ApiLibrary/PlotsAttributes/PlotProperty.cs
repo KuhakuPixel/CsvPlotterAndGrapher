@@ -7,7 +7,7 @@ namespace ProjectLibrary
 {
     interface IPlotProperty
     {
-        bool AreColumnsNamesValid();
+        bool ColumnsNamesAreValid();
     }
     /// <summary>
     /// This class or the other classess that derrive from this  will be instantiated by using [PropertyGrid].
@@ -32,9 +32,9 @@ namespace ProjectLibrary
         /// </summary>
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
-        public bool AreColumnsNamesValid()
+        public bool ColumnsNamesAreValid()
         {
-            return CsvReader.DoesColumnExist(xColumnName);
+            return CsvReader.HasColumn(xColumnName);
            
         }
     }
@@ -54,12 +54,22 @@ namespace ProjectLibrary
         /// </summary>
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
-        public bool AreColumnsNamesValid()
+        public bool ColumnsNamesAreValid()
         {
-            bool columnsNameAreValid = false;
-            columnsNameAreValid = CsvReader.DoesColumnExist(xColumnName);
-            columnsNameAreValid = CsvReader.DoesColumnExist(yColumnName);
-            return columnsNameAreValid;
+           
+            if (!CsvReader.HasColumn(xColumnName))
+            {
+                return false;
+            }
+            else if (!CsvReader.HasColumn(yColumnName))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
     }
 

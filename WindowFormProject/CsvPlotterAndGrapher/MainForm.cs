@@ -22,8 +22,8 @@ namespace CsvPlotterAndGrapher
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Opening csv file";
             openFileDialog.Filter = "CSV files|*.csv";
-            openFileDialog.InitialDirectory = @"C:\";
-
+           //openFileDialog.InitialDirectory = @"C:\";
+            openFileDialog.InitialDirectory = @"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher";
             //open dialog to open a file 
             DialogResult dialogResult = openFileDialog.ShowDialog();
 

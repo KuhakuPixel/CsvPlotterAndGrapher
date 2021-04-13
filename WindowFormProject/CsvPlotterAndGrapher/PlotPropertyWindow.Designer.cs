@@ -30,6 +30,7 @@ namespace CsvPlotterAndGrapher
         private void InitializeComponent()
         {
             this.pgPlotProperty = new System.Windows.Forms.PropertyGrid();
+            this.btnPlotGraph = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pgPlotProperty
@@ -40,11 +41,22 @@ namespace CsvPlotterAndGrapher
             this.pgPlotProperty.Size = new System.Drawing.Size(341, 351);
             this.pgPlotProperty.TabIndex = 0;
             // 
+            // btnPlotGraph
+            // 
+            this.btnPlotGraph.Location = new System.Drawing.Point(122, 371);
+            this.btnPlotGraph.Name = "btnPlotGraph";
+            this.btnPlotGraph.Size = new System.Drawing.Size(75, 23);
+            this.btnPlotGraph.TabIndex = 1;
+            this.btnPlotGraph.Text = "Plot Me";
+            this.btnPlotGraph.UseVisualStyleBackColor = true;
+            this.btnPlotGraph.Click += new System.EventHandler(this.btnPlotGraph_Click);
+            // 
             // PlotPropertyWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPlotGraph);
             this.Controls.Add(this.pgPlotProperty);
             this.Name = "PlotPropertyWindow";
             this.Text = "PlotPropertyWindow";
@@ -55,5 +67,6 @@ namespace CsvPlotterAndGrapher
         #endregion
 
         private System.Windows.Forms.PropertyGrid pgPlotProperty;
+        private System.Windows.Forms.Button btnPlotGraph;
     }
 }

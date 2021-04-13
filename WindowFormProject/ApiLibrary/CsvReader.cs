@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ApiLibrary;
 using Newtonsoft.Json;
@@ -35,11 +36,14 @@ namespace ProjectLibrary
         /// </summary>
         /// <param name="columnName"></param>
         /// <returns></returns>
-        static public bool DoesColumnExist(string columnName)
+        static public bool HasColumn(string columnName)
         {
-           for(int i = 0; i < CsvReader.columns.Length; i++)
+            //regex to remove non alphanumeric
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            
+            for (int i = 0; i < CsvReader.columns.Length; i++)
            {
-                if (CsvReader.columns[i] == columnName)
+                if (rgx.Replace(CsvReader.columns[i], "") == rgx.Replace(columnName, ""))
                 {
                     return true;
                 }

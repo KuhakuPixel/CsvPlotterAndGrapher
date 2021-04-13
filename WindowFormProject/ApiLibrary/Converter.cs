@@ -16,6 +16,7 @@ namespace ProjectLibrary
             //remove brackets in the string (array leftover)
             arrayInString=arrayInString.Replace("[", "");
             arrayInString=arrayInString.Replace("]", "");
+            arrayInString= arrayInString.Replace(" ", "");
             return arrayInString.Split(',');
 
 
@@ -30,6 +31,7 @@ namespace ProjectLibrary
             //remove brackets in the string (array leftover)
             arrayInString = arrayInString.Replace("[", "");
             arrayInString = arrayInString.Replace("]", "");
+            arrayInString = arrayInString.Replace(" ", "");
             string[] array=arrayInString.Split(',');
             //convert to int
             int[] convertedArray = new int[array.Length];
@@ -45,6 +47,7 @@ namespace ProjectLibrary
             //remove brackets in the string (array leftover)
             arrayInString = arrayInString.Replace("[", "");
             arrayInString = arrayInString.Replace("]", "");
+            arrayInString = arrayInString.Replace(" ", "");
             string[] array = arrayInString.Split(',');
             //convert to int
             byte [] convertedArray = new byte[array.Length];

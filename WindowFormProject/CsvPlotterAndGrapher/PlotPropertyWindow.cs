@@ -36,5 +36,28 @@ namespace CsvPlotterAndGrapher
                     break;
             }
         }
+
+        /// <summary>
+        /// Start plotting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void btnPlotGraph_Click(object sender, EventArgs e)
+        {
+            //draw respective plot
+            switch (this.plotType)
+            {
+                case CsvPlotter.PlotTypes.Histogram:
+                    HistogramAttributes attributes = this.pgPlotProperty.SelectedObject as HistogramAttributes;
+                    if (attributes.ColumnsNamesAreValid())
+                    {
+                        await CsvPlotter.DisplayHistogram(attributes);
+                    }
+                    break;
+                case CsvPlotter.PlotTypes.Scatter:
+                    this.pgPlotProperty.SelectedObject = new ScatterAttributes();
+                    break;
+            }
+        }
     }
 }
