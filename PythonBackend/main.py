@@ -50,16 +50,20 @@ class CsvReader(Resource):
 
 columnToHistogramArgumentParser = reqparse.RequestParser()
 columnToHistogramArgumentParser.add_argument('columnName', type=str)
-columnToHistogramArgumentParser.add_argument('plotTitle', type=str)
+columnToHistogramArgumentParser.add_argument('plotName', type=str)
 
 
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
+        #getting request's argument
         arguments = UserData.temporaryArgumentDictionary[plot_id]
         column_name = arguments["columnName"]
+        plotName=arguments["plotName"]
+
+        #get the plot in array of rgb
         x = UserData.dataFrame[column_name]
-        image_in_numpy_array = CsvPlotter.histogram(x=x)
+        image_in_numpy_array = CsvPlotter.histogram(x=x, plotName=plotName)
 
         # dimension of the array
         img_shape = image_in_numpy_array.shape

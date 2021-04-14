@@ -1,4 +1,3 @@
-from multiprocessing import Process
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -6,7 +5,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 class CsvPlotter:
     @staticmethod
-    def pyplotFigureToImageArray(figure):
+    def pyplot_figure_to_image_array(figure):
         """
            turn pyplot.figure to an image in array format
         """
@@ -15,19 +14,18 @@ class CsvPlotter:
         canvas.draw()
 
         width, height = figure.get_size_inches() * figure.get_dpi()
-        #convert to array
+        # convert to array
         img = np.frombuffer(canvas.tostring_rgb(), dtype='uint8').reshape(int(height), int(width), 3)
         return img
 
     @staticmethod
-    def histogram(x: np.ndarray) -> np.ndarray:
+    def histogram(x: np.ndarray, plotName: str = "") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
         """
         fig, ax = plt.subplots()
         ax.hist(x=x)
-        #ax.set_title()
+        ax.set_title(label=plotName)
 
-
-        return CsvPlotter.pyplotFigureToImageArray(figure=fig)
+        return CsvPlotter.pyplot_figure_to_image_array(figure=fig)
