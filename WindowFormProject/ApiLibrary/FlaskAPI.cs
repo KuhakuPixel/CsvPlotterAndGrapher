@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using Newtonsoft.Json;
+
 namespace ApiLibrary
 {
 
@@ -57,7 +59,7 @@ namespace ApiLibrary
             Thread.Sleep(3000);
 
         }
-        public static async Task<string> GetRequest(string apiEndPointUrl, bool printResponse=true)
+        public static async Task<Dictionary<string, object>> GetRequest(string apiEndPointUrl, bool printResponse=true)
         {
             HttpResponseMessage response = await client.GetAsync(apiEndPointUrl);
             string responseString = await response.Content.ReadAsStringAsync();
@@ -70,8 +72,8 @@ namespace ApiLibrary
                 Debug.Write(debugMessage);
                 Console.WriteLine(debugMessage);
             }
-           
-            return responseString;
+
+            return JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString);
         }
 
 
@@ -81,18 +83,17 @@ namespace ApiLibrary
         /// <summary>
         /// make a put request through the api url
         /// </summary>
-        /// <param name="keyAndArgument">DataID specified by the key and the data specified by the value, </param>
+        /// <param name="keysAndArguments">DataID specified by the key and the data specified by the value, </param>
         /// <returns></returns>
-        public static async Task PutRequest(string apiEndPointUrl, KeyValuePair<string, string> keyAndArgument, bool printResponse = true)
+        public static async Task PutRequest(string apiEndPointUrl, Dictionary<string, string> keysAndArguments, bool printResponse = true)
         {
-            //encode keyAndArgument
-            FormUrlEncodedContent content = new FormUrlEncodedContent(
-                       new[] {
-                           keyAndArgument
-                           //new KeyValuePair<string, string>("csvFilePath", "C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv"),
-                       }
 
-                       );
+            //encode keyAndArgument
+            FormUrlEncodedContent content = new FormUrlEncodedContent(keysAndArguments);
+
+
+
+                       
 
             HttpResponseMessage response = await client.PutAsync(apiEndPointUrl, content);
 
