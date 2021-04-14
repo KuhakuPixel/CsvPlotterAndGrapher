@@ -27,6 +27,7 @@ class CsvPlotter:
         """
         fig, ax = plt.subplots()
         ax.hist(x=x)
+        #ax.set_title()
 
 
         return CsvPlotter.pyplotFigureToImageArray(figure=fig)
