@@ -7,7 +7,7 @@ namespace ProjectLibrary
 {
     interface IPlotProperty
     {
-        bool ColumnsNamesAreValid();
+        bool ColumnsNamesAreValid(ref string exceptionMessage);
     }
     /// <summary>
     /// This class or the other classess that derrive from this  will be instantiated by using [PropertyGrid].
@@ -27,15 +27,26 @@ namespace ProjectLibrary
     {
         private string xColumnName;
 
+        [DisplayName("X Column Name")]
+        [Description("The name of the column that will be plotted into histogram")]
         /// <summary>
         /// the column name for x (histogram's data)
         /// </summary>
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
-        public bool ColumnsNamesAreValid()
+        public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
-            return CsvReader.HasColumn(xColumnName);
-           
+            exceptionMessage = "";
+            if (CsvReader.HasColumn(xColumnName))
+            {
+                return true;
+            }
+            else
+            {
+                exceptionMessage = "X Column Name doesnt exist in the specified name ";
+                return false;
+            }
+          
         }
     }
     public class TwoDataPlotAttributes : PlotProperty, IPlotProperty
@@ -54,9 +65,9 @@ namespace ProjectLibrary
         /// </summary>
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
-        public bool ColumnsNamesAreValid()
+      
+        public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
-           
             if (!CsvReader.HasColumn(xColumnName))
             {
                 return false;
@@ -69,7 +80,7 @@ namespace ProjectLibrary
             {
                 return true;
             }
-            
+            throw new NotImplementedException();
         }
     }
 

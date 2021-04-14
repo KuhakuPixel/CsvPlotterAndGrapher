@@ -25,7 +25,7 @@ namespace ProjectLibrary
             return plotTypesValues;
 
         }
-        static public async Task DisplayHistogram(string columnToHistogram)
+        static public async Task CreateHistogramTest(string columnToHistogram)
         {
             string plotName = "plot1";
             string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram" + "/" + plotName;
@@ -58,7 +58,7 @@ namespace ProjectLibrary
             
             bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" +"plot1.png",ImageFormat.Png);
         }
-        static public async Task<Bitmap> DisplayHistogram(HistogramAttributes attributes)
+        static public async Task<Bitmap> CreateHistogram(HistogramAttributes attributes)
         {
             string plotName = attributes.PlotName;
             string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram" + "/" + plotName;

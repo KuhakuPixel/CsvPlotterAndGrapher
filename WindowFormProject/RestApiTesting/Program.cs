@@ -18,7 +18,7 @@ namespace RestApiTesting
 
             //await FlaskApi.GetRequest(apiURL);
             await CsvReader.GetCsvColumns("C:/Users/Nicho/Desktop/Projects/CsvPlotterAndGrapher/csvTest.csv");
-            await CsvPlotter.DisplayHistogram("petal width");
+            await CsvPlotter.CreateHistogramTest("petal width");
 
 
 

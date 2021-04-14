@@ -45,17 +45,23 @@ namespace CsvPlotterAndGrapher
         private async void btnPlotGraph_Click(object sender, EventArgs e)
         {
             //draw respective plot
+            string exceptionMessage="";
             switch (this.plotType)
             {
                 case CsvPlotter.PlotTypes.Histogram:
                     HistogramAttributes attributes = this.pgPlotProperty.SelectedObject as HistogramAttributes;
-                    if (attributes.ColumnsNamesAreValid())
+                    if (attributes.ColumnsNamesAreValid(ref exceptionMessage))
                     {
-                        Bitmap image=await CsvPlotter.DisplayHistogram(attributes);
+                        Bitmap image=await CsvPlotter.CreateHistogram(attributes);
                         using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
                         {
                             showPlotForm.ShowDialog();
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show(exceptionMessage, "Exception Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     }
                     break;
                 case CsvPlotter.PlotTypes.Scatter:
