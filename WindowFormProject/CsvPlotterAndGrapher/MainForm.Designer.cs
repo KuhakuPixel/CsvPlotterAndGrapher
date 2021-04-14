@@ -56,7 +56,7 @@ namespace CsvPlotterAndGrapher
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // PlotTypeComboBox
+            // cbPlotType
             // 
             this.cbPlotType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlotType.FormattingEnabled = true;
@@ -64,7 +64,7 @@ namespace CsvPlotterAndGrapher
             "Histogram",
             "Scatter"});
             this.cbPlotType.Location = new System.Drawing.Point(340, 172);
-            this.cbPlotType.Name = "PlotTypeComboBox";
+            this.cbPlotType.Name = "cbPlotType";
             this.cbPlotType.Size = new System.Drawing.Size(121, 21);
             this.cbPlotType.TabIndex = 1;
             this.cbPlotType.SelectedValueChanged += new System.EventHandler(this.PlotTypeComboBox_SelectedValueChanged);
@@ -87,8 +87,12 @@ namespace CsvPlotterAndGrapher
             this.Controls.Add(this.StartPlotBtn);
             this.Controls.Add(this.cbPlotType);
             this.Controls.Add(this.OpenFileButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

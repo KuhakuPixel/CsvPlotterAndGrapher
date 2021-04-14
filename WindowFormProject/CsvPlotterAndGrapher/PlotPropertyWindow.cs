@@ -51,13 +51,22 @@ namespace CsvPlotterAndGrapher
                     HistogramAttributes attributes = this.pgPlotProperty.SelectedObject as HistogramAttributes;
                     if (attributes.ColumnsNamesAreValid())
                     {
-                        await CsvPlotter.DisplayHistogram(attributes);
+                        Bitmap image=await CsvPlotter.DisplayHistogram(attributes);
+                        using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
+                        {
+                            showPlotForm.ShowDialog();
+                        }
                     }
                     break;
                 case CsvPlotter.PlotTypes.Scatter:
                     this.pgPlotProperty.SelectedObject = new ScatterAttributes();
                     break;
             }
+        }
+
+        private void pgPlotProperty_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

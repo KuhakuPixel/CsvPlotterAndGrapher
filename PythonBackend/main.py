@@ -41,6 +41,7 @@ class CsvReader(Resource):
         # reading argument and put it into a dictionary
         arguments = csvReaderArgumentParser.parse_args()
         UserData.csvFilesPathDictionary[path_id] = arguments["csvFilePath"]
+        print("put request")
         return {path_id: UserData.csvFilesPathDictionary[path_id]}
 
 
@@ -65,6 +66,7 @@ class ColumnToHistogram(Resource):
         # reading argument and put it into a dictionary
         arguments = columnToHistogramArgumentParser.parse_args()
         UserData.columnNametoBePlottedDictionary[plot_id] = arguments["columnName"]
+        print("put request")
         return {plot_id: UserData.columnNametoBePlottedDictionary[plot_id]}
 
 

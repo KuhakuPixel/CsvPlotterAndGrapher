@@ -40,6 +40,7 @@ namespace CsvPlotterAndGrapher
             this.pgPlotProperty.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pgPlotProperty.Size = new System.Drawing.Size(341, 351);
             this.pgPlotProperty.TabIndex = 0;
+            this.pgPlotProperty.Click += new System.EventHandler(this.pgPlotProperty_Click);
             // 
             // btnPlotGraph
             // 
@@ -58,6 +59,9 @@ namespace CsvPlotterAndGrapher
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnPlotGraph);
             this.Controls.Add(this.pgPlotProperty);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PlotPropertyWindow";
             this.Text = "PlotPropertyWindow";
             this.ResumeLayout(false);

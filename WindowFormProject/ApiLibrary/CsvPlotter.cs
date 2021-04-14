@@ -58,7 +58,7 @@ namespace ProjectLibrary
             
             bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" +"plot1.png",ImageFormat.Png);
         }
-        static public async Task DisplayHistogram(HistogramAttributes attributes)
+        static public async Task<Bitmap> DisplayHistogram(HistogramAttributes attributes)
         {
             string plotName = attributes.PlotName;
             string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram" + "/" + plotName;
@@ -85,11 +85,12 @@ namespace ProjectLibrary
 
             byte[] imageData = DataStructureConverter.ConvertArrayInStringToArrayOfByte(imageDataInString);
 
+            //make bitmap 
             Bitmap bitmap = ImageReader.CreateImageFromRGB(width, height, imageData);
             #endregion
 
 
-            bitmap.Save(@"C:\Users\Nicho\Desktop\Projects\CsvPlotterAndGrapher\" + (plotName+".png"), ImageFormat.Png);
+            return bitmap;
         }
     }
 }
