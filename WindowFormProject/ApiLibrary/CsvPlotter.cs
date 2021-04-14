@@ -36,6 +36,8 @@ namespace ProjectLibrary
             {
                 {"columnName", attributes.XColumnName},
                 {"plotName", attributes.PlotName},
+                {"xLabel",attributes.XLabel},
+                {"yLabel",attributes.YLabel},
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(apiURL, printResponse: false);

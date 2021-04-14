@@ -32,7 +32,7 @@ namespace CsvPlotterAndGrapher
                 case DialogResult.OK:
                     string csvPath = openFileDialog.FileName;
                    
-                    string[] columns = await CsvReader.GetCsvColumns(csvPath);
+                    await CsvReader.ReadAndInitializeCsv(csvPath);
                     
                     
                     
@@ -48,7 +48,7 @@ namespace CsvPlotterAndGrapher
 
         private void StartPlotBtn_Click(object sender, EventArgs e)
         {
-            
+            //get the plot type selected by user from combo box
             CsvPlotter.PlotTypes plotType=EnumConverter.ToEnum<CsvPlotter.PlotTypes>(cbPlotType.SelectedItem as string);
 
             

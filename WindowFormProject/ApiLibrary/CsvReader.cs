@@ -14,7 +14,7 @@ namespace ProjectLibrary
         private static string csvFilePath;
         private static string[] columns;
        
-        static public async Task<string[]>  GetCsvColumns(string csvFilePath)
+        static public async Task  ReadAndInitializeCsv(string csvFilePath)
         {
             CsvReader.csvFilePath = csvFilePath;
 
@@ -33,7 +33,7 @@ namespace ProjectLibrary
             //result["path1"] should be an array of the columns in string data types
             string columnsString = result["path1"] as string;
             CsvReader.columns = DataStructureConverter.ConvertStringToArrayOfString(columnsString);
-            return CsvReader.columns;
+         
             
         }
         /// <summary>

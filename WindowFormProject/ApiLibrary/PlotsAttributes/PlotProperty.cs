@@ -18,7 +18,7 @@ namespace ProjectLibrary
     {
         private string plotName;
 
-        [Category("Trivial")]
+        [Category("Appearance (Optional)")]
         [DisplayName("Plot name")]
         [Description("Plot name will be displayed on top of the plot")]
         public string PlotName { get => plotName; set => plotName = value; }
@@ -34,6 +34,17 @@ namespace ProjectLibrary
         /// </summary>
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
+        private string xLabel="";
+        [Category("Appearance (Optional)")]
+        [DisplayName("X Axes Label")]
+        [Description("Label for the X axes")]
+        public string XLabel { get => xLabel; set => xLabel = value; }
+
+        private string yLabel="";
+        [Category("Appearance (Optional)")]
+        [DisplayName("Y Axes Label")]
+        [Description("Label for the Y axes")]
+        public string YLabel { get => yLabel; set => yLabel = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
             exceptionMessage = "";
@@ -65,7 +76,17 @@ namespace ProjectLibrary
         /// </summary>
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
-      
+        private string xLabel = "";
+        [Category("Appearance (Optional)")]
+        [DisplayName("X Axes Label")]
+        [Description("Label for the X axes")]
+        public string XLabel { get => xLabel; set => xLabel = value; }
+
+        private string yLabel = "";
+        [Category("Appearance (Optional)")]
+        [DisplayName("Y Axes Label")]
+        [Description("Label for the Y axes")]
+        public string YLabel { get => yLabel; set => yLabel = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
             if (!CsvReader.HasColumn(xColumnName))
