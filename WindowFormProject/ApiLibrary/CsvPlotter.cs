@@ -29,7 +29,7 @@ namespace ProjectLibrary
         static public async Task<Bitmap> CreateHistogram(HistogramAttributes attributes)
         {
             string plotName = attributes.PlotName;
-            string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram" + "/" + plotName;
+            string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot" ;
 
           
             await FlaskApi.PutRequest(apiURL, new Dictionary<string, string>
@@ -45,7 +45,7 @@ namespace ProjectLibrary
 
 
 
-            string imageDataInString = result[plotName] as string;
+            string imageDataInString = result["HistogramPlot"] as string;
             string imageDimensionInString = result["img_shape"] as string;
             #region getting image Shape
             //(height,width ,3)

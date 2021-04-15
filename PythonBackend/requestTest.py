@@ -29,4 +29,4 @@ def histogram_api():
     get(API_ENDPOINT)
 
 read_csv()
-#histogram_api()
+histogram_api()

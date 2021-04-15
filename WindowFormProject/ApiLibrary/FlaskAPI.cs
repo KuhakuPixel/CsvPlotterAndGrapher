@@ -59,7 +59,7 @@ namespace ApiLibrary
             Thread.Sleep(3000);
 
         }
-        public static async Task<Dictionary<string, object>> GetRequest(string apiEndPointUrl, bool printResponse=true)
+        public static async Task<Dictionary<string, object>> GetRequest(string apiEndPointUrl, bool printResponse = true)
         {
             HttpResponseMessage response = await client.GetAsync(apiEndPointUrl);
             string responseString = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,8 @@ namespace ApiLibrary
 
 
 
-                       
+
+
 
             HttpResponseMessage response = await client.PutAsync(apiEndPointUrl, content);
 
@@ -107,7 +108,7 @@ namespace ApiLibrary
                 Debug.Write(debugMessage);
                 Console.WriteLine(debugMessage);
             }
-           
+
         }
 
     }

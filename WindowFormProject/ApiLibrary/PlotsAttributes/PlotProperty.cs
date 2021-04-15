@@ -16,7 +16,7 @@ namespace ProjectLibrary
     /// </summary>
     public class PlotProperty
     {
-        private string plotName;
+        private string plotName=" ";
 
         [Category("Appearance (Optional)")]
         [DisplayName("Plot name")]
@@ -34,20 +34,20 @@ namespace ProjectLibrary
         /// </summary>
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
-        private string xLabel="";
+        private string xLabel=" ";
         [Category("Appearance (Optional)")]
         [DisplayName("X Axes Label")]
         [Description("Label for the X axes")]
         public string XLabel { get => xLabel; set => xLabel = value; }
 
-        private string yLabel="";
+        private string yLabel=" ";
         [Category("Appearance (Optional)")]
         [DisplayName("Y Axes Label")]
         [Description("Label for the Y axes")]
         public string YLabel { get => yLabel; set => yLabel = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
-            exceptionMessage = "";
+            exceptionMessage = " ";
             if (CsvReader.HasColumn(xColumnName))
             {
                 return true;
@@ -76,13 +76,13 @@ namespace ProjectLibrary
         /// </summary>
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
-        private string xLabel = "";
+        private string xLabel = " ";
         [Category("Appearance (Optional)")]
         [DisplayName("X Axes Label")]
         [Description("Label for the X axes")]
         public string XLabel { get => xLabel; set => xLabel = value; }
 
-        private string yLabel = "";
+        private string yLabel = " ";
         [Category("Appearance (Optional)")]
         [DisplayName("Y Axes Label")]
         [Description("Label for the Y axes")]

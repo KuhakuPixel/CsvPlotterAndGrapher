@@ -49,10 +49,10 @@ class CsvReader(Resource):
 
 
 columnToHistogramArgumentParser = reqparse.RequestParser()
-columnToHistogramArgumentParser.add_argument('columnName', type=str)
-columnToHistogramArgumentParser.add_argument('plotName', type=str)
-columnToHistogramArgumentParser.add_argument('xLabel', type=str)
-columnToHistogramArgumentParser.add_argument('yLabel', type=str)
+columnToHistogramArgumentParser.add_argument('columnName', type=str,help="the column that will be plotted as histogram")
+columnToHistogramArgumentParser.add_argument('plotName', type=str,default="",required=False,help="The name of th plot")
+columnToHistogramArgumentParser.add_argument('xLabel', type=str,default="",required=False,help="The label of the x axes")
+columnToHistogramArgumentParser.add_argument('yLabel', type=str,default="",required=False,help="The label of the y axes")
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
