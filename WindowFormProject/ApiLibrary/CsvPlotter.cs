@@ -29,10 +29,10 @@ namespace ProjectLibrary
         static public async Task<Bitmap> CreateHistogram(HistogramAttributes attributes)
         {
             string plotName = attributes.PlotName;
-            string apiURL = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot" ;
+       
 
           
-            await FlaskApi.PutRequest(apiURL, new Dictionary<string, string>
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
             {
                 {"columnName", attributes.XColumnName},
                 {"plotName", attributes.PlotName},
@@ -40,13 +40,13 @@ namespace ProjectLibrary
                 {"yLabel",attributes.YLabel},
             });
 
-            Dictionary<string, object> result = await FlaskApi.GetRequest(apiURL, printResponse: false);
+            Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);
          
 
 
 
-            string imageDataInString = result["HistogramPlot"] as string;
-            string imageDimensionInString = result["img_shape"] as string;
+            string imageDataInString = result[ApiEndpointConfigurations.histogramImageData_key] as string;
+            string imageDimensionInString = result[ApiEndpointConfigurations.histogramImageShape_key] as string;
             #region getting image Shape
             //(height,width ,3)
             int[] imageShape = DataStructureConverter.ConvertArrayInStringToArrayOfInt(imageDimensionInString);

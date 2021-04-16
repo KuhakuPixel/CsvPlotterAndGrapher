@@ -18,20 +18,20 @@ namespace ProjectLibrary
         {
             CsvReader.csvFilePath = csvFilePath;
 
-            string apiURL = "http://localhost:5000/CsvReader/path1";
-            //await FlaskApi.PutRequest(apiURL,[ new KeyValuePair<string, string>("csvFilePath", csvFilePath)]);
-            await FlaskApi.PutRequest(apiURL, new Dictionary<string, string>
+
+
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.csvReaderApiEndPoint, new Dictionary<string, string>
             {
                 {"csvFilePath",csvFilePath },
             });
 
 
-            Dictionary<string, object> result = await FlaskApi.GetRequest(apiURL);
+            Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.csvReaderApiEndPoint);
 
 
 
-            //result["path1"] should be an array of the columns in string data types
-            string columnsString = result["path1"] as string;
+            //result should be an array of the columns in string data types
+            string columnsString = result[ApiEndpointConfigurations.csvColumn_key] as string;
             CsvReader.columns = DataStructureConverter.ConvertStringToArrayOfString(columnsString);
 
 

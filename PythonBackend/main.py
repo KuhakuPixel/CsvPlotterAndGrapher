@@ -6,7 +6,7 @@ from flask import Flask
 from flask_restful import Resource, Api, reqparse
 
 from CsvPlotter import CsvPlotter
-
+from ApiEndpointConfigurations import ApiEndpointConfigurations
 """
 containing the data such as dataframe,columns or ect
 """
@@ -38,14 +38,14 @@ class CsvReader(Resource):
         columns = np.array(UserData.dataFrame.columns)
         print(columns)
         columns_json = json.dumps(columns.tolist())
-        return {path_id: columns_json}
+        return {ApiEndpointConfigurations.csvColumn_key: columns_json}
 
     def put(self, path_id):
         # reading argument and put it into a dictionary
         UserData.temporaryArgumentDictionary[path_id] = csvReaderArgumentParser.parse_args()
 
         print("put request")
-        return {path_id: UserData.temporaryArgumentDictionary[path_id]["csvFilePath"]}
+        return {"Csv Path": UserData.temporaryArgumentDictionary[path_id]["csvFilePath"]}
 
 
 columnToHistogramArgumentParser = reqparse.RequestParser()
@@ -72,7 +72,7 @@ class ColumnToHistogram(Resource):
 
         img_json = json.dumps(image_in_numpy_array.tolist())
 
-        return {plot_id: img_json, "img_shape": img_shape_json}
+        return {ApiEndpointConfigurations.histogramImageData_key: img_json, ApiEndpointConfigurations.histogramImageShape_key: img_shape_json}
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary
