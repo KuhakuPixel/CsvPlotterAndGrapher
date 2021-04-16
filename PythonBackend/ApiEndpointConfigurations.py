@@ -3,5 +3,9 @@ class ApiEndpointConfigurations:
     csvColumn_key = "csvColumns"
 
     histogramPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot"
-    histogramImageData_key = "histogramPlot"
-    histogramImageShape_key = "img_shape"
+    scatterPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToScatterPlot/ScatterPlot"
+
+
+
+    plotImageData_key = "plot_data"
+    plotImageShape_key = "img_shape"

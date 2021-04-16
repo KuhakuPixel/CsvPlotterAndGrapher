@@ -134,16 +134,15 @@ namespace ProjectLibrary
     {
         private string xColumnName;
 
-        /// <summary>
-        /// the column name for x 
-        /// </summary>
+        [Category(PlotProperty.plotDataCategoryText)]
+        [DisplayName("X Column Name")]
+        [Description("The name of the column that will be plotted into the scatter plot (X axis)")]
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
         private string yColumnName;
-
-        /// <summary>
-        /// the column name for y 
-        /// </summary>
+        [Category(PlotProperty.plotDataCategoryText)]
+        [DisplayName("Y Column Name")]
+        [Description("The name of the column that will be plotted into the scatter plot (Y axis)")]
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
         public bool ColumnsNamesAreValid(ref string exceptionMessage)

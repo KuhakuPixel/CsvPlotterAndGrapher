@@ -33,14 +33,14 @@ namespace ProjectLibrary
 
         }
 
-        
 
 
-       
+
+
 
         static public async Task<Bitmap> CreateHistogram(HistogramAttributes attributes)
         {
-            string plotName = attributes.PlotName;
+
 
 
 
@@ -66,8 +66,58 @@ namespace ProjectLibrary
 
 
 
-            string imageDataInString = result[ApiEndpointConfigurations.histogramImageData_key] as string;
-            string imageDimensionInString = result[ApiEndpointConfigurations.histogramImageShape_key] as string;
+            string imageDataInString = result[ApiEndpointConfigurations.plotImageData_key] as string;
+            string imageDimensionInString = result[ApiEndpointConfigurations.plotImageShape_key] as string;
+            #region getting image Shape
+            //(height,width ,3)
+            int[] imageShape = DataStructureConverter.ConvertArrayInStringToArrayOfInt(imageDimensionInString);
+            int height = imageShape[0];
+            int width = imageShape[1];
+
+            #endregion
+
+            #region getting bitmap
+
+            byte[] imageData = DataStructureConverter.ConvertArrayInStringToArrayOfByte(imageDataInString);
+
+            //make bitmap 
+            Bitmap bitmap = ImageReader.CreateImageFromRGB(width, height, imageData);
+            #endregion
+
+
+            return bitmap;
+        }
+
+        static public async Task<Bitmap> CreateScatterPlot(ScatterAttributes attributes)
+        {
+
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, new Dictionary<string, string>
+            {
+                {"xColumnName", attributes.XColumnName},
+                {"yColumnName", attributes.YColumnName},
+                {"plotName", attributes.PlotName},
+
+                {"xLabel",attributes.XLabel},
+                {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
+
+                {"yLabel",attributes.YLabel},
+                {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
+
+                {"plotNameColor",attributes.PlotNameColor.ToString()},
+
+                {"bottomSpineColor",attributes.BottomSpineColor.ToString()},
+                {"topSpineColor",attributes.TopSpineColor.ToString()},
+                {"leftSpineColor",attributes.LeftSpineColor.ToString()},
+                {"rightSpineColor",attributes.RightSpineColor.ToString()},
+            });
+
+            Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, printResponse: false);
+
+
+
+
+            string imageDataInString = result[ApiEndpointConfigurations.plotImageData_key] as string;
+            string imageDimensionInString = result[ApiEndpointConfigurations.plotImageShape_key] as string;
             #region getting image Shape
             //(height,width ,3)
             int[] imageShape = DataStructureConverter.ConvertArrayInStringToArrayOfInt(imageDimensionInString);

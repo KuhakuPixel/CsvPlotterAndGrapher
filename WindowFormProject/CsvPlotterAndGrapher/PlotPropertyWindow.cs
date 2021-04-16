@@ -49,23 +49,42 @@ namespace CsvPlotterAndGrapher
             switch (this.plotType)
             {
                 case CsvPlotter.PlotTypes.Histogram:
-                    HistogramAttributes attributes = this.pgPlotProperty.SelectedObject as HistogramAttributes;
-                    if (attributes.ColumnsNamesAreValid(ref exceptionMessage))
                     {
-                        Bitmap image=await CsvPlotter.CreateHistogram(attributes);
-                        using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
+                        HistogramAttributes attributes = this.pgPlotProperty.SelectedObject as HistogramAttributes;
+                        if (attributes.ColumnsNamesAreValid(ref exceptionMessage))
                         {
-                            showPlotForm.ShowDialog();
+                            Bitmap image = await CsvPlotter.CreateHistogram(attributes);
+                            using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
+                            {
+                                showPlotForm.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(exceptionMessage, "Exception Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show(exceptionMessage, "Exception Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
+                   
                     break;
                 case CsvPlotter.PlotTypes.Scatter:
-                    this.pgPlotProperty.SelectedObject = new ScatterAttributes();
+                    {
+                        ScatterAttributes attributes = this.pgPlotProperty.SelectedObject as ScatterAttributes;
+                        if (attributes.ColumnsNamesAreValid(ref exceptionMessage))
+                        {
+                            Bitmap image = await CsvPlotter.CreateScatterPlot(attributes);
+                            using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
+                            {
+                                showPlotForm.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(exceptionMessage, "Exception Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                    }
+                 
                     break;
             }
         }

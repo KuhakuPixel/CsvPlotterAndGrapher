@@ -107,8 +107,8 @@ class ColumnToHistogram(Resource):
 
         img_json = json.dumps(image_in_numpy_array.tolist())
 
-        return {ApiEndpointConfigurations.histogramImageData_key: img_json,
-                ApiEndpointConfigurations.histogramImageShape_key: img_shape_json}
+        return {ApiEndpointConfigurations.plotImageData_key: img_json,
+                ApiEndpointConfigurations.plotImageShape_key: img_shape_json}
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary
@@ -119,9 +119,86 @@ class ColumnToHistogram(Resource):
         return {plot_id: arguments["columnName"]}
 
 
+columnsToScatterPlotArgumentParser = reqparse.RequestParser()
+columnsToScatterPlotArgumentParser.add_argument('xColumnName', type=str,
+                                                help="the column that will be plotted on the x axis of the plot")
+
+columnsToScatterPlotArgumentParser.add_argument('yColumnName', type=str,
+                                                help="the column that will be plotted on the y axis of the plot")
+columnsToScatterPlotArgumentParser.add_argument('plotName', type=str, default="", required=False,
+                                                help="The name of the plot")
+columnsToScatterPlotArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
+                                                help="The color of the plot name")
+columnsToScatterPlotArgumentParser.add_argument('xLabel', type=str, default="black", required=False,
+                                                help="The label of the x axes")
+columnsToScatterPlotArgumentParser.add_argument('xAxisLabelColor', type=str, default="", required=False,
+                                                help="The label color of the x axes")
+columnsToScatterPlotArgumentParser.add_argument('yLabel', type=str, default="", required=False,
+                                                help="The label of the y axes")
+columnsToScatterPlotArgumentParser.add_argument('yAxisLabelColor', type=str, default="black", required=False,
+                                                help="The label color of the y axes")
+
+columnsToScatterPlotArgumentParser.add_argument('bottomSpineColor', type=str, default="black", required=False,
+                                                help="The color of the plot 's bottom spine")
+columnsToScatterPlotArgumentParser.add_argument('topSpineColor', type=str, default="", required=False,
+                                                help="The color of the plot 's top spine")
+columnsToScatterPlotArgumentParser.add_argument('leftSpineColor', type=str, default="", required=False,
+                                                help="The color of the plot 's left spine")
+columnsToScatterPlotArgumentParser.add_argument('rightSpineColor', type=str, default="black", required=False,
+                                                help="The color of the plot 's right spine")
+
+
+class ColumnsToScatterPlot(Resource):
+
+    def get(self, plot_id):
+        # getting request's argument
+        arguments = UserData.temporaryArgumentDictionary[plot_id]
+
+        x_column_name = arguments["xColumnName"]
+        y_column_name = arguments["yColumnName"]
+        plotName = arguments["plotName"]
+        xLabel = arguments["xLabel"]
+        yLabel = arguments["yLabel"]
+        #
+        plotNameColor = arguments["plotNameColor"]
+        xAxisLabelColor = arguments["xAxisLabelColor"]
+        yAxisLabelColor = arguments["yAxisLabelColor"]
+        bottomSpineColor = arguments["bottomSpineColor"]
+        topSpineColor = arguments["topSpineColor"]
+        leftSpineColor = arguments["leftSpineColor"]
+        rightSpineColor = arguments["rightSpineColor"]
+
+        # get the plot in array of rgb
+        x = UserData.dataFrame[x_column_name]
+        y = UserData.dataFrame[y_column_name]
+        image_in_numpy_array = CsvPlotter.scatter(x=x, y=y, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+                                                  plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
+                                                  yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
+                                                  topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
+                                                  leftSpineColor=leftSpineColor)
+
+        # dimension of the array
+        img_shape = image_in_numpy_array.shape
+        img_shape_json = json.dumps(img_shape)
+
+        img_json = json.dumps(image_in_numpy_array.tolist())
+
+        return {ApiEndpointConfigurations.plotImageData_key: img_json,
+                ApiEndpointConfigurations.plotImageShape_key: img_shape_json}
+
+    def put(self, plot_id):
+        # reading argument and put it into a dictionary
+        arguments = columnsToScatterPlotArgumentParser.parse_args()
+
+        UserData.temporaryArgumentDictionary[plot_id] = arguments
+        print("put request")
+        return {plot_id: arguments["columnName"]}
+
+
 # api resource routing
 api.add_resource(CsvReader, '/CsvReader/<string:path_id>')
 api.add_resource(ColumnToHistogram, '/Plotter/ColumnToHistogram/<string:plot_id>')
+api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:plot_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
