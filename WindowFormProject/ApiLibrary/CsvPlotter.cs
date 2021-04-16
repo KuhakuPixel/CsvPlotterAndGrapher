@@ -53,7 +53,12 @@ namespace ProjectLibrary
 
                 {"yLabel",attributes.YLabel},
                 {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
-                {"plotNameColor",attributes.PlotNameColor.ToString()}
+                {"plotNameColor",attributes.PlotNameColor.ToString()},
+
+                {"bottomSpineColor",attributes.BottomSpineColor.ToString()},
+                {"topSpineColor",attributes.TopSpineColor.ToString()},
+                {"leftSpineColor",attributes.LeftSpineColor.ToString()},
+                {"rightSpineColor",attributes.RightSpineColor.ToString()},
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);

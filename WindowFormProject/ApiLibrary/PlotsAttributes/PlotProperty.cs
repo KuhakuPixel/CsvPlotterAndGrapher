@@ -16,9 +16,14 @@ namespace ProjectLibrary
     /// </summary>
     public class PlotProperty
     {
+        #region Category String
+        public const string plotTextCategoryText="Plot Text (Optional)";
+        public  const string plotColorCategoryText = "Plot Color(Optional)";
+        public const string plotDataCategoryText = "Data (Mandatory)";
+        #endregion
         private string plotName=" ";
 
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("Plot name")]
         [Description("Plot name will be displayed on top of the plot")]
         public string PlotName { get => plotName; set => plotName = value; }
@@ -26,7 +31,7 @@ namespace ProjectLibrary
 
         
         private CsvPlotter.ColorsCollection plotNameColor = CsvPlotter.ColorsCollection.black;
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotColorCategoryText)]
         [DisplayName("Plot Name Color")]
         [Description("The text color of plot name")]
         public CsvPlotter.ColorsCollection PlotNameColor { get => plotNameColor; set => plotNameColor = value; }
@@ -39,13 +44,13 @@ namespace ProjectLibrary
 
         #region X Label
         private string xLabel=" ";
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("X Axes Label")]
         [Description("Label for the X axes")]
         public string XLabel { get => xLabel; set => xLabel = value; }
 
         private CsvPlotter.ColorsCollection xAxisLabelColor = CsvPlotter.ColorsCollection.black;
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotColorCategoryText)]
         [DisplayName("X Axis Label Color")]
         [Description("The Color of the X axis label")]
         public CsvPlotter.ColorsCollection XAxisLabelColor { get => xAxisLabelColor; set => xAxisLabelColor = value; }
@@ -53,7 +58,7 @@ namespace ProjectLibrary
 
         #region YLabel
         private string yLabel=" ";
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("Y Axes Label")]
         [Description("Label for the Y axes")]
         public string YLabel { get => yLabel; set => yLabel = value; }
@@ -61,18 +66,48 @@ namespace ProjectLibrary
 
 
         private CsvPlotter.ColorsCollection yAxisLabelColor = CsvPlotter.ColorsCollection.black;
-        [Category("Appearance (Optional)")]
+        [Category(PlotProperty.plotColorCategoryText)]
         [DisplayName("Y Axis Label Color")]
         [Description("The Color of the Y axis label")]
         public CsvPlotter.ColorsCollection YAxisLabelColor { get => yAxisLabelColor; set => yAxisLabelColor = value; }
         #endregion
-        
+
+        #region Plot 's Spine color
+
+        //bottom
+        private CsvPlotter.ColorsCollection bottomSpineColor = CsvPlotter.ColorsCollection.black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Bottom Spine Color")]
+        [Description("The color of the plot 's bottom spine")]
+        public CsvPlotter.ColorsCollection BottomSpineColor { get => bottomSpineColor; set => bottomSpineColor = value; }
+
+        //top
+        private CsvPlotter.ColorsCollection topSpineColor = CsvPlotter.ColorsCollection.black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Top Spine Color")]
+        [Description("The color of the plot 's top spine")]
+        public CsvPlotter.ColorsCollection TopSpineColor { get => topSpineColor; set => topSpineColor = value; }
+
+        //left
+        private CsvPlotter.ColorsCollection leftSpineColor = CsvPlotter.ColorsCollection.black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Left Spine Color")]
+        [Description("The color of the plot 's left spine")]
+        public CsvPlotter.ColorsCollection LeftSpineColor { get => leftSpineColor; set => leftSpineColor = value; }
+
+        //right
+        private CsvPlotter.ColorsCollection rightSpineColor = CsvPlotter.ColorsCollection.black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Right Spine Color")]
+        [Description("The color of the plot 's right spine")]
+        public CsvPlotter.ColorsCollection RightSpineColor { get => rightSpineColor; set => rightSpineColor = value; }
+        #endregion
     }
-   
+
     public class HistogramAttributes : PlotProperty2d,IPlotProperty
     {
         private string xColumnName;
-        [Category("Data (Mandatory)")]
+        [Category(PlotProperty.plotDataCategoryText)]
         [DisplayName("X Column Name")]
         [Description("The name of the column that will be plotted into histogram")]
         /// <summary>

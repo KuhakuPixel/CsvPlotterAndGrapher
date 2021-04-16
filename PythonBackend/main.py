@@ -65,6 +65,15 @@ columnToHistogramArgumentParser.add_argument('yLabel', type=str, default="", req
 columnToHistogramArgumentParser.add_argument('yAxisLabelColor', type=str, default="black", required=False,
                                              help="The label color of the y axes")
 
+columnToHistogramArgumentParser.add_argument('bottomSpineColor', type=str, default="black", required=False,
+                                             help="The color of the plot 's bottom spine")
+columnToHistogramArgumentParser.add_argument('topSpineColor', type=str, default="", required=False,
+                                             help="The color of the plot 's top spine")
+columnToHistogramArgumentParser.add_argument('leftSpineColor', type=str, default="", required=False,
+                                             help="The color of the plot 's left spine")
+columnToHistogramArgumentParser.add_argument('rightSpineColor', type=str, default="black", required=False,
+                                             help="The color of the plot 's right spine")
+
 
 class ColumnToHistogram(Resource):
 
@@ -75,15 +84,22 @@ class ColumnToHistogram(Resource):
         plotName = arguments["plotName"]
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
+        #
         plotNameColor = arguments["plotNameColor"]
         xAxisLabelColor = arguments["xAxisLabelColor"]
         yAxisLabelColor = arguments["yAxisLabelColor"]
+        bottomSpineColor = arguments["bottomSpineColor"]
+        topSpineColor = arguments["topSpineColor"]
+        leftSpineColor = arguments["leftSpineColor"]
+        rightSpineColor = arguments["rightSpineColor"]
 
         # get the plot in array of rgb
         x = UserData.dataFrame[column_name]
         image_in_numpy_array = CsvPlotter.histogram(x=x, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
                                                     plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
-                                                    yAxisColorLabel=yAxisLabelColor)
+                                                    yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
+                                                    topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
+                                                    leftSpineColor=leftSpineColor)
 
         # dimension of the array
         img_shape = image_in_numpy_array.shape

@@ -25,7 +25,8 @@ class CsvPlotter:
     @staticmethod
     def histogram(x: np.ndarray, plotName: str = "", xLabel: str = "", yLabel: str = "",
                   plotNameColor: str = "black", xAxisColorLabel: str = "black",
-                  yAxisColorLabel: str = "black") -> np.ndarray:
+                  yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
+                  leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
@@ -35,8 +36,14 @@ class CsvPlotter:
         ax.set_title(label=plotName)
         ax.set_xlabel(xlabel=xLabel)
         ax.set_ylabel(ylabel=yLabel)
-        # decorate plot
+        # decorate plot's label
         ax.title.set_color(plotNameColor)
         ax.yaxis.label.set_color(xAxisColorLabel)
         ax.xaxis.label.set_color(yAxisColorLabel)
+
+        # decorate plot's spine
+        ax.spines['bottom'].set_color(bottomSpineColor)
+        ax.spines['top'].set_color(topSpineColor)
+        ax.spines['right'].set_color(rightSpineColor)
+        ax.spines['left'].set_color(leftSpineColor)
         return CsvPlotter.pyplot_figure_to_image_array(figure=fig)
