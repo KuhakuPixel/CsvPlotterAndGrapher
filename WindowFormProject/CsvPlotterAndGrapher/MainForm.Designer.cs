@@ -60,9 +60,7 @@ namespace CsvPlotterAndGrapher
             // 
             this.cbPlotType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlotType.FormattingEnabled = true;
-            this.cbPlotType.Items.AddRange(new object[] {
-            "Histogram",
-            "Scatter"});
+            this.cbPlotType.Items.AddRange(EnumConverter.EnumToStringArray(typeof(CsvPlotter.PlotTypes)));
             this.cbPlotType.Location = new System.Drawing.Point(340, 172);
             this.cbPlotType.Name = "cbPlotType";
             this.cbPlotType.Size = new System.Drawing.Size(121, 21);

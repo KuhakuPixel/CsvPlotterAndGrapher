@@ -95,13 +95,19 @@ namespace ProjectLibrary
 
         }
     }
-    
+   
     static public class EnumConverter
     {
         static public T ToEnum<T>(this string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
         }
+
+        static public string[] EnumToStringArray(Type enumType)
+        {
+            return Enum.GetNames(enumType);
+        }
+
 
     }
 }

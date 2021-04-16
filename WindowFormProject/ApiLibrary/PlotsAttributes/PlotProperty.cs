@@ -22,11 +22,57 @@ namespace ProjectLibrary
         [DisplayName("Plot name")]
         [Description("Plot name will be displayed on top of the plot")]
         public string PlotName { get => plotName; set => plotName = value; }
+
+
+        
+        private CsvPlotter.ColorsCollection plotNameColor = CsvPlotter.ColorsCollection.black;
+        [Category("Appearance (Optional)")]
+        [DisplayName("Plot Name Color")]
+        [Description("The text color of plot name")]
+        public CsvPlotter.ColorsCollection PlotNameColor { get => plotNameColor; set => plotNameColor = value; }
     }
-    public class OneDataPlotAttributes : PlotProperty,IPlotProperty
+
+    public class PlotProperty2d : PlotProperty
+    {
+        
+
+
+        #region X Label
+        private string xLabel=" ";
+        [Category("Appearance (Optional)")]
+        [DisplayName("X Axes Label")]
+        [Description("Label for the X axes")]
+        public string XLabel { get => xLabel; set => xLabel = value; }
+
+        private CsvPlotter.ColorsCollection xAxisLabelColor = CsvPlotter.ColorsCollection.black;
+        [Category("Appearance (Optional)")]
+        [DisplayName("X Axis Label Color")]
+        [Description("The Color of the X axis label")]
+        public CsvPlotter.ColorsCollection XAxisLabelColor { get => xAxisLabelColor; set => xAxisLabelColor = value; }
+        #endregion
+
+        #region YLabel
+        private string yLabel=" ";
+        [Category("Appearance (Optional)")]
+        [DisplayName("Y Axes Label")]
+        [Description("Label for the Y axes")]
+        public string YLabel { get => yLabel; set => yLabel = value; }
+
+
+
+        private CsvPlotter.ColorsCollection yAxisLabelColor = CsvPlotter.ColorsCollection.black;
+        [Category("Appearance (Optional)")]
+        [DisplayName("Y Axis Label Color")]
+        [Description("The Color of the Y axis label")]
+        public CsvPlotter.ColorsCollection YAxisLabelColor { get => yAxisLabelColor; set => yAxisLabelColor = value; }
+        #endregion
+        
+    }
+   
+    public class HistogramAttributes : PlotProperty2d,IPlotProperty
     {
         private string xColumnName;
-
+        [Category("Data (Mandatory)")]
         [DisplayName("X Column Name")]
         [Description("The name of the column that will be plotted into histogram")]
         /// <summary>
@@ -34,17 +80,6 @@ namespace ProjectLibrary
         /// </summary>
         public string XColumnName { get => xColumnName; set => xColumnName = value; }
 
-        private string xLabel=" ";
-        [Category("Appearance (Optional)")]
-        [DisplayName("X Axes Label")]
-        [Description("Label for the X axes")]
-        public string XLabel { get => xLabel; set => xLabel = value; }
-
-        private string yLabel=" ";
-        [Category("Appearance (Optional)")]
-        [DisplayName("Y Axes Label")]
-        [Description("Label for the Y axes")]
-        public string YLabel { get => yLabel; set => yLabel = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
             exceptionMessage = " ";
@@ -57,10 +92,10 @@ namespace ProjectLibrary
                 exceptionMessage = "X Column Name doesnt exist in the specified name ";
                 return false;
             }
-          
+         
         }
     }
-    public class TwoDataPlotAttributes : PlotProperty, IPlotProperty
+    public class ScatterAttributes : PlotProperty2d,IPlotProperty
     {
         private string xColumnName;
 
@@ -76,17 +111,6 @@ namespace ProjectLibrary
         /// </summary>
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
-        private string xLabel = " ";
-        [Category("Appearance (Optional)")]
-        [DisplayName("X Axes Label")]
-        [Description("Label for the X axes")]
-        public string XLabel { get => xLabel; set => xLabel = value; }
-
-        private string yLabel = " ";
-        [Category("Appearance (Optional)")]
-        [DisplayName("Y Axes Label")]
-        [Description("Label for the Y axes")]
-        public string YLabel { get => yLabel; set => yLabel = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
             if (!CsvReader.HasColumn(xColumnName))
@@ -101,20 +125,6 @@ namespace ProjectLibrary
             {
                 return true;
             }
-            throw new NotImplementedException();
         }
-    }
-
-
-    public class HistogramAttributes : OneDataPlotAttributes
-    {
-
-
-    }
-    public class ScatterAttributes : TwoDataPlotAttributes
-    {
-
-
-
     }
 }

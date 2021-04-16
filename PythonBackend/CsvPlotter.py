@@ -1,12 +1,12 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-
 # Turn interactive plotting off
-#turn off Interactive Mode, and only call plt.show() when  ready to display the plots:
+# turn off Interactive Mode, and only call plt.show() when  ready to display the plots:
 plt.ioff()
+
+
 class CsvPlotter:
     @staticmethod
     def pyplot_figure_to_image_array(figure):
@@ -23,7 +23,9 @@ class CsvPlotter:
         return img
 
     @staticmethod
-    def histogram(x: np.ndarray, plotName: str = "",xLabel:str = "", yLabel: str = "") -> np.ndarray:
+    def histogram(x: np.ndarray, plotName: str = "", xLabel: str = "", yLabel: str = "",
+                  plotNameColor: str = "black", xAxisColorLabel: str = "black",
+                  yAxisColorLabel: str = "black") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
@@ -33,4 +35,8 @@ class CsvPlotter:
         ax.set_title(label=plotName)
         ax.set_xlabel(xlabel=xLabel)
         ax.set_ylabel(ylabel=yLabel)
+        # decorate plot
+        ax.title.set_color(plotNameColor)
+        ax.yaxis.label.set_color(xAxisColorLabel)
+        ax.xaxis.label.set_color(yAxisColorLabel)
         return CsvPlotter.pyplot_figure_to_image_array(figure=fig)

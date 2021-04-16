@@ -11,37 +11,53 @@ namespace ProjectLibrary
 {
     static public class CsvPlotter
     {
-       public enum PlotTypes
+        public enum PlotTypes
         {
             Histogram,
             Scatter,
 
         }
-        static private string[] plotTypesValues = Enum.GetNames(typeof(PlotTypes));
-
-        
-        static public string[] GetPlotTypesValues()
+        /// <summary>
+        /// list of available colours that can be used to decorate the plot 
+        /// </summary>
+        public enum ColorsCollection
         {
-            return plotTypesValues;
+            blue,
+            green,
+            red,
+            cyan,
+            magenta,
+            yellow,
+            black,
+            white
 
         }
+
+        
+
+
        
+
         static public async Task<Bitmap> CreateHistogram(HistogramAttributes attributes)
         {
             string plotName = attributes.PlotName;
-       
 
-          
+
+
             await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
             {
                 {"columnName", attributes.XColumnName},
                 {"plotName", attributes.PlotName},
                 {"xLabel",attributes.XLabel},
+                {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
+
                 {"yLabel",attributes.YLabel},
+                {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
+                {"plotNameColor",attributes.PlotNameColor.ToString()}
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);
-         
+
 
 
 

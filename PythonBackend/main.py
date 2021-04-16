@@ -5,8 +5,9 @@ import pandas as pd
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 
-from CsvPlotter import CsvPlotter
 from ApiEndpointConfigurations import ApiEndpointConfigurations
+from CsvPlotter import CsvPlotter
+
 """
 containing the data such as dataframe,columns or ect
 """
@@ -49,22 +50,40 @@ class CsvReader(Resource):
 
 
 columnToHistogramArgumentParser = reqparse.RequestParser()
-columnToHistogramArgumentParser.add_argument('columnName', type=str,help="the column that will be plotted as histogram")
-columnToHistogramArgumentParser.add_argument('plotName', type=str,default="",required=False,help="The name of th plot")
-columnToHistogramArgumentParser.add_argument('xLabel', type=str,default="",required=False,help="The label of the x axes")
-columnToHistogramArgumentParser.add_argument('yLabel', type=str,default="",required=False,help="The label of the y axes")
+columnToHistogramArgumentParser.add_argument('columnName', type=str,
+                                             help="the column that will be plotted as histogram")
+columnToHistogramArgumentParser.add_argument('plotName', type=str, default="", required=False,
+                                             help="The name of the plot")
+columnToHistogramArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
+                                             help="The color of the plot name")
+columnToHistogramArgumentParser.add_argument('xLabel', type=str, default="black", required=False,
+                                             help="The label of the x axes")
+columnToHistogramArgumentParser.add_argument('xAxisLabelColor', type=str, default="", required=False,
+                                             help="The label color of the x axes")
+columnToHistogramArgumentParser.add_argument('yLabel', type=str, default="", required=False,
+                                             help="The label of the y axes")
+columnToHistogramArgumentParser.add_argument('yAxisLabelColor', type=str, default="black", required=False,
+                                             help="The label color of the y axes")
+
+
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
-        #getting request's argument
+        # getting request's argument
         arguments = UserData.temporaryArgumentDictionary[plot_id]
         column_name = arguments["columnName"]
-        plotName=arguments["plotName"]
-        xLabel=arguments["xLabel"]
-        yLabel=arguments["yLabel"]
-        #get the plot in array of rgb
+        plotName = arguments["plotName"]
+        xLabel = arguments["xLabel"]
+        yLabel = arguments["yLabel"]
+        plotNameColor = arguments["plotNameColor"]
+        xAxisLabelColor = arguments["xAxisLabelColor"]
+        yAxisLabelColor = arguments["yAxisLabelColor"]
+
+        # get the plot in array of rgb
         x = UserData.dataFrame[column_name]
-        image_in_numpy_array = CsvPlotter.histogram(x=x, plotName=plotName,xLabel=xLabel,yLabel=yLabel)
+        image_in_numpy_array = CsvPlotter.histogram(x=x, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+                                                    plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
+                                                    yAxisColorLabel=yAxisLabelColor)
 
         # dimension of the array
         img_shape = image_in_numpy_array.shape
@@ -72,7 +91,8 @@ class ColumnToHistogram(Resource):
 
         img_json = json.dumps(image_in_numpy_array.tolist())
 
-        return {ApiEndpointConfigurations.histogramImageData_key: img_json, ApiEndpointConfigurations.histogramImageShape_key: img_shape_json}
+        return {ApiEndpointConfigurations.histogramImageData_key: img_json,
+                ApiEndpointConfigurations.histogramImageShape_key: img_shape_json}
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary

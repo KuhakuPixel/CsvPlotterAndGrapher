@@ -12,10 +12,12 @@ namespace ProjectLibrary
         #endregion
 
 
-
+        #region Histogram Plotter Configuration
         public static readonly string histogramPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot";
         public static readonly string histogramImageData_key = "histogramPlot";
         public static readonly string histogramImageShape_key = "img_shape";
+        #endregion
+
 
     }
 }
