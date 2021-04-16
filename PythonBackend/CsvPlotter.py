@@ -26,13 +26,13 @@ class CsvPlotter:
     def histogram(x: np.ndarray, plotName: str = "", xLabel: str = "", yLabel: str = "",
                   plotNameColor: str = "black", xAxisColorLabel: str = "black",
                   yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                  leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
+                  leftSpineColor: str = "black", rightSpineColor: str = "black",barColor:str="blue") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
         """
         fig, ax = plt.subplots()
-        ax.hist(x=x)
+        ax.hist(x=x,color=barColor)
         ax.set_title(label=plotName)
         ax.set_xlabel(xlabel=xLabel)
         ax.set_ylabel(ylabel=yLabel)
@@ -49,7 +49,7 @@ class CsvPlotter:
         return CsvPlotter.pyplot_figure_to_image_array(figure=fig)
 
     @staticmethod
-    def scatter(x: np.ndarray,y:np.ndarray ,plotName: str = "", xLabel: str = "", yLabel: str = "",
+    def scatter(x: np.ndarray,y:np.ndarray ,plotName: str = "",dotColor:str="blue" ,xLabel: str = "", yLabel: str = "",
                   plotNameColor: str = "black", xAxisColorLabel: str = "black",
                   yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
                   leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
@@ -58,7 +58,7 @@ class CsvPlotter:
            return a numpy array of the graph
         """
         fig, ax = plt.subplots()
-        ax.scatter(x=x,y=y)
+        ax.scatter(x=x,y=y,color=dotColor)
         ax.set_title(label=plotName)
         ax.set_xlabel(xlabel=xLabel)
         ax.set_ylabel(ylabel=yLabel)

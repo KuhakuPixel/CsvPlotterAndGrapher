@@ -50,7 +50,7 @@ namespace ProjectLibrary
                 {"plotName", attributes.PlotName},
                 {"xLabel",attributes.XLabel},
                 {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
-
+                {"barColor",attributes.BarColor.ToString() },
                 {"yLabel",attributes.YLabel},
                 {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
                 {"plotNameColor",attributes.PlotNameColor.ToString()},
@@ -96,6 +96,7 @@ namespace ProjectLibrary
                 {"xColumnName", attributes.XColumnName},
                 {"yColumnName", attributes.YColumnName},
                 {"plotName", attributes.PlotName},
+                {"dotColor",attributes.DotColor.ToString() },
 
                 {"xLabel",attributes.XLabel},
                 {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},

@@ -52,6 +52,8 @@ class CsvReader(Resource):
 columnToHistogramArgumentParser = reqparse.RequestParser()
 columnToHistogramArgumentParser.add_argument('columnName', type=str,
                                              help="the column that will be plotted as histogram")
+columnToHistogramArgumentParser.add_argument('barColor', type=str, default="blue", required=False,
+                                             help="Color of the bar")
 columnToHistogramArgumentParser.add_argument('plotName', type=str, default="", required=False,
                                              help="The name of the plot")
 columnToHistogramArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
@@ -85,6 +87,7 @@ class ColumnToHistogram(Resource):
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
         #
+        barColor=arguments["barColor"]
         plotNameColor = arguments["plotNameColor"]
         xAxisLabelColor = arguments["xAxisLabelColor"]
         yAxisLabelColor = arguments["yAxisLabelColor"]
@@ -95,7 +98,7 @@ class ColumnToHistogram(Resource):
 
         # get the plot in array of rgb
         x = UserData.dataFrame[column_name]
-        image_in_numpy_array = CsvPlotter.histogram(x=x, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+        image_in_numpy_array = CsvPlotter.histogram(x=x,barColor=barColor, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
                                                     plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
                                                     yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
                                                     topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
@@ -116,7 +119,7 @@ class ColumnToHistogram(Resource):
 
         UserData.temporaryArgumentDictionary[plot_id] = arguments
         print("put request")
-        return {plot_id: arguments["columnName"]}
+        return 200
 
 
 columnsToScatterPlotArgumentParser = reqparse.RequestParser()
@@ -127,6 +130,8 @@ columnsToScatterPlotArgumentParser.add_argument('yColumnName', type=str,
                                                 help="the column that will be plotted on the y axis of the plot")
 columnsToScatterPlotArgumentParser.add_argument('plotName', type=str, default="", required=False,
                                                 help="The name of the plot")
+columnsToScatterPlotArgumentParser.add_argument('dotColor', type=str, default="blue", required=False,
+                                                help="The color of the dot")
 columnsToScatterPlotArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
                                                 help="The color of the plot name")
 columnsToScatterPlotArgumentParser.add_argument('xLabel', type=str, default="black", required=False,
@@ -160,6 +165,7 @@ class ColumnsToScatterPlot(Resource):
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
         #
+        dotColor=arguments["dotColor"]
         plotNameColor = arguments["plotNameColor"]
         xAxisLabelColor = arguments["xAxisLabelColor"]
         yAxisLabelColor = arguments["yAxisLabelColor"]
@@ -171,7 +177,7 @@ class ColumnsToScatterPlot(Resource):
         # get the plot in array of rgb
         x = UserData.dataFrame[x_column_name]
         y = UserData.dataFrame[y_column_name]
-        image_in_numpy_array = CsvPlotter.scatter(x=x, y=y, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+        image_in_numpy_array = CsvPlotter.scatter(x=x,dotColor=dotColor,y=y, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
                                                   plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
                                                   yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
                                                   topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
@@ -192,7 +198,7 @@ class ColumnsToScatterPlot(Resource):
 
         UserData.temporaryArgumentDictionary[plot_id] = arguments
         print("put request")
-        return {plot_id: arguments["columnName"]}
+        return 200
 
 
 # api resource routing

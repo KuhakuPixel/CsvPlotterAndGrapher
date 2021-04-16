@@ -106,6 +106,12 @@ namespace ProjectLibrary
 
     public class HistogramAttributes : PlotProperty2d,IPlotProperty
     {
+        private CsvPlotter.ColorsCollection barColor = CsvPlotter.ColorsCollection.blue;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Bar Color")]
+        [Description("The color of the bar")]
+        public CsvPlotter.ColorsCollection BarColor { get => barColor; set => barColor = value; }
+
         private string xColumnName;
         [Category(PlotProperty.plotDataCategoryText)]
         [DisplayName("X Column Name")]
@@ -145,6 +151,11 @@ namespace ProjectLibrary
         [Description("The name of the column that will be plotted into the scatter plot (Y axis)")]
         public string YColumnName { get => yColumnName; set => yColumnName = value; }
 
+        private CsvPlotter.ColorsCollection dotColor = CsvPlotter.ColorsCollection.blue;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Dot Color")]
+        [Description("The color of the dot")]
+        public CsvPlotter.ColorsCollection DotColor { get => dotColor; set => dotColor = value; }
         public bool ColumnsNamesAreValid(ref string exceptionMessage)
         {
             if (!CsvReader.HasColumn(xColumnName))
