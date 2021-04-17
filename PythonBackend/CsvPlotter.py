@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
+from matPlotLibWrapper import MatPlotLibWrapper
+
 # Turn interactive plotting off
 # turn off Interactive Mode, and only call plt.show() when  ready to display the plots:
 plt.ioff()
@@ -26,50 +28,35 @@ class CsvPlotter:
     def histogram(x: np.ndarray, plotName: str = "", xLabel: str = "", yLabel: str = "",
                   plotNameColor: str = "black", xAxisColorLabel: str = "black",
                   yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                  leftSpineColor: str = "black", rightSpineColor: str = "black",barColor:str="blue") -> np.ndarray:
+                  leftSpineColor: str = "black", rightSpineColor: str = "black", barColor: str = "blue") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
         """
         fig, ax = plt.subplots()
-        ax.hist(x=x,color=barColor)
-        ax.set_title(label=plotName)
-        ax.set_xlabel(xlabel=xLabel)
-        ax.set_ylabel(ylabel=yLabel)
-        # decorate plot's label
-        ax.title.set_color(plotNameColor)
-        ax.yaxis.label.set_color(xAxisColorLabel)
-        ax.xaxis.label.set_color(yAxisColorLabel)
-
-        # decorate plot's spine
-        ax.spines['bottom'].set_color(bottomSpineColor)
-        ax.spines['top'].set_color(topSpineColor)
-        ax.spines['right'].set_color(rightSpineColor)
-        ax.spines['left'].set_color(leftSpineColor)
+        ax.hist(x=x, color=barColor)
+        MatPlotLibWrapper.decorate_axes(ax, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+                                        plotNameColor=plotNameColor, xAxisColorLabel=xAxisColorLabel,
+                                        yAxisColorLabel=yAxisColorLabel, bottomSpineColor=bottomSpineColor,
+                                        topSpineColor=topSpineColor, leftSpineColor=leftSpineColor,
+                                        rightSpineColor=rightSpineColor)
         return CsvPlotter.pyplot_figure_to_image_array(figure=fig)
 
     @staticmethod
-    def scatter(x: np.ndarray,y:np.ndarray ,plotName: str = "",dotColor:str="blue" ,xLabel: str = "", yLabel: str = "",
-                  plotNameColor: str = "black", xAxisColorLabel: str = "black",
-                  yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                  leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
+    def scatter(x: np.ndarray, y: np.ndarray, plotName: str = "", dotColor: str = "blue", xLabel: str = "",
+                yLabel: str = "",
+                plotNameColor: str = "black", xAxisColorLabel: str = "black",
+                yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
+                leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
         """
         fig, ax = plt.subplots()
-        ax.scatter(x=x,y=y,color=dotColor)
-        ax.set_title(label=plotName)
-        ax.set_xlabel(xlabel=xLabel)
-        ax.set_ylabel(ylabel=yLabel)
-        # decorate plot's label
-        ax.title.set_color(plotNameColor)
-        ax.yaxis.label.set_color(xAxisColorLabel)
-        ax.xaxis.label.set_color(yAxisColorLabel)
-
-        # decorate plot's spine
-        ax.spines['bottom'].set_color(bottomSpineColor)
-        ax.spines['top'].set_color(topSpineColor)
-        ax.spines['right'].set_color(rightSpineColor)
-        ax.spines['left'].set_color(leftSpineColor)
+        ax.scatter(x=x, y=y, color=dotColor)
+        MatPlotLibWrapper.decorate_axes(ax, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+                                        plotNameColor=plotNameColor, xAxisColorLabel=xAxisColorLabel,
+                                        yAxisColorLabel=yAxisColorLabel, bottomSpineColor=bottomSpineColor,
+                                        topSpineColor=topSpineColor, leftSpineColor=leftSpineColor,
+                                        rightSpineColor=rightSpineColor)
         return CsvPlotter.pyplot_figure_to_image_array(figure=fig)
