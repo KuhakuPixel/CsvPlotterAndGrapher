@@ -207,4 +207,5 @@ api.add_resource(ColumnToHistogram, '/Plotter/ColumnToHistogram/<string:plot_id>
 api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:plot_id>')
 
 if __name__ == '__main__':
+    #assing False if ready to turn to exe
     app.run(debug=True)
