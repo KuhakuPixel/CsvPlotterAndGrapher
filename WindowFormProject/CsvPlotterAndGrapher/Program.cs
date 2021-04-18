@@ -19,7 +19,7 @@ namespace CsvPlotterAndGrapher
 #if (!DEBUG)
             FlaskApi.StartAPIServer();
 #endif
-
+            
 
             Application.Run(new MainForm());
         }

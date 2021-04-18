@@ -208,4 +208,4 @@ api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:pl
 
 if __name__ == '__main__':
     #assing False if ready to turn to exe
-    app.run(debug=True)
+    app.run(debug=False)

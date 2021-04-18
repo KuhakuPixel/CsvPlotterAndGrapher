@@ -26,34 +26,14 @@ namespace ApiLibrary
             ProcessStartInfo start = new ProcessStartInfo();
 
 
-            #region PythonBackEndDirectory
-            // This will get the current WORKING directory (i.e. \bin\Debug)
-            string workingDirectory = Environment.CurrentDirectory;
-            // or: Directory.GetCurrentDirectory() gives the same result
-            // This will get the current PROJECT directory
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+        
 
-            //navigate one folder up
-            string solutionDirectory = Path.GetFullPath(Path.Combine(projectDirectory, @"..\"));
-
-            string pythonBackendDirectory = Path.Combine(solutionDirectory, "PythonBackend");
-
-            //getting pythonscript dir
-            string pythonScriptDirectory = Path.Combine(pythonBackendDirectory,
-                                                         Path.GetFileName("main.py"));
-
-            //getting executable dir
-            string pythonExeDirectory = Path.Combine(new string[] { pythonBackendDirectory, "venv", "scripts", Path.GetFileName("python.exe") });
-            #endregion
-
-
-            start.FileName = pythonExeDirectory;
-            start.Arguments = pythonScriptDirectory;
+            start.FileName = "main.exe";
+     
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = false;
             //runnning cmd
-
             Process.Start(start);
             //suspend control until the process ended
             Thread.Sleep(3000);
