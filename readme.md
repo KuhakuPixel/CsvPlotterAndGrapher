@@ -41,7 +41,7 @@ open command line , navigate to PythonBackend 's directory and use
 ```sh
  pip install -r requirements.txt
 ```
-To install of of the packages for the python project
+To install all of the packages for the python project
 
 
 ## License
