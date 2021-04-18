@@ -28,9 +28,13 @@ The Gui is created using c# (winform project) and the plot is created using pyth
 ## Contribution
 
 Want to contribute? Great!
-Use visual studio for the winform project 
 
-Use pycharm python
+
+
+## Development Enviroment Setup
+Use visual studio for  **WindowFormProject** (Developing the GUI)
+
+Use pycharm for **PythonBackend**(Developing Backend and Api)
 
 open command line , navigate to PythonBackend 's directory and use
 
@@ -38,7 +42,6 @@ open command line , navigate to PythonBackend 's directory and use
  pip install -r requirements.txt
 ```
 To install of of the packages for the python project
-
 
 
 ## License
