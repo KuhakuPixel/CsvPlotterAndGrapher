@@ -21,10 +21,24 @@ Csv Graph is a software created to create graph or plot from a csv file
 Install [here](https://drive.google.com/drive/folders/1l6OqOB2IzKvXarkO6kq6cMJ-UCG33QRA?usp=sharing)
 Unzip and run CsvPlotterAndGrapher.exe
 
+## Contribution
 
-## Development
+The Gui is created using c# (winform project) and the plot is created using python and matplotlib 
+
+## Contribution
 
 Want to contribute? Great!
+Use visual studio for the winform project 
+
+Use pycharm python
+
+open command line , navigate to PythonBackend 's directory and use
+
+```sh
+ pip install -r requirements.txt
+```
+To install of of the packages for the python project
+
 
 
 ## License
