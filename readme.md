@@ -2,7 +2,7 @@
 ## Graph Maker from csv file
 
 
-
+![ScreenShot](ScreenShots/Screenshot_120.png)
 Csv Graph is a software created to create graph or plot from a csv file
 
 - upload csv file by pressing the **open** button
