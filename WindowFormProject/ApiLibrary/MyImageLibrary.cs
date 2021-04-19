@@ -4,7 +4,7 @@ using System.Drawing;
 namespace ProjectLibrary
 {
 
-    public class ImageReader
+    public class MyImageLibrary
     {
         
         static public Bitmap CreateImageFromRGB(int width, int height, byte[] data)
@@ -43,12 +43,20 @@ namespace ProjectLibrary
             }
             return pic;
         }
-      
-        static public void ConvertArrayInStringToImage(string arrayInString)
+     
+        /// <summary>
+        /// Convert [System.Drawing.Color] to an array of rgba between 0 and 1
+        /// </summary>
+        /// <returns></returns>
+        static public float[] ConvertColorToRGBA(Color color)
         {
-            //convert to bytes
-            byte[] imageData=DataStructureConverter.ConvertArrayInStringToArrayOfByte(arrayInString);
+            return new float[] {
+                (float) color.R /255,
+                (float) color.G /255,
+                (float) color.B /255,
+                (float) color.A /255,
 
+            };
         }
     }
 }

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from matPlotLibWrapper import MatPlotLibWrapper
+from Wrapper.matPlotLibWrapper import MatPlotLibWrapper
 
 # Turn interactive plotting off
 # turn off Interactive Mode, and only call plt.show() when  ready to display the plots:

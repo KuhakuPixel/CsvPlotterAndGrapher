@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Text;
 
 namespace ProjectLibrary
@@ -101,6 +102,11 @@ namespace ProjectLibrary
         [DisplayName("Right Spine Color")]
         [Description("The color of the plot 's right spine")]
         public CsvPlotter.ColorsCollection RightSpineColor { get => rightSpineColor; set => rightSpineColor = value; }
+        
+
+        //color test
+        private Color colorTest;
+        public Color ColorTest { get => colorTest; set => colorTest = value; }
         #endregion
     }
 

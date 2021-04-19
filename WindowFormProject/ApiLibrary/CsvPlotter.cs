@@ -43,7 +43,7 @@ namespace ProjectLibrary
 
 
 
-
+           
             await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
             {
                 {"columnName", attributes.XColumnName},
@@ -81,7 +81,7 @@ namespace ProjectLibrary
             byte[] imageData = DataStructureConverter.ConvertArrayInStringToArrayOfByte(imageDataInString);
 
             //make bitmap 
-            Bitmap bitmap = ImageReader.CreateImageFromRGB(width, height, imageData);
+            Bitmap bitmap = MyImageLibrary.CreateImageFromRGB(width, height, imageData);
             #endregion
 
 
@@ -132,7 +132,7 @@ namespace ProjectLibrary
             byte[] imageData = DataStructureConverter.ConvertArrayInStringToArrayOfByte(imageDataInString);
 
             //make bitmap 
-            Bitmap bitmap = ImageReader.CreateImageFromRGB(width, height, imageData);
+            Bitmap bitmap = MyImageLibrary.CreateImageFromRGB(width, height, imageData);
             #endregion
 
 
