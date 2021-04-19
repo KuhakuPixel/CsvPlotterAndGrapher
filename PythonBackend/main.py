@@ -7,7 +7,7 @@ from flask_restful import Resource, Api, reqparse
 
 from ApiEndpointConfigurations import ApiEndpointConfigurations
 from CsvPlotter import CsvPlotter
-
+from Wrapper import PlotArgumentParser
 """
 containing the data such as dataframe,columns or ect
 """
@@ -49,40 +49,14 @@ class CsvReader(Resource):
         return {"Csv Path": UserData.temporaryArgumentDictionary[path_id]["csvFilePath"]}
 
 
-columnToHistogramArgumentParser = reqparse.RequestParser()
-columnToHistogramArgumentParser.add_argument('columnName', type=str,
-                                             help="the column that will be plotted as histogram")
-columnToHistogramArgumentParser.add_argument('barColor', type=str, default="blue", required=False,
-                                             help="Color of the bar")
-columnToHistogramArgumentParser.add_argument('plotName', type=str, default="", required=False,
-                                             help="The name of the plot")
-columnToHistogramArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
-                                             help="The color of the plot name")
-columnToHistogramArgumentParser.add_argument('xLabel', type=str, default="black", required=False,
-                                             help="The label of the x axes")
-columnToHistogramArgumentParser.add_argument('xAxisLabelColor', type=str, default="", required=False,
-                                             help="The label color of the x axes")
-columnToHistogramArgumentParser.add_argument('yLabel', type=str, default="", required=False,
-                                             help="The label of the y axes")
-columnToHistogramArgumentParser.add_argument('yAxisLabelColor', type=str, default="black", required=False,
-                                             help="The label color of the y axes")
-
-columnToHistogramArgumentParser.add_argument('bottomSpineColor', type=str, default="black", required=False,
-                                             help="The color of the plot 's bottom spine")
-columnToHistogramArgumentParser.add_argument('topSpineColor', type=str, default="", required=False,
-                                             help="The color of the plot 's top spine")
-columnToHistogramArgumentParser.add_argument('leftSpineColor', type=str, default="", required=False,
-                                             help="The color of the plot 's left spine")
-columnToHistogramArgumentParser.add_argument('rightSpineColor', type=str, default="black", required=False,
-                                             help="The color of the plot 's right spine")
-
-
+histogram_argument_parser = PlotArgumentParser.HistogramPlotRequestParser()
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
         # getting request's argument
         arguments = UserData.temporaryArgumentDictionary[plot_id]
-        column_name = arguments["columnName"]
+
+        column_name = arguments["xColumnName"]
         plotName = arguments["plotName"]
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
@@ -115,42 +89,15 @@ class ColumnToHistogram(Resource):
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary
-        arguments = columnToHistogramArgumentParser.parse_args()
+        arguments = histogram_argument_parser.parse_args()
 
         UserData.temporaryArgumentDictionary[plot_id] = arguments
         print("put request")
         return 200
 
 
-columnsToScatterPlotArgumentParser = reqparse.RequestParser()
-columnsToScatterPlotArgumentParser.add_argument('xColumnName', type=str,
-                                                help="the column that will be plotted on the x axis of the plot")
+scatter_argument_parser = PlotArgumentParser.ScatterPlotRequestParser()
 
-columnsToScatterPlotArgumentParser.add_argument('yColumnName', type=str,
-                                                help="the column that will be plotted on the y axis of the plot")
-columnsToScatterPlotArgumentParser.add_argument('plotName', type=str, default="", required=False,
-                                                help="The name of the plot")
-columnsToScatterPlotArgumentParser.add_argument('dotColor', type=str, default="blue", required=False,
-                                                help="The color of the dot")
-columnsToScatterPlotArgumentParser.add_argument('plotNameColor', type=str, default="black", required=False,
-                                                help="The color of the plot name")
-columnsToScatterPlotArgumentParser.add_argument('xLabel', type=str, default="black", required=False,
-                                                help="The label of the x axes")
-columnsToScatterPlotArgumentParser.add_argument('xAxisLabelColor', type=str, default="", required=False,
-                                                help="The label color of the x axes")
-columnsToScatterPlotArgumentParser.add_argument('yLabel', type=str, default="", required=False,
-                                                help="The label of the y axes")
-columnsToScatterPlotArgumentParser.add_argument('yAxisLabelColor', type=str, default="black", required=False,
-                                                help="The label color of the y axes")
-
-columnsToScatterPlotArgumentParser.add_argument('bottomSpineColor', type=str, default="black", required=False,
-                                                help="The color of the plot 's bottom spine")
-columnsToScatterPlotArgumentParser.add_argument('topSpineColor', type=str, default="", required=False,
-                                                help="The color of the plot 's top spine")
-columnsToScatterPlotArgumentParser.add_argument('leftSpineColor', type=str, default="", required=False,
-                                                help="The color of the plot 's left spine")
-columnsToScatterPlotArgumentParser.add_argument('rightSpineColor', type=str, default="black", required=False,
-                                                help="The color of the plot 's right spine")
 
 
 class ColumnsToScatterPlot(Resource):
@@ -194,7 +141,7 @@ class ColumnsToScatterPlot(Resource):
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary
-        arguments = columnsToScatterPlotArgumentParser.parse_args()
+        arguments = scatter_argument_parser.parse_args()
 
         UserData.temporaryArgumentDictionary[plot_id] = arguments
         print("put request")
@@ -208,4 +155,4 @@ api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:pl
 
 if __name__ == '__main__':
     #assing False if ready to turn to exe
-    app.run(debug=False)
+    app.run(debug=True)

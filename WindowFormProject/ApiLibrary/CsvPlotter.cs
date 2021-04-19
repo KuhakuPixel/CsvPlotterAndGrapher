@@ -46,7 +46,7 @@ namespace ProjectLibrary
            
             await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
             {
-                {"columnName", attributes.XColumnName},
+                {"xColumnName", attributes.XColumnName},
                 {"plotName", attributes.PlotName},
                 {"xLabel",attributes.XLabel},
                 {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
