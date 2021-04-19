@@ -8,6 +8,7 @@ from flask_restful import Resource, Api, reqparse
 from ApiEndpointConfigurations import ApiEndpointConfigurations
 from CsvPlotter import CsvPlotter
 from Wrapper import PlotArgumentParser
+
 """
 containing the data such as dataframe,columns or ect
 """
@@ -50,6 +51,8 @@ class CsvReader(Resource):
 
 
 histogram_argument_parser = PlotArgumentParser.HistogramPlotRequestParser()
+
+
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
@@ -61,18 +64,19 @@ class ColumnToHistogram(Resource):
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
         #
-        barColor=arguments["barColor"]
-        plotNameColor = arguments["plotNameColor"]
-        xAxisLabelColor = arguments["xAxisLabelColor"]
-        yAxisLabelColor = arguments["yAxisLabelColor"]
-        bottomSpineColor = arguments["bottomSpineColor"]
-        topSpineColor = arguments["topSpineColor"]
-        leftSpineColor = arguments["leftSpineColor"]
-        rightSpineColor = arguments["rightSpineColor"]
+        barColor = tuple(json.loads(arguments["barColor"]))
+        plotNameColor = tuple(json.loads(arguments["plotNameColor"]))
+        xAxisLabelColor = tuple(json.loads(arguments["xAxisLabelColor"]))
+        yAxisLabelColor = tuple(json.loads(arguments["yAxisLabelColor"]))
+        bottomSpineColor = tuple(json.loads(arguments["bottomSpineColor"]))
+        topSpineColor = tuple(json.loads(arguments["topSpineColor"]))
+        leftSpineColor = tuple(json.loads(arguments["leftSpineColor"]))
+        rightSpineColor = tuple(json.loads(arguments["rightSpineColor"]))
 
         # get the plot in array of rgb
         x = UserData.dataFrame[column_name]
-        image_in_numpy_array = CsvPlotter.histogram(x=x,barColor=barColor, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+        image_in_numpy_array = CsvPlotter.histogram(x=x, barColor=barColor, plotName=plotName, xLabel=xLabel,
+                                                    yLabel=yLabel,
                                                     plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
                                                     yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
                                                     topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
@@ -99,7 +103,6 @@ class ColumnToHistogram(Resource):
 scatter_argument_parser = PlotArgumentParser.ScatterPlotRequestParser()
 
 
-
 class ColumnsToScatterPlot(Resource):
 
     def get(self, plot_id):
@@ -112,19 +115,20 @@ class ColumnsToScatterPlot(Resource):
         xLabel = arguments["xLabel"]
         yLabel = arguments["yLabel"]
         #
-        dotColor=arguments["dotColor"]
-        plotNameColor = arguments["plotNameColor"]
-        xAxisLabelColor = arguments["xAxisLabelColor"]
-        yAxisLabelColor = arguments["yAxisLabelColor"]
-        bottomSpineColor = arguments["bottomSpineColor"]
-        topSpineColor = arguments["topSpineColor"]
-        leftSpineColor = arguments["leftSpineColor"]
-        rightSpineColor = arguments["rightSpineColor"]
+        dotColor = tuple(json.loads(arguments["dotColor"]))
+        plotNameColor = tuple(json.loads(arguments["plotNameColor"]))
+        xAxisLabelColor = tuple(json.loads(arguments["xAxisLabelColor"]))
+        yAxisLabelColor = tuple(json.loads(arguments["yAxisLabelColor"]))
+        bottomSpineColor = tuple(json.loads(arguments["bottomSpineColor"]))
+        topSpineColor = tuple(json.loads(arguments["topSpineColor"]))
+        leftSpineColor = tuple(json.loads(arguments["leftSpineColor"]))
+        rightSpineColor = tuple(json.loads(arguments["rightSpineColor"]))
 
-        # get the plot in array of rgb
         x = UserData.dataFrame[x_column_name]
         y = UserData.dataFrame[y_column_name]
-        image_in_numpy_array = CsvPlotter.scatter(x=x,dotColor=dotColor,y=y, plotName=plotName, xLabel=xLabel, yLabel=yLabel,
+        # get the plot in array of rgb
+        image_in_numpy_array = CsvPlotter.scatter(x=x, dotColor=dotColor, y=y, plotName=plotName, xLabel=xLabel,
+                                                  yLabel=yLabel,
                                                   plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
                                                   yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
                                                   topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
@@ -154,5 +158,5 @@ api.add_resource(ColumnToHistogram, '/Plotter/ColumnToHistogram/<string:plot_id>
 api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:plot_id>')
 
 if __name__ == '__main__':
-    #assing False if ready to turn to exe
+    # assing False if ready to turn to exe
     app.run(debug=True)

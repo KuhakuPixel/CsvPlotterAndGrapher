@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
+from ColorsCollection import ColorCollection
 from Wrapper.matPlotLibWrapper import MatPlotLibWrapper
 
 # Turn interactive plotting off
@@ -26,9 +27,11 @@ class CsvPlotter:
 
     @staticmethod
     def histogram(x: np.ndarray, plotName: str = "", xLabel: str = "", yLabel: str = "",
-                  plotNameColor: str = "black", xAxisColorLabel: str = "black",
-                  yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                  leftSpineColor: str = "black", rightSpineColor: str = "black", barColor: str = "blue") -> np.ndarray:
+                  plotNameColor: tuple = ColorCollection.black, xAxisColorLabel: tuple = ColorCollection.black,
+                  yAxisColorLabel: tuple = ColorCollection.black, bottomSpineColor: tuple = ColorCollection.black,
+                  topSpineColor: tuple = ColorCollection.black,
+                  leftSpineColor: tuple = ColorCollection.black, rightSpineColor: tuple = ColorCollection.black,
+                  barColor: tuple = ColorCollection.blue) -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph
@@ -45,9 +48,11 @@ class CsvPlotter:
     @staticmethod
     def scatter(x: np.ndarray, y: np.ndarray, plotName: str = "", dotColor: str = "blue", xLabel: str = "",
                 yLabel: str = "",
-                plotNameColor: str = "black", xAxisColorLabel: str = "black",
-                yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                leftSpineColor: str = "black", rightSpineColor: str = "black") -> np.ndarray:
+                plotNameColor: tuple = ColorCollection.black, xAxisColorLabel: tuple = ColorCollection.black,
+                yAxisColorLabel: tuple = ColorCollection.black, bottomSpineColor: tuple = ColorCollection.black,
+                topSpineColor: tuple = ColorCollection.black,
+                leftSpineColor: tuple = ColorCollection.black,
+                rightSpineColor: tuple = ColorCollection.black) -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph

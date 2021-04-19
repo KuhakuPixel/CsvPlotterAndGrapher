@@ -59,11 +59,11 @@ namespace ProjectLibrary
                 {"topSpineColor",attributes.TopSpineColor.ToString()},
                 {"leftSpineColor",attributes.LeftSpineColor.ToString()},
                 {"rightSpineColor",attributes.RightSpineColor.ToString()},
+                //{"titleColorTest",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.ColorTest))}
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);
-
-
+           
 
 
             string imageDataInString = result[ApiEndpointConfigurations.plotImageData_key] as string;

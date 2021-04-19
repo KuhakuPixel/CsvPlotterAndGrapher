@@ -1,10 +1,16 @@
 import matplotlib.pyplot as plt
+
+from ColorsCollection import ColorCollection
+
+
 class MatPlotLibWrapper:
     @staticmethod
-    def decorate_axes(ax:plt.axes, plotName: str = "", xLabel: str = "", yLabel: str = "",
-                  plotNameColor: str = "black", xAxisColorLabel: str = "black",
-                  yAxisColorLabel: str = "black", bottomSpineColor: str = "black", topSpineColor: str = "black",
-                  leftSpineColor: str = "black", rightSpineColor: str = "black")->plt.axes:
+    def decorate_axes(ax: plt.axes, plotName: str = "", xLabel: str = "", yLabel: str = "",
+                      plotNameColor: tuple = ColorCollection.black, xAxisColorLabel: tuple = ColorCollection.black,
+                      yAxisColorLabel: tuple = ColorCollection.black, bottomSpineColor: tuple = ColorCollection.black,
+                      topSpineColor: tuple = ColorCollection.black,
+                      leftSpineColor: tuple = ColorCollection.black,
+                      rightSpineColor: tuple = ColorCollection.black) -> plt.axes:
         ax.set_title(label=plotName)
         ax.set_xlabel(xlabel=xLabel)
         ax.set_ylabel(ylabel=yLabel)
