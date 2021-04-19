@@ -17,21 +17,6 @@ namespace ProjectLibrary
             Scatter,
 
         }
-        /// <summary>
-        /// list of available colours that can be used to decorate the plot 
-        /// </summary>
-        public enum ColorsCollection
-        {
-            blue,
-            green,
-            red,
-            cyan,
-            magenta,
-            yellow,
-            black,
-            white
-
-        }
 
 
 
@@ -43,27 +28,27 @@ namespace ProjectLibrary
 
 
 
-           
+
             await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
             {
                 {"xColumnName", attributes.XColumnName},
                 {"plotName", attributes.PlotName},
                 {"xLabel",attributes.XLabel},
-                {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
-                {"barColor",attributes.BarColor.ToString() },
+                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.XAxisLabelColor))},
+                {"barColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BarColor))},
                 {"yLabel",attributes.YLabel},
-                {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
-                {"plotNameColor",attributes.PlotNameColor.ToString()},
+                {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.YAxisLabelColor)) },
+                {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.PlotNameColor))},
 
-                {"bottomSpineColor",attributes.BottomSpineColor.ToString()},
-                {"topSpineColor",attributes.TopSpineColor.ToString()},
-                {"leftSpineColor",attributes.LeftSpineColor.ToString()},
-                {"rightSpineColor",attributes.RightSpineColor.ToString()},
+                {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BottomSpineColor))},
+                {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
+                {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
+                {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
                 //{"titleColorTest",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.ColorTest))}
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);
-           
+
 
 
             string imageDataInString = result[ApiEndpointConfigurations.plotImageData_key] as string;
@@ -93,23 +78,23 @@ namespace ProjectLibrary
 
             await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, new Dictionary<string, string>
             {
+                
+
+
                 {"xColumnName", attributes.XColumnName},
                 {"yColumnName", attributes.YColumnName},
                 {"plotName", attributes.PlotName},
-                {"dotColor",attributes.DotColor.ToString() },
-
                 {"xLabel",attributes.XLabel},
-                {"xAxisLabelColor",attributes.XAxisLabelColor.ToString()},
-
+                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.XAxisLabelColor))},
+                {"barColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.DotColor))},
                 {"yLabel",attributes.YLabel},
-                {"yAxisLabelColor",attributes.YAxisLabelColor.ToString() },
+                {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.YAxisLabelColor)) },
+                {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.PlotNameColor))},
 
-                {"plotNameColor",attributes.PlotNameColor.ToString()},
-
-                {"bottomSpineColor",attributes.BottomSpineColor.ToString()},
-                {"topSpineColor",attributes.TopSpineColor.ToString()},
-                {"leftSpineColor",attributes.LeftSpineColor.ToString()},
-                {"rightSpineColor",attributes.RightSpineColor.ToString()},
+                {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BottomSpineColor))},
+                {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
+                {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
+                {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, printResponse: false);
