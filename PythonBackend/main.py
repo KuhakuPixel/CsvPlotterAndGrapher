@@ -1,4 +1,4 @@
-import json
+
 
 import numpy as np
 import pandas as pd
@@ -6,19 +6,16 @@ from flask import Flask
 from flask_restful import Resource, Api, reqparse
 
 from ApiEndpointConfigurations import ApiEndpointConfigurations
-from CsvPlotter import CsvPlotter
-from Wrapper import PlotArgumentParser
-
+from MyPlotter import Plotter
+from Wrapper import PlotAttributesAndParser
+import json
+from UserData import UserData
 """
 containing the data such as dataframe,columns or ect
 """
 
 
-class UserData:
-    dataFrame = pd.DataFrame(columns=['A', 'B', 'C'], index=range(5))
-    # <string:object>
 
-    temporaryArgumentDictionary = {}
 
 
 app = Flask(__name__)
@@ -50,37 +47,14 @@ class CsvReader(Resource):
         return {"Csv Path": UserData.temporaryArgumentDictionary[path_id]["csvFilePath"]}
 
 
-histogram_argument_parser = PlotArgumentParser.HistogramPlotRequestParser()
+histogram_attributes_parser = PlotAttributesAndParser.HistogramPlotAttributesAndParser()
 
 
 class ColumnToHistogram(Resource):
 
     def get(self, plot_id):
-        # getting request's argument
-        arguments = UserData.temporaryArgumentDictionary[plot_id]
 
-        column_name = arguments["xColumnName"]
-        plotName = arguments["plotName"]
-        xLabel = arguments["xLabel"]
-        yLabel = arguments["yLabel"]
-        #
-        barColor = tuple(json.loads(arguments["barColor"]))
-        plotNameColor = tuple(json.loads(arguments["plotNameColor"]))
-        xAxisLabelColor = tuple(json.loads(arguments["xAxisLabelColor"]))
-        yAxisLabelColor = tuple(json.loads(arguments["yAxisLabelColor"]))
-        bottomSpineColor = tuple(json.loads(arguments["bottomSpineColor"]))
-        topSpineColor = tuple(json.loads(arguments["topSpineColor"]))
-        leftSpineColor = tuple(json.loads(arguments["leftSpineColor"]))
-        rightSpineColor = tuple(json.loads(arguments["rightSpineColor"]))
-
-        # get the plot in array of rgb
-        x = UserData.dataFrame[column_name]
-        image_in_numpy_array = CsvPlotter.histogram(x=x, barColor=barColor, plotName=plotName, xLabel=xLabel,
-                                                    yLabel=yLabel,
-                                                    plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
-                                                    yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
-                                                    topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
-                                                    leftSpineColor=leftSpineColor)
+        image_in_numpy_array = Plotter.histogram(attributes=histogram_attributes_parser)
 
         # dimension of the array
         img_shape = image_in_numpy_array.shape
@@ -93,46 +67,20 @@ class ColumnToHistogram(Resource):
 
     def put(self, plot_id):
         # reading argument and put it into a dictionary
-        arguments = histogram_argument_parser.parse_args()
+        histogram_attributes_parser.initialize_args()
 
-        UserData.temporaryArgumentDictionary[plot_id] = arguments
-        print("put request")
+
         return 200
 
 
-scatter_argument_parser = PlotArgumentParser.ScatterPlotRequestParser()
+scatter_attributes_parser = PlotAttributesAndParser.ScatterPlotAttributesAndParser()
 
 
 class ColumnsToScatterPlot(Resource):
 
     def get(self, plot_id):
-        # getting request's argument
-        arguments = UserData.temporaryArgumentDictionary[plot_id]
 
-        x_column_name = arguments["xColumnName"]
-        y_column_name = arguments["yColumnName"]
-        plotName = arguments["plotName"]
-        xLabel = arguments["xLabel"]
-        yLabel = arguments["yLabel"]
-        #
-        dotColor = tuple(json.loads(arguments["dotColor"]))
-        plotNameColor = tuple(json.loads(arguments["plotNameColor"]))
-        xAxisLabelColor = tuple(json.loads(arguments["xAxisLabelColor"]))
-        yAxisLabelColor = tuple(json.loads(arguments["yAxisLabelColor"]))
-        bottomSpineColor = tuple(json.loads(arguments["bottomSpineColor"]))
-        topSpineColor = tuple(json.loads(arguments["topSpineColor"]))
-        leftSpineColor = tuple(json.loads(arguments["leftSpineColor"]))
-        rightSpineColor = tuple(json.loads(arguments["rightSpineColor"]))
-
-        x = UserData.dataFrame[x_column_name]
-        y = UserData.dataFrame[y_column_name]
-        # get the plot in array of rgb
-        image_in_numpy_array = CsvPlotter.scatter(x=x, dotColor=dotColor, y=y, plotName=plotName, xLabel=xLabel,
-                                                  yLabel=yLabel,
-                                                  plotNameColor=plotNameColor, xAxisColorLabel=xAxisLabelColor,
-                                                  yAxisColorLabel=yAxisLabelColor, bottomSpineColor=bottomSpineColor,
-                                                  topSpineColor=topSpineColor, rightSpineColor=rightSpineColor,
-                                                  leftSpineColor=leftSpineColor)
+        image_in_numpy_array = Plotter.scatter(attributes=scatter_attributes_parser)
 
         # dimension of the array
         img_shape = image_in_numpy_array.shape
@@ -144,11 +92,7 @@ class ColumnsToScatterPlot(Resource):
                 ApiEndpointConfigurations.plotImageShape_key: img_shape_json}
 
     def put(self, plot_id):
-        # reading argument and put it into a dictionary
-        arguments = scatter_argument_parser.parse_args()
-
-        UserData.temporaryArgumentDictionary[plot_id] = arguments
-        print("put request")
+        scatter_attributes_parser.initialize_args()
         return 200
 
 

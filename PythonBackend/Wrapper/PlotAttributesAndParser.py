@@ -1,9 +1,11 @@
-
+import json
 
 from flask_restful import reqparse
+
 from ColorsCollection import ColorCollection
 
-class PlotRequestParser:
+
+class PlotAttributesAndParser:
     """
     This Class is used as a wrapper for  [flask_restful.reqparse.RequestParser()] and
     will be the base class and  be used to parse the arguments for different kind of plot
@@ -11,17 +13,31 @@ class PlotRequestParser:
     The purpose is to have all of the other class their own implementation of  [flask_restful.reqparse.RequestParser()]
     according to the plot type ,anticipating changes and increase usability
 
+    The instance of the class that is derived from this  will be used as an argument to draw the plot (struct alternative)
 
     """
 
+    arguments = {}
 
+    # plot properties
+    plotName = ""
+    xLabel = ""
+    yLabel = ""
+    # color
+
+    plotNameColor = ()
+    xAxisLabelColor = ()
+    yAxisLabelColor = ()
+    bottomSpineColor = ()
+    topSpineColor = ()
+    leftSpineColor = ()
+    rightSpineColor = ()
 
     def __init__(self):
         """
         Initialize all of the basic arguments that are required to create a plot
         """
         self.argumentParser = reqparse.RequestParser()
-
 
         self.argumentParser.add_argument('plotName', type=str, default="", required=False,
                                          help="The name of the plot")
@@ -49,15 +65,27 @@ class PlotRequestParser:
         self.argumentParser.add_argument('rightSpineColor', type=str, default=ColorCollection.black, required=False,
                                          help="The color of the plot 's right spine")
 
-    def parse_args(self):
+    def initialize_args(self):
         """
-        Parse all arguments from the provided request and return a dictionary from the result
+        Parse all arguments from the provided request And assign the value to the object's properties
+
+        all of the arguments are put inside self.arguments (dictionary)
         """
-        return self.argumentParser.parse_args()
+        self.arguments = self.argumentParser.parse_args()
 
-        pass
+        self.plotName = self.arguments["plotName"]
+        self.xLabel = self.arguments["xLabel"]
+        self.yLabel = self.arguments["yLabel"]
 
+        # convert array in json format to tuple
 
+        self.plotNameColor = tuple(json.loads(self.arguments["plotNameColor"]))
+        self.xAxisLabelColor = tuple(json.loads(self.arguments["xAxisLabelColor"]))
+        self.yAxisLabelColor = tuple(json.loads(self.arguments["yAxisLabelColor"]))
+        self.bottomSpineColor = tuple(json.loads(self.arguments["bottomSpineColor"]))
+        self.topSpineColor = tuple(json.loads(self.arguments["topSpineColor"]))
+        self.leftSpineColor = tuple(json.loads(self.arguments["leftSpineColor"]))
+        self.rightSpineColor = tuple(json.loads(self.arguments["rightSpineColor"]))
 
 
 """
@@ -65,7 +93,10 @@ note: super().__init__() will call the base constructor to initialize argumentPa
 """
 
 
-class HistogramPlotRequestParser(PlotRequestParser):
+class HistogramPlotAttributesAndParser(PlotAttributesAndParser):
+    xColumnName = ""
+    barColor = ColorCollection.blue
+
     def __init__(self):
         super().__init__()
         self.argumentParser.add_argument('xColumnName', type=str,
@@ -73,13 +104,16 @@ class HistogramPlotRequestParser(PlotRequestParser):
         self.argumentParser.add_argument('barColor', type=str, default=ColorCollection.blue, required=False,
                                          help="Color of the bar")
 
+    def initialize_args(self):
+        super().initialize_args()
+        self.xColumnName = self.arguments["xColumnName"]
+        self.barColor=tuple(json.loads(self.arguments["barColor"]))
 
 
-
-
-
-
-class ScatterPlotRequestParser(PlotRequestParser):
+class ScatterPlotAttributesAndParser(PlotAttributesAndParser):
+    xColumnName=""
+    yColumnName=""
+    dotColor=ColorCollection.blue
     def __init__(self):
         super().__init__()
         self.argumentParser.add_argument('xColumnName', type=str,
@@ -89,6 +123,9 @@ class ScatterPlotRequestParser(PlotRequestParser):
         self.argumentParser.add_argument('dotColor', type=str, default=ColorCollection.blue, required=False,
                                          help="Color of the dot")
 
-
-
+    def initialize_args(self):
+        super().initialize_args()
+        self.xColumnName = self.arguments["xColumnName"]
+        self.xColumnName = self.arguments["yColumnName"]
+        self.dotColor=tuple(json.loads(self.arguments["dotColor"]))
     pass
