@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -9,6 +10,20 @@ namespace ProjectLibrary
     interface IPlotProperty
     {
         bool ColumnsNamesAreValid(ref string exceptionMessage);
+
+     
+       
+    }
+
+    interface IToKeyAndArguments
+    {
+  
+
+        /// <summary>
+        /// Convert the class 's property key and arguments that will be supplied to the api request 's argument
+        /// </summary>
+        /// <returns></returns>
+        Dictionary<String, String> PlotToKeyAndArguments();
     }
     /// <summary>
     /// This class or the other classess that derrive from this  will be instantiated by using [PropertyGrid].
@@ -18,11 +33,11 @@ namespace ProjectLibrary
     public class PlotProperty
     {
         #region Category String
-        public const string plotTextCategoryText="Plot Text (Optional)";
-        public  const string plotColorCategoryText = "Plot Color(Optional)";
+        public const string plotTextCategoryText = "Plot Text (Optional)";
+        public const string plotColorCategoryText = "Plot Color(Optional)";
         public const string plotDataCategoryText = "Data (Mandatory)";
         #endregion
-        private string plotName=" ";
+        private string plotName = " ";
 
         [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("Plot name")]
@@ -30,21 +45,23 @@ namespace ProjectLibrary
         public string PlotName { get => plotName; set => plotName = value; }
 
 
-        
+
         private Color plotNameColor = Color.Black;
         [Category(PlotProperty.plotColorCategoryText)]
         [DisplayName("Plot Name Color")]
         [Description("The text color of plot name")]
         public Color PlotNameColor { get => plotNameColor; set => plotNameColor = value; }
+
+
     }
 
     public class PlotProperty2d : PlotProperty
     {
-        
+
 
 
         #region X Label
-        private string xLabel=" ";
+        private string xLabel = " ";
         [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("X Axes Label")]
         [Description("Label for the X axes")]
@@ -58,7 +75,7 @@ namespace ProjectLibrary
         #endregion
 
         #region YLabel
-        private string yLabel=" ";
+        private string yLabel = " ";
         [Category(PlotProperty.plotTextCategoryText)]
         [DisplayName("Y Axes Label")]
         [Description("Label for the Y axes")]
@@ -127,9 +144,32 @@ namespace ProjectLibrary
 
 
         #endregion
+
+        
+        protected Dictionary<String, String> ToKeyAndArguments()
+        {
+            return new Dictionary<string, string>()
+            {
+
+                {"plotName", PlotName},
+                {"xLabel",XLabel},
+                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XAxisLabelColor))},
+
+                {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YAxisLabelColor)) },
+                {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(PlotNameColor))},
+
+                {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(BottomSpineColor))},
+                {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(TopSpineColor))},
+                {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(LeftSpineColor))},
+                {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(RightSpineColor))},
+
+                {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(FigureBackgroundColor))},
+                {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(AxesBackgroundColor))},
+            };
+        }
     }
 
-    public class HistogramAttributes : PlotProperty2d,IPlotProperty
+    public class HistogramAttributes : PlotProperty2d, IPlotProperty,IToKeyAndArguments
     {
         private Color barColor = Color.Blue;
         [Category(PlotProperty.plotColorCategoryText)]
@@ -158,10 +198,21 @@ namespace ProjectLibrary
                 exceptionMessage = "X Column Name doesnt exist in the specified name ";
                 return false;
             }
-         
+
+        }
+
+        public Dictionary<string, string> PlotToKeyAndArguments()
+        {
+            Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
+            {
+                   {"xColumnName", XColumnName},
+                   {"barColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(BarColor))},
+
+            };
+            return DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, base.ToKeyAndArguments());
         }
     }
-    public class ScatterAttributes : PlotProperty2d,IPlotProperty
+    public class ScatterAttributes : PlotProperty2d, IPlotProperty,IToKeyAndArguments
     {
         private string xColumnName;
 
@@ -195,6 +246,19 @@ namespace ProjectLibrary
             {
                 return true;
             }
+        }
+
+        public Dictionary<string, string> PlotToKeyAndArguments()
+        {
+            Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
+            {
+                   {"xColumnName", XColumnName},
+
+                   {"yColumnName", YColumnName},
+                   {"dotColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(DotColor))},
+
+            };
+            return DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, base.ToKeyAndArguments());
         }
     }
 }

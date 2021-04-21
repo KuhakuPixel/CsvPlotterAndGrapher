@@ -94,6 +94,26 @@ namespace ProjectLibrary
             return arr;
 
         }
+        public static Dictionary<T, S> AppendDictionary<T, S>(Dictionary<T, S> source, Dictionary<T, S> collection)
+        {
+            if (collection == null)
+            {
+                throw new ArgumentNullException("Collection is null");
+            }
+
+            foreach (var item in collection)
+            {
+                if (!source.ContainsKey(item.Key))
+                {
+                    source.Add(item.Key, item.Value);
+                }
+                else
+                {
+                    throw new ArgumentException("Duplicate Key is found between the source and the collection ");
+                }
+            }
+            return source;
+        }
     }
    
     static public class EnumConverter

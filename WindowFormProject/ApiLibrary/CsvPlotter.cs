@@ -28,28 +28,11 @@ namespace ProjectLibrary
 
 
 
-
-            await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, new Dictionary<string, string>
-            {
-                {"xColumnName", attributes.XColumnName},
-                {"plotName", attributes.PlotName},
-                {"xLabel",attributes.XLabel},
-                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.XAxisLabelColor))},
-                {"barColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BarColor))},
-                {"yLabel",attributes.YLabel},
-                {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.YAxisLabelColor)) },
-                {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.PlotNameColor))},
-
-                {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BottomSpineColor))},
-                {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
-                {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
-                {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
-
-                {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.FigureBackgroundColor))},
-                {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.AxesBackgroundColor))},
-                //{"titleColorTest",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.ColorTest))}
-            });
-
+            
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, attributes.PlotToKeyAndArguments());
+            
+            
+               
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, printResponse: false);
 
 
@@ -79,29 +62,7 @@ namespace ProjectLibrary
         static public async Task<Bitmap> CreateScatterPlot(ScatterAttributes attributes)
         {
 
-            await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, new Dictionary<string, string>
-            {
-                
-
-
-                {"xColumnName", attributes.XColumnName},
-                {"yColumnName", attributes.YColumnName},
-                {"plotName", attributes.PlotName},
-                {"xLabel",attributes.XLabel},
-                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.XAxisLabelColor))},
-                {"barColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.DotColor))},
-                {"yLabel",attributes.YLabel},
-                {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.YAxisLabelColor)) },
-                {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.PlotNameColor))},
-
-                {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.BottomSpineColor))},
-                {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
-                {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
-                {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
-
-                {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.FigureBackgroundColor))},
-                {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.AxesBackgroundColor))},
-            });
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint,attributes.PlotToKeyAndArguments());
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, printResponse: false);
 
