@@ -37,7 +37,7 @@ class Plotter:
 
         fig, ax = plt.subplots()
         ax.hist(x=x, color=attributes.barColor)
-        MatPlotLibWrapper.decorate_axes(ax, attributes)
+        MatPlotLibWrapper.decorate_plot(fig=fig, ax=ax, attributes=attributes)
         return Plotter.pyplot_figure_to_image_array(figure=fig)
 
     @staticmethod
@@ -51,5 +51,5 @@ class Plotter:
 
         fig, ax = plt.subplots()
         ax.scatter(x=x, y=y, color=attributes.dotColor)
-        MatPlotLibWrapper.decorate_axes(ax, attributes=attributes)
+        MatPlotLibWrapper.decorate_plot(fig=fig, ax=ax, attributes=attributes)
         return Plotter.pyplot_figure_to_image_array(figure=fig)

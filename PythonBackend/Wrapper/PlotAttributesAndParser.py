@@ -28,10 +28,14 @@ class PlotAttributesAndParser:
     plotNameColor = ()
     xAxisLabelColor = ()
     yAxisLabelColor = ()
+
     bottomSpineColor = ()
     topSpineColor = ()
     leftSpineColor = ()
     rightSpineColor = ()
+
+    figureBackgroundColor = ColorCollection.white
+    axesBackgroundColor = ColorCollection.white
 
     def __init__(self):
         """
@@ -65,11 +69,15 @@ class PlotAttributesAndParser:
         self.argumentParser.add_argument('rightSpineColor', type=str, default=ColorCollection.black, required=False,
                                          help="The color of the plot 's right spine")
 
+        self.argumentParser.add_argument('figureBackgroundColor', type=str, default=ColorCollection.white,
+                                         required=False,
+                                         help="")
+        self.argumentParser.add_argument('axesBackgroundColor', type=str, default=ColorCollection.white, required=False,
+                                         help="")
+
     def initialize_args(self):
         """
-        Parse all arguments from the provided request And assign the value to the object's properties
-
-        all of the arguments are put inside self.arguments (dictionary)
+        Parse all arguments from the provided request And initialize the object
         """
         self.arguments = self.argumentParser.parse_args()
 
@@ -77,7 +85,7 @@ class PlotAttributesAndParser:
         self.xLabel = self.arguments["xLabel"]
         self.yLabel = self.arguments["yLabel"]
 
-        # convert array in json format to tuple
+        # convert array in json format(representing color) to tuple
 
         self.plotNameColor = tuple(json.loads(self.arguments["plotNameColor"]))
         self.xAxisLabelColor = tuple(json.loads(self.arguments["xAxisLabelColor"]))
@@ -86,6 +94,10 @@ class PlotAttributesAndParser:
         self.topSpineColor = tuple(json.loads(self.arguments["topSpineColor"]))
         self.leftSpineColor = tuple(json.loads(self.arguments["leftSpineColor"]))
         self.rightSpineColor = tuple(json.loads(self.arguments["rightSpineColor"]))
+
+        # bg color
+        self.figureBackgroundColor = tuple(json.loads(self.arguments["figureBackgroundColor"]))
+        self.axesBackgroundColor = tuple(json.loads(self.arguments["axesBackgroundColor"]))
 
 
 """
@@ -107,13 +119,14 @@ class HistogramPlotAttributesAndParser(PlotAttributesAndParser):
     def initialize_args(self):
         super().initialize_args()
         self.xColumnName = self.arguments["xColumnName"]
-        self.barColor=tuple(json.loads(self.arguments["barColor"]))
+        self.barColor = tuple(json.loads(self.arguments["barColor"]))
 
 
 class ScatterPlotAttributesAndParser(PlotAttributesAndParser):
-    xColumnName=""
-    yColumnName=""
-    dotColor=ColorCollection.blue
+    xColumnName = ""
+    yColumnName = ""
+    dotColor = ColorCollection.blue
+
     def __init__(self):
         super().__init__()
         self.argumentParser.add_argument('xColumnName', type=str,
@@ -127,5 +140,6 @@ class ScatterPlotAttributesAndParser(PlotAttributesAndParser):
         super().initialize_args()
         self.xColumnName = self.arguments["xColumnName"]
         self.xColumnName = self.arguments["yColumnName"]
-        self.dotColor=tuple(json.loads(self.arguments["dotColor"]))
+        self.dotColor = tuple(json.loads(self.arguments["dotColor"]))
+
     pass

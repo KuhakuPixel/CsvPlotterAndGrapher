@@ -102,9 +102,30 @@ namespace ProjectLibrary
         [DisplayName("Right Spine Color")]
         [Description("The color of the plot 's right spine")]
         public Color RightSpineColor { get => rightSpineColor; set => rightSpineColor = value; }
-        
 
-     
+
+
+        #endregion
+
+        #region Plot 's background Color
+
+        //figure bg color
+        private Color figureBackgroundColor = Color.White;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Figure Background Color")]
+        [Description("The surrounding color of the plot")]
+        public Color FigureBackgroundColor { get => figureBackgroundColor; set => figureBackgroundColor = value; }
+
+        //axes bg color
+        private Color axesBackgroundColor = Color.White;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Axes BackgroundColor")]
+        [Description("The color of the plot 's background")]
+        public Color AxesBackgroundColor { get => axesBackgroundColor; set => axesBackgroundColor = value; }
+
+
+
+
         #endregion
     }
 

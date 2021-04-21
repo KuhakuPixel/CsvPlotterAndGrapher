@@ -44,6 +44,9 @@ namespace ProjectLibrary
                 {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
                 {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
                 {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
+
+                {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.FigureBackgroundColor))},
+                {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.AxesBackgroundColor))},
                 //{"titleColorTest",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.ColorTest))}
             });
 
@@ -95,6 +98,9 @@ namespace ProjectLibrary
                 {"topSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.TopSpineColor))},
                 {"leftSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.LeftSpineColor))},
                 {"rightSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.RightSpineColor))},
+
+                {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.FigureBackgroundColor))},
+                {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(attributes.AxesBackgroundColor))},
             });
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, printResponse: false);
