@@ -5,12 +5,13 @@
 ![ScreenShot](ScreenShots/Screenshot_120.png)
 Csv Graph is a software created to create graph or plot from a csv file
 
-- upload csv file by pressing the **open** button
+- read csv file by pressing the **open** button
 - Select Plot Type
 - Fill the requirements and press the plot button to create the graph
 
 ## Features
 
+- Read Csv's column data
 - Scatter Graph
 - Histogram Graph
 
