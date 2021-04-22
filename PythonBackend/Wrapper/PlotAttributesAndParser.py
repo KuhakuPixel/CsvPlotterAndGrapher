@@ -139,7 +139,7 @@ class ScatterPlotAttributesAndParser(PlotAttributesAndParser):
     def initialize_args(self):
         super().initialize_args()
         self.xColumnName = self.arguments["xColumnName"]
-        self.xColumnName = self.arguments["yColumnName"]
+        self.yColumnName = self.arguments["yColumnName"]
         self.dotColor = tuple(json.loads(self.arguments["dotColor"]))
 
     pass
