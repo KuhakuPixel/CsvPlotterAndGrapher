@@ -20,7 +20,7 @@ namespace ProjectLibrary
   
 
         /// <summary>
-        /// Convert the class 's property key and arguments that will be supplied to the api request 's argument
+        /// Convert the class 's property and its base 's properties (if any) into  key and arguments that will be supplied to the api request 's argument
         /// </summary>
         /// <returns></returns>
         Dictionary<String, String> PlotToKeyAndArguments();
@@ -236,10 +236,12 @@ namespace ProjectLibrary
         {
             if (!CsvReader.HasColumn(xColumnName))
             {
+                exceptionMessage = "X Column Name doesnt exist";
                 return false;
             }
             else if (!CsvReader.HasColumn(yColumnName))
             {
+                exceptionMessage = "X Column Name doesnt exist";
                 return false;
             }
             else
@@ -256,6 +258,58 @@ namespace ProjectLibrary
 
                    {"yColumnName", YColumnName},
                    {"dotColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(DotColor))},
+
+            };
+            return DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, base.ToKeyAndArguments());
+        }
+    }
+
+    public class LineOrMarkerAttributes : PlotProperty2d, IPlotProperty, IToKeyAndArguments
+    {
+        private string xColumnName;
+
+        [Category(PlotProperty.plotDataCategoryText)]
+        [DisplayName("X Column Name")]
+        [Description("The name of the column that will be plotted into the scatter plot (X axis)")]
+        public string XColumnName { get => xColumnName; set => xColumnName = value; }
+
+        private string yColumnName;
+        [Category(PlotProperty.plotDataCategoryText)]
+        [DisplayName("Y Column Name")]
+        [Description("The name of the column that will be plotted into the scatter plot (Y axis)")]
+        public string YColumnName { get => yColumnName; set => yColumnName = value; }
+
+        private Color lineOrMarkerColor = Color.Blue;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("Line Or Marker Color")]
+        [Description("The color of the Line or the Marker")]
+        public Color LineColor { get => lineOrMarkerColor; set => lineOrMarkerColor = value; }
+        public bool ColumnsNamesAreValid(ref string exceptionMessage)
+        {
+            if (!CsvReader.HasColumn(xColumnName))
+            {
+                exceptionMessage = "X Column Name doesnt exist";
+                return false;
+            }
+            else if (!CsvReader.HasColumn(yColumnName))
+            {
+                exceptionMessage = "Y Column Name doesnt exist";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public Dictionary<string, string> PlotToKeyAndArguments()
+        {
+            Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
+            {
+                   {"xColumnName", XColumnName},
+
+                   {"yColumnName", YColumnName},
+                   {"lineOrMarkerColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(LineColor))},
 
             };
             return DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, base.ToKeyAndArguments());

@@ -21,7 +21,9 @@ namespace ProjectLibrary
         public static readonly string scatterPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnsToScatterPlot/ScatterPlot";
         #endregion
 
-
+        #region Line Or marker Plotter Configuration
+        public static readonly string lineOrMarkerPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnsToLineOrMarkerPlot/LineOrMarkerPlot";
+        #endregion
         public static readonly string plotImageData_key = "plot_data";
         public static readonly string plotImageShape_key = "img_shape";
     }

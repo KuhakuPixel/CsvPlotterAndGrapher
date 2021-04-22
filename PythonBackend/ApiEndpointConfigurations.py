@@ -4,7 +4,7 @@ class ApiEndpointConfigurations:
 
     histogramPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot"
     scatterPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToScatterPlot/ScatterPlot"
-
+    lineOrMarkPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToLineOrMarkerPlot/LineOrMarkerPlot"
 
 
     plotImageData_key = "plot_data"

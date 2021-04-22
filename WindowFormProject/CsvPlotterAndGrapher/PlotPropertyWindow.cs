@@ -20,19 +20,22 @@ namespace CsvPlotterAndGrapher
             this.plotType = plotType;
            
             InitializeComponent();
-            InitializePlotPropertyGrid();
+            InitializePlotPropertyGrid(plotType);
 
         }
-        //initialize property grid
-        private void InitializePlotPropertyGrid()
+        //initialize property grid 's properties field according to the plot type
+        private void InitializePlotPropertyGrid(CsvPlotter.PlotTypes plotType)
         {
-            switch (this.plotType)
+            switch (plotType)
             {
                 case CsvPlotter.PlotTypes.Histogram:
                     this.pgPlotProperty.SelectedObject = new HistogramAttributes();
                     break;
                 case CsvPlotter.PlotTypes.Scatter:
                     this.pgPlotProperty.SelectedObject = new ScatterAttributes();
+                    break;
+                case CsvPlotter.PlotTypes.LineOrMarker:
+                    this.pgPlotProperty.SelectedObject = new LineOrMarkerAttributes();
                     break;
             }
         }
@@ -65,7 +68,7 @@ namespace CsvPlotterAndGrapher
 
                         }
                     }
-                   
+
                     break;
                 case CsvPlotter.PlotTypes.Scatter:
                     {
@@ -84,7 +87,25 @@ namespace CsvPlotterAndGrapher
 
                         }
                     }
-                 
+
+                    break;
+                case CsvPlotter.PlotTypes.LineOrMarker:
+                    {
+                        LineOrMarkerAttributes attributes = this.pgPlotProperty.SelectedObject as LineOrMarkerAttributes;
+                        if (attributes.ColumnsNamesAreValid(ref exceptionMessage))
+                        {
+                            Bitmap image = await CsvPlotter.CreateLineOrMarkerPlot(attributes);
+                            using (ShowPlotForm showPlotForm = new ShowPlotForm(image))
+                            {
+                                showPlotForm.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(exceptionMessage, "Exception Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                    }
                     break;
             }
         }

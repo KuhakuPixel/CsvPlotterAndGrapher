@@ -96,10 +96,33 @@ class ColumnsToScatterPlot(Resource):
         return 200
 
 
+line_or_marker_plot_attributes_parser = PlotAttributesAndParser.LineOrMarkerPlotAttributesAndParser()
+
+
+class ColumnsToLineOrMarkerPlot(Resource):
+
+    def get(self, plot_id):
+
+        image_in_numpy_array = Plotter.line_or_marker(attributes=line_or_marker_plot_attributes_parser)
+
+        # dimension of the array
+        img_shape = image_in_numpy_array.shape
+        img_shape_json = json.dumps(img_shape)
+
+        img_json = json.dumps(image_in_numpy_array.tolist())
+
+        return {ApiEndpointConfigurations.plotImageData_key: img_json,
+                ApiEndpointConfigurations.plotImageShape_key: img_shape_json}
+
+    def put(self, plot_id):
+        line_or_marker_plot_attributes_parser.initialize_args()
+        return 200
+
 # api resource routing
 api.add_resource(CsvReader, '/CsvReader/<string:path_id>')
 api.add_resource(ColumnToHistogram, '/Plotter/ColumnToHistogram/<string:plot_id>')
 api.add_resource(ColumnsToScatterPlot, '/Plotter/ColumnsToScatterPlot/<string:plot_id>')
+api.add_resource(ColumnsToLineOrMarkerPlot, '/Plotter/ColumnsToLineOrMarkerPlot/<string:plot_id>')
 
 if __name__ == '__main__':
     # assing False if ready to turn to exe

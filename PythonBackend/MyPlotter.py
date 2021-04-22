@@ -4,6 +4,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 from Wrapper.PlotAttributesAndParser import HistogramPlotAttributesAndParser
 from Wrapper.PlotAttributesAndParser import ScatterPlotAttributesAndParser
+from Wrapper.PlotAttributesAndParser import LineOrMarkerPlotAttributesAndParser
 from Wrapper.matPlotLibWrapper import MatPlotLibWrapper
 from UserData import UserData
 
@@ -51,5 +52,19 @@ class Plotter:
 
         fig, ax = plt.subplots()
         ax.scatter(x=x, y=y, color=attributes.dotColor)
+        MatPlotLibWrapper.decorate_plot(fig=fig, ax=ax, attributes=attributes)
+        return Plotter.pyplot_figure_to_image_array(figure=fig)
+
+    @staticmethod
+    def line_or_marker(attributes:LineOrMarkerPlotAttributesAndParser) -> np.ndarray:
+        """
+           x is a numpy array
+           return a numpy array of the graph
+        """
+        x = UserData.dataFrame[attributes.xColumnName]
+        y = UserData.dataFrame[attributes.yColumnName]
+
+        fig, ax = plt.subplots()
+        ax.plot(x, y, color=attributes.lineOrMarkerColor)
         MatPlotLibWrapper.decorate_plot(fig=fig, ax=ax, attributes=attributes)
         return Plotter.pyplot_figure_to_image_array(figure=fig)

@@ -143,3 +143,26 @@ class ScatterPlotAttributesAndParser(PlotAttributesAndParser):
         self.dotColor = tuple(json.loads(self.arguments["dotColor"]))
 
     pass
+
+
+class LineOrMarkerPlotAttributesAndParser(PlotAttributesAndParser):
+    xColumnName = ""
+    yColumnName = ""
+    lineOrMarkerColor = ColorCollection.blue
+
+    def __init__(self):
+        super().__init__()
+        self.argumentParser.add_argument('xColumnName', type=str,
+                                         help="the column that will be plotted on the x axis of the plot")
+        self.argumentParser.add_argument('yColumnName', type=str,
+                                         help="the column that will be plotted on the y axis of the plot")
+        self.argumentParser.add_argument('lineOrMarkerColor', type=str, default=ColorCollection.blue, required=False,
+                                         help="Color of the dot")
+
+    def initialize_args(self):
+        super().initialize_args()
+        self.xColumnName = self.arguments["xColumnName"]
+        self.yColumnName = self.arguments["yColumnName"]
+        self.lineOrMarkerColor = tuple(json.loads(self.arguments["lineOrMarkerColor"]))
+
+    pass
