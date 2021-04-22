@@ -36,6 +36,10 @@ class PlotAttributesAndParser:
 
     figureBackgroundColor = ColorCollection.white
     axesBackgroundColor = ColorCollection.white
+    
+    #tick color
+    xTickColor = ColorCollection.black
+    yTickColor = ColorCollection.black
 
     def __init__(self):
         """
@@ -75,6 +79,11 @@ class PlotAttributesAndParser:
         self.argumentParser.add_argument('axesBackgroundColor', type=str, default=ColorCollection.white, required=False,
                                          help="")
 
+        self.argumentParser.add_argument('xTickColor', type=str, default=ColorCollection.black, required=False,
+                                         help="The color of tick in x")
+        self.argumentParser.add_argument('yTickColor', type=str, default=ColorCollection.black, required=False,
+                                         help="he color of tick in y")
+
     def initialize_args(self):
         """
         Parse all arguments from the provided request And initialize the object
@@ -94,6 +103,9 @@ class PlotAttributesAndParser:
         self.topSpineColor = tuple(json.loads(self.arguments["topSpineColor"]))
         self.leftSpineColor = tuple(json.loads(self.arguments["leftSpineColor"]))
         self.rightSpineColor = tuple(json.loads(self.arguments["rightSpineColor"]))
+
+        self.xTickColor = tuple(json.loads(self.arguments["xTickColor"]))
+        self.yTickColor = tuple(json.loads(self.arguments["yTickColor"]))
 
         # bg color
         self.figureBackgroundColor = tuple(json.loads(self.arguments["figureBackgroundColor"]))

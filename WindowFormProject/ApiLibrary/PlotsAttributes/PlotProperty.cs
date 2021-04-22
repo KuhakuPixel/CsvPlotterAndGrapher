@@ -139,13 +139,28 @@ namespace ProjectLibrary
         [DisplayName("Axes BackgroundColor")]
         [Description("The color of the plot 's background")]
         public Color AxesBackgroundColor { get => axesBackgroundColor; set => axesBackgroundColor = value; }
-
-
+       
 
 
         #endregion
+        //x tick color
+        private Color xTicksColor = Color.Black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName("X Ticks Color")]
+        [Description("Change the color of the x ticks")]
+        public Color XTicksColor { get => xTicksColor; set => xTicksColor = value; }
 
-        
+        //y tick color
+        private Color yTicksColor = Color.Black;
+        [Category(PlotProperty.plotColorCategoryText)]
+        [DisplayName(" y Ticks Color")]
+        [Description("The surrounding color of the plot")]
+        public Color YTicksColor { get => yTicksColor; set => yTicksColor = value; }
+
+
+        #region Plot 's tick Color
+
+        #endregion
         protected Dictionary<String, String> ToKeyAndArguments()
         {
             return new Dictionary<string, string>()
@@ -165,6 +180,9 @@ namespace ProjectLibrary
 
                 {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(FigureBackgroundColor))},
                 {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(AxesBackgroundColor))},
+
+                {"xTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XTicksColor))},
+                {"yTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YTicksColor))},
             };
         }
     }

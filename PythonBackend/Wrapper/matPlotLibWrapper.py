@@ -32,4 +32,8 @@ class MatPlotLibWrapper:
         #decorate plot 's background
         ax.set_facecolor(attributes.axesBackgroundColor)
         fig.patch.set_facecolor(attributes.figureBackgroundColor)
+
+        # decorate ticks
+        ax.tick_params(axis='x', colors=attributes.xTickColor,which="both")
+        ax.tick_params(axis='y', colors=attributes.yTickColor, which="both")
         pass
