@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from Wrapper.PlotAttributesAndParser import HistogramPlotAttributesAndParser
-from Wrapper.PlotAttributesAndParser import ScatterPlotAttributesAndParser
-from Wrapper.PlotAttributesAndParser import LineOrMarkerPlotAttributesAndParser
-from Wrapper.matPlotLibWrapper import MatPlotLibWrapper
 from UserData import UserData
+from Wrapper.PlotAttributesAndParser import HistogramPlotAttributesAndParser
+from Wrapper.PlotAttributesAndParser import LineOrMarkerPlotAttributesAndParser
+from Wrapper.PlotAttributesAndParser import ScatterPlotAttributesAndParser
+from Wrapper.matPlotLibWrapper import MatPlotLibWrapper
 
 # Turn interactive plotting off
 # turn off Interactive Mode, and only call plt.show() when  ready to display the plots:
@@ -56,7 +56,7 @@ class Plotter:
         return Plotter.pyplot_figure_to_image_array(figure=fig)
 
     @staticmethod
-    def line_or_marker(attributes:LineOrMarkerPlotAttributesAndParser) -> np.ndarray:
+    def line_or_marker(attributes: LineOrMarkerPlotAttributesAndParser) -> np.ndarray:
         """
            x is a numpy array
            return a numpy array of the graph

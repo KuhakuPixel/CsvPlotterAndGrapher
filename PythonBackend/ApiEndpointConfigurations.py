@@ -1,10 +1,10 @@
 class ApiEndpointConfigurations:
-    csvReaderApiEndPoint = "http://localhost:5000/CsvReader/path1"
+    csvReaderApiEndPoint = "http://localhost:5000/CsvReader"
     csvColumn_key = "csvColumns"
 
-    histogramPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnToHistogram/HistogramPlot"
-    scatterPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToScatterPlot/ScatterPlot"
-    lineOrMarkPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToLineOrMarkerPlot/LineOrMarkerPlot"
+    histogramPlotterApiEndPoint = "http://localhost:5000/Plotter/ColumnToHistogram"
+    scatterPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToScatterPlot"
+    lineOrMarkPlotterApiEndPoint="http://localhost:5000/Plotter/ColumnsToLineOrMarkerPlot"
 
 
     plotImageData_key = "plot_data"
