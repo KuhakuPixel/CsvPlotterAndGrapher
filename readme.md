@@ -14,7 +14,7 @@ Csv Graph is a software created to create graph or plot from a csv file
 - Read Csv's column data
 - Scatter Graph
 - Histogram Graph
-
+- Line Graph
 
 ## Installation
 
