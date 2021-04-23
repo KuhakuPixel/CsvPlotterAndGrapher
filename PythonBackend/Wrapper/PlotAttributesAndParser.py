@@ -41,10 +41,15 @@ class PlotAttributesAndParser:
     xTickColor = ColorCollection.black
     yTickColor = ColorCollection.black
 
+    #minor locator value
+    xMinorLocatorValue=0
+    yMinorLocatorValue=0
+
     def __init__(self):
         """
         Initialize all of the basic arguments that are required to create a plot
         """
+        #region trivial
         self.argumentParser = reqparse.RequestParser()
 
         self.argumentParser.add_argument('plotName', type=str, default="", required=False,
@@ -79,11 +84,19 @@ class PlotAttributesAndParser:
         self.argumentParser.add_argument('axesBackgroundColor', type=str, default=ColorCollection.white, required=False,
                                          help="")
 
+
+        #endregion
+
+        #region ticks
         self.argumentParser.add_argument('xTickColor', type=str, default=ColorCollection.black, required=False,
                                          help="The color of tick in x")
         self.argumentParser.add_argument('yTickColor', type=str, default=ColorCollection.black, required=False,
                                          help="he color of tick in y")
-
+        self.argumentParser.add_argument('xMinorLocatorValue', type=float, default=0, required=False,
+                                         help="The amount of minor ticks of this value  multiply")
+        self.argumentParser.add_argument('yMinorLocatorValue', type=float, default=0, required=False,
+                                         help="The amount of minor ticks of this value  multiply")
+        #endregion
     def initialize_args(self):
         """
         Parse all arguments from the provided request And initialize the object
@@ -110,6 +123,11 @@ class PlotAttributesAndParser:
         # bg color
         self.figureBackgroundColor = tuple(json.loads(self.arguments["figureBackgroundColor"]))
         self.axesBackgroundColor = tuple(json.loads(self.arguments["axesBackgroundColor"]))
+
+        #region minor locator
+        self.xMinorLocatorValue=self.arguments["xMinorLocatorValue"]
+        self.yMinorLocatorValue = self.arguments["yMinorLocatorValue"]
+        #endregion
 
 
 """

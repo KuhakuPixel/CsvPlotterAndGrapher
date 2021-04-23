@@ -29,7 +29,7 @@ namespace ProjectLibrary
 
 
             
-            await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, attributes.PlotToKeyAndArguments());
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.histogramPlotterApiEndPoint, attributes.ConvertToKeyAndArguments());
             
             
                
@@ -62,7 +62,7 @@ namespace ProjectLibrary
         static public async Task<Bitmap> CreateScatterPlot(ScatterAttributes attributes)
         {
 
-            await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint,attributes.PlotToKeyAndArguments());
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint,attributes.ConvertToKeyAndArguments());
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.scatterPlotterApiEndPoint, printResponse: false);
 
@@ -94,7 +94,7 @@ namespace ProjectLibrary
         static public async Task<Bitmap> CreateLineOrMarkerPlot(LineOrMarkerAttributes attributes)
         {
 
-            await FlaskApi.PutRequest(ApiEndpointConfigurations.lineOrMarkerPlotterApiEndPoint, attributes.PlotToKeyAndArguments());
+            await FlaskApi.PutRequest(ApiEndpointConfigurations.lineOrMarkerPlotterApiEndPoint, attributes.ConvertToKeyAndArguments());
 
             Dictionary<string, object> result = await FlaskApi.GetRequest(ApiEndpointConfigurations.lineOrMarkerPlotterApiEndPoint, printResponse: false);
 

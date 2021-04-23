@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 
@@ -42,5 +43,7 @@ namespace ProjectLibrary.PlotsAttributes
         private float minorLocatorValue;
         [ReadOnly(true)]
         public float MinorLocatorValue { get => minorLocatorValue; set => minorLocatorValue = value; }
+
+    
     }
 }

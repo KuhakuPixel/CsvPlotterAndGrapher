@@ -24,7 +24,7 @@ namespace ProjectLibrary
         /// Convert the class 's property and its base 's properties (if any) into  key and arguments that will be supplied to the api request 's argument
         /// </summary>
         /// <returns></returns>
-        Dictionary<String, String> PlotToKeyAndArguments();
+        Dictionary<String, String> ConvertToKeyAndArguments();
     }
     /// <summary>
     /// This class or the other classess that derrive from this  will be instantiated by using [PropertyGrid].
@@ -148,22 +148,7 @@ namespace ProjectLibrary
 
 
         #region Plot 's tick Color
-        /*
-        //x tick color
-        private Color xTicksColor = Color.Black;
-        [Category(PlotProperty.plotColorCategoryText)]
-        [DisplayName("X Ticks Color")]
-        [Description("Change the color of the x ticks")]
-        public Color XTicksColor { get => xTicksColor; set => xTicksColor = value; }
-
-        //y tick color
-        private Color yTicksColor = Color.Black;
-        [Category(PlotProperty.plotColorCategoryText)]
-        [DisplayName(" y Ticks Color")]
-        [Description("The surrounding color of the plot")]
-        public Color YTicksColor { get => yTicksColor; set => yTicksColor = value; }
        
-        */
         private TicksProperty xTickProperty=new TicksProperty();
 
         [Category("Ticks")]
@@ -179,16 +164,13 @@ namespace ProjectLibrary
         #endregion
         protected Dictionary<String, String> ToKeyAndArguments()
         {
-            return new Dictionary<string, string>()
+            Dictionary<string,string> keyAndArguments= new Dictionary<string, string>()
             {
 
                 {"plotName", PlotName},
 
                 {"xLabel",XLabel},
-                
-
                 {"yLabel",YLabel},
-               
 
                 {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XAxisLabelColor))},
                 {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YAxisLabelColor)) },
@@ -206,6 +188,22 @@ namespace ProjectLibrary
                 {"xTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XTickProperty.TicksColor))},
                 {"yTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YTickProperty.TicksColor))},
             };
+           
+            if (XTickProperty.UseMinorLocator)
+            {
+                keyAndArguments = DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, new Dictionary<string, string>()
+                {
+                    {"xMinorLocatorValue",XTickProperty.MinorLocatorValue.ToString() }
+                });
+            }
+            if (YTickProperty.UseMinorLocator)
+            {
+                keyAndArguments = DataStructureConverter.AppendDictionary<string, string>(keyAndArguments, new Dictionary<string, string>()
+                {
+                    {"yMinorLocatorValue",YTickProperty.MinorLocatorValue.ToString() }
+                });
+            }
+            return keyAndArguments;
         }
     }
 
@@ -241,7 +239,7 @@ namespace ProjectLibrary
 
         }
 
-        public Dictionary<string, string> PlotToKeyAndArguments()
+        public Dictionary<string, string> ConvertToKeyAndArguments()
         {
             Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
             {
@@ -290,7 +288,7 @@ namespace ProjectLibrary
             }
         }
 
-        public Dictionary<string, string> PlotToKeyAndArguments()
+        public Dictionary<string, string> ConvertToKeyAndArguments()
         {
             Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
             {
@@ -342,7 +340,7 @@ namespace ProjectLibrary
             }
         }
 
-        public Dictionary<string, string> PlotToKeyAndArguments()
+        public Dictionary<string, string> ConvertToKeyAndArguments()
         {
             Dictionary<string, string> keyAndArguments = new Dictionary<string, string>()
             {
