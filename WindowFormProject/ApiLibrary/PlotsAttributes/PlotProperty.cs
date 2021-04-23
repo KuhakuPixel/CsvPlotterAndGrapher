@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using ProjectLibrary.PlotsAttributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -139,10 +140,15 @@ namespace ProjectLibrary
         [DisplayName("Axes BackgroundColor")]
         [Description("The color of the plot 's background")]
         public Color AxesBackgroundColor { get => axesBackgroundColor; set => axesBackgroundColor = value; }
-       
+
 
 
         #endregion
+
+
+
+        #region Plot 's tick Color
+        /*
         //x tick color
         private Color xTicksColor = Color.Black;
         [Category(PlotProperty.plotColorCategoryText)]
@@ -156,10 +162,20 @@ namespace ProjectLibrary
         [DisplayName(" y Ticks Color")]
         [Description("The surrounding color of the plot")]
         public Color YTicksColor { get => yTicksColor; set => yTicksColor = value; }
+       
+        */
+        private TicksProperty xTickProperty=new TicksProperty();
+
+        [Category("Ticks")]
+        [TypeConverter(typeof(ExpandableObjectConverter))]
+        public TicksProperty XTickProperty { get => xTickProperty; set => xTickProperty = value; }
 
 
-        #region Plot 's tick Color
+        private TicksProperty yTickProperty = new TicksProperty();
 
+        [Category("Ticks")]
+        [TypeConverter(typeof(ExpandableObjectConverter))]
+        public TicksProperty YTickProperty { get => yTickProperty; set => yTickProperty = value; }
         #endregion
         protected Dictionary<String, String> ToKeyAndArguments()
         {
@@ -167,10 +183,16 @@ namespace ProjectLibrary
             {
 
                 {"plotName", PlotName},
-                {"xLabel",XLabel},
-                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XAxisLabelColor))},
 
+                {"xLabel",XLabel},
+                
+
+                {"yLabel",YLabel},
+               
+
+                {"xAxisLabelColor", JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XAxisLabelColor))},
                 {"yAxisLabelColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YAxisLabelColor)) },
+
                 {"plotNameColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(PlotNameColor))},
 
                 {"bottomSpineColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(BottomSpineColor))},
@@ -181,8 +203,8 @@ namespace ProjectLibrary
                 {"figureBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(FigureBackgroundColor))},
                 {"axesBackgroundColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(AxesBackgroundColor))},
 
-                {"xTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XTicksColor))},
-                {"yTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YTicksColor))},
+                {"xTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(XTickProperty.TicksColor))},
+                {"yTickColor",JsonConvert.SerializeObject(MyImageLibrary.ConvertColorToRGBA(YTickProperty.TicksColor))},
             };
         }
     }
