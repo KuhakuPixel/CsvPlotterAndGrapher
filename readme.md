@@ -19,8 +19,9 @@ Csv Graph is a software created to create graph or plot from a csv file
 ## Installation
 
 
-Install [here](https://drive.google.com/drive/folders/1l6OqOB2IzKvXarkO6kq6cMJ-UCG33QRA?usp=sharing)
-Unzip and run CsvPlotterAndGrapher.exe
+Install the zip [here](https://github.com/KuhakuPixel/CsvPlotterAndGrapher/releases/tag/1.0.0)
+
+Unzip it and run CsvPlotterAndGrapher.exe
 
 ## Contribution
 
